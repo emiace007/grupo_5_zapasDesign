@@ -4,6 +4,10 @@ NOSOTROS:
 Zapas Design es una página web enfocada en la venta de zapatillas. 
 Estas serán de todas las marcas, modelos y colores. 
 
+AUDIENCIA OBJETIVO:
+Nos centraremos en mayores de edad. Tanto masculino como femenino. 
+Para enfocarnos en dicho publico, los talles disponibles seran de 36 a 42 y el registro recaudará el nombre, apellido, fecha y mail del usuario.
+
 ENFOQUE:
 
 Nuestro principal objetivo será estar a disposicion bajo cualquier requisito que quiera el usuario. 
@@ -11,16 +15,17 @@ En el caso que el mismo quiera botines, habrá una sección "Deportes". Por otro
 
 INTEGRANTES DEL GRUPO 5:
 
-1) Acevedo, Emiliano
-2) Quinto, Alan Ramiro
-3) Pareja, Juan
-4) Lobo, Gastón
+1) Acevedo, Emiliano  // habil en HTML, CSS y habilidades en diseño web.
+2) Cueto Quinto, Alan Ramiro // habil en la programacion y resolucion de problemas.
+3) Pareja, Juan // 
+4) Lobo, Gastón // Editor de video y locutor.
 
 REFERENCIAS:
 Por qué fueron elegidos.
-1) https://kicks.com.co/ -- Tiene un front simple, con funcionalidades interasnte que podemos adoptar para nuestra pagina, adicional a esto nos da una idea de como funciona una tienda que vende el mismo tipo de sneackers que nosotros pensamos ofrecer.
-2)
-3)
-4)
-5)
+1) https://kicks.com.co/ -- Nos gustó su interfaz (UX), es muy sencillo para el usuario. Nos gustó la sección del "carrito"
+2) https://trueshop.co/collections -- Interfaz sencilla.
+3) https://www.adidas.com.ar/ -- La estetica y el video en la portada.
+4) https://www.moovbydexter.com.ar/marcas/jordan -- Al entrar a una marca te deja seguir filtrando por hombre, mujer y tipos.
+5) https://www.jordan.com/collection/air-jordan-8 -- La tendremos en cuenta para el diseño de la pagina principal
+
 
