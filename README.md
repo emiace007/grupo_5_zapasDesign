@@ -17,7 +17,8 @@ INTEGRANTES DEL GRUPO 5:
 4) Lobo, Gastón
 
 REFERENCIAS:
-1) Por qué fueron elegidos.
+Por qué fueron elegidos.
+1) https://kicks.com.co/ -- Tiene un front simple, con funcionalidades interasnte que podemos adoptar para nuestra pagina, adicional a esto nos da una idea de como funciona una tienda que vende el mismo tipo de sneackers que nosotros pensamos ofrecer.
 2)
 3)
 4)
