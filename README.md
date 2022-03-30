@@ -28,4 +28,6 @@ Por qué fueron elegidos.
 4) https://www.moovbydexter.com.ar/marcas/jordan -- Al entrar a una marca te deja seguir filtrando por hombre, mujer y tipos.
 5) https://www.jordan.com/collection/air-jordan-8 -- La tendremos en cuenta para el diseño de la pagina principal
 
+WIREFRAMES:
 
+Mobile: https://miro.com/welcomeonboard/Rm9Ya3UzTkNJQ2lZWkQ5UGhnWEFxOGJGUHVZWkM5djJpMFdyTkJtQ0ZZUXlsbTVRc3pESVFzbk9hYWN5a2Vua3wzNDU4NzY0NTIxNTcwNjY2NDUz?invite_link_id=605657002737
