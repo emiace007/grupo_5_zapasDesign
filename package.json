@@ -1,0 +1,23 @@
+{
+  "name": "grupo_5_zapasdesign",
+  "version": "1.0.0",
+  "description": "NOSOTROS:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gastylobo/grupo_5_zapasDesign.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gastylobo/grupo_5_zapasDesign/issues"
+  },
+  "homepage": "https://github.com/gastylobo/grupo_5_zapasDesign#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
