@@ -1,6 +1,14 @@
+:root{
+    --titulos: 24px;
+    --subtitulos: 18px;
+    --descripciones: 16px;
+    --infomación-secundaria: 12px;
+}
+
 * {
     box-sizing: border-box;
 }
+
 
 header{
     width: 100%;
@@ -30,6 +38,101 @@ nav {
     gap: 10px;
     align-items: center;
 }
+
+main{
+    height: 100%;
+    width: 100%;
+}
+
+.contenedor-productos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 220px;
+    border-bottom: 1px solid #7c7777;
+}
+.foto-producto{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.descripcion-producto{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.añadir-productos{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.resumen-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 220px;
+    border-bottom: 1px solid #7c7777;
+
+}
+.texto-resumen-producto{
+    margin: 30px auto;
+    font-weight: bold;
+}
+.resumen-producto{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.resumen-envio{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton-pago{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    margin: 20px;
+}
+
+.boton-pago input{
+    width: 80%;
+    height: 20px;
+    
+}
+
+footer{
+    position: absolute;
+    bottom:0;
+    padding: 8px;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.links-informacion-adicional{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.redes-sociales{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
 
 @media (min-width: 480px) {
     
