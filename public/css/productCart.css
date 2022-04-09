@@ -1,3 +1,44 @@
-h1{
-    color: blue;
+* {
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+}
+nav {
+    margin: 0;
+    display: grid;
+    grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
+    grid-template-rows: 50px;
+    align-items: center;
+    border-bottom: 1px solid #7c7777;
+}
+
+.logo-Zapas-Design{
+    text-align: center;
+    
+}
+
+.logo-Zapas-Design img{
+    width: 200px;
+    height: 45px;
+    object-fit: contain;
+}
+.opciones-barra-navegacion{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+
+@media (min-width: 480px) {
+    
+    .icono-menu-hamburguesa{
+        margin-left: 50px;
+    }
+    .opciones-barra-navegacion{
+        margin-right: 50px ;
+        gap: 30px;
+    }
+
 }
