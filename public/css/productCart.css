@@ -32,7 +32,7 @@ nav {
     height: 45px;
     object-fit: contain;
 }
-.opciones-barra-navegacion{
+.opciones-barra-navegacion-rigth{
     display: flex;
     justify-content: flex-end;
     gap: 10px;
