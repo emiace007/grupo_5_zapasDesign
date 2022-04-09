@@ -1,5 +1,5 @@
 :root{
-    --titulos: 24px;
+    --titulos: 21px;
     --subtitulos: 18px;
     --descripciones: 16px;
     --infomación-secundaria: 12px;
@@ -58,13 +58,14 @@ main{
     justify-content: center;
 }
 .descripcion-producto{
-    width: 30%;
+    font-size: var(--descripciones);
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 .añadir-productos{
-    width: 30%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -80,15 +81,19 @@ main{
 
 }
 .texto-resumen-producto{
+    font-size: var(--subtitulos);
     margin: 30px auto;
     font-weight: bold;
 }
 .resumen-producto{
+    font-size: var(--descripciones);
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .resumen-envio{
+    font-size: var(--descripciones);
+
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -119,6 +124,8 @@ footer{
 }
 
 .links-informacion-adicional{
+    font-size: var(--descripciones);
+
     width: 50%;
     display: flex;
     flex-direction: column;
