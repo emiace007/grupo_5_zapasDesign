@@ -1,3 +1,116 @@
-h1{
-    color: black;
+:root{
+    --titulos: 21px;
+    --subtitulos: 18px;
+    --descripciones: 16px;
+    --infomación-secundaria: 12px;
+    --fuente-de-texto: 'Khand', sans-serif;
+    --ligth:300;
+    --normal: 500;
+    --negrita: 700;
+    --gris:#222226;
+    --color:#6DE51E;
+    --celeste: #45B5D9;
 }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--fuente-de-texto);
+    font-weight: var(--normal);
+}
+
+/* BARRA DE NAVEGACION */
+header{
+    width: 100%;
+}
+
+nav {
+    margin: 0;
+    display: grid;
+    grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
+    grid-template-rows: 50px;
+    align-items: center;
+    border-bottom: 1px solid #7c7777;
+}
+
+nav i{
+    color: var(--gris);
+}
+
+nav i:hover{
+    color: var(--color);
+}
+
+.logo-Zapas-Design{
+    text-align: center;
+    
+}
+
+.logo-Zapas-Design img{
+    width: 200px;
+    height: 45px;
+    object-fit: contain;
+}
+.opciones-barra-navegacion-right{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+
+/*MAIN*/
+
+main {
+    text-align: center;
+}
+
+.nombre-prodcuto {
+    font-size: var(--titulos);
+}
+
+.imagen-producto {
+    height: 50vh;
+    width: 100%;
+}
+
+.marca-precio {
+    font-size: var(--descripciones);
+    font-weight: var(--negrita);
+}
+
+.div-talles {
+    margin: auto;
+    margin-top: 5px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.boton-talle {
+    color: var(--celeste);
+    border: var(--celeste) solid 1px;
+    border-radius: 5px;
+    padding: 0px 9px;
+}
+
+.boton-talle:hover {
+    background-color: var(--celeste);
+    color: white;
+}
+
+.añadir-al-carrito {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    border-color: black;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: var(--descripciones);
+}
+
+
+
