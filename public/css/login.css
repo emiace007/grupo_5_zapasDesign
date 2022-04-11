@@ -15,6 +15,14 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: var(--fuente-de-texto);
+    background-image: url(../images/login/foto-login.jpg); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover;
+}
 
 /* BARRA DE NAVEGACION */
 
@@ -33,7 +41,7 @@ nav {
 }
 
 nav i{
-    color: var(--gris);
+    color: white;
 }
 
 nav i:hover{
@@ -64,6 +72,10 @@ nav i:hover{
     align-items: center;
 }
 
+
+
+
+
 /* CUERPO */
 
 main{
@@ -75,15 +87,76 @@ main section{
     text-align: center;
 }
 
-.register{
-    text-decoration: none;
+
+
+.portada h2{
+    font-size: 4rem;
+    color: white;
+    font-weight: var(--ligth);
+    margin: 5% 0px auto 0px;
+    padding: 0px;
 }
 
+
+
+
+/* FORMULARIO // LOGIN */
+
+
+
+.formulario h1{
+    color: var(--color);
+    font-size: 2rem;
+}
+
+.email-password{
+    margin: 15px auto;
+}
+
+
+form input{
+    width: 50%;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-register{
+    margin: 10px;
+}
+
+.login{
+    width: 40%;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--gris);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.login:hover{
+    color: #222226;
+    background-color: var(--color);
+}
+
+.register{
+    text-decoration: none;
+    color: white;    
+}
+
+.register:hover{
+    color: var(--color);
+}
+
+.placeholder{
+    font-family: var(--fuente-de-texto);
+    font-size: 1rem;
+}
 
 /* FOOTER */
 
 footer{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .redes-sociales{
@@ -91,11 +164,19 @@ footer{
 }
 
 .redes-sociales a{
-    color: var(--gris);
+    color: white;
     margin: 4px;
 }
 
 .redes-sociales a:hover{
-    color: var(--color);
+    color: var(--gris);
     padding: 8px;
+    
+}
+
+
+@media (min-width: 480px){
+    .login{
+        width: 25%;
+    }
 }

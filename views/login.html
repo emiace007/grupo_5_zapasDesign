@@ -21,7 +21,7 @@
                 <a href="#" class="icono-flecha"><i class="fas fa-arrow-left fa-2x"></i></a>
             </section>
             
-            <a href="#" class="logo-zapas-design-white"><img src="static/img/logo-zapas-design.svg" alt="logo-zapas-design-white"></a>
+            <a href="#" class="logo-zapas-design-white"><img src="static/img/logo-zapas-design-white.svg" alt="logo-zapas-design-white"></a>
             
             <section class="opciones-barra-navegacion-right">
                 <a href="#" class="icono-menu-hamburguesa"><i class="fas fa-bars fa-2x"></i></a>
@@ -30,21 +30,22 @@
     </header>
 
     <main>
-        <section>
-            <h2>BIENVENIDO</h2>
+        <section class="portada">
+            <h2>BIENVENIDO</h2>     
         </section>
 
-        <section>
+        <section class="formulario">
             <h1>INICIAR SESION</h1>
+            
             <form action="/login" method="get">
-                <div class="login-input">
-                    <input type="email" name="email" placeholder="Correo electrónico">
+                <div class="email-password">
+                    <input type="email" name="email" placeholder="Correo electrónico"  class="placeholder" >
                 </div>
-                <div class="login-input">
-                    <input type="password" name="password" placeholder="Contraseña">
+                <div class="email-password">
+                    <input type="password" name="password" placeholder="Contraseña" class="placeholder">
                 </div>
                 <div class="login-register">
-                    <button type="submit">Iniciar Sesion</button>
+                    <button class="login" class="placeholder" type="submit">Iniciar Sesion</button>
                 </div>
             </form>
 
