@@ -12,9 +12,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <title>Zapas Design</title>
+    <title>Formulario Registro</title>
+    
 </head>
+<header>
+    <nav>
+        <section class="opciones-barra-navegacion-left">    
+            <a href="#" class="icono-menu-hamburguesa"><i class="fas fa-bars fa-2x"></i></a>
+            <a href="#" class="icono-lupa"><i class="fas fa-search fa-2x"></i></a>
+        </section>
+
+        <a href="#" class="logo-zapas-design-white"><img src="static/img/logo-zapas-design-white.svg" alt="logo-zapas-design-white"></a>
+        
+        <section class="opciones-barra-navegacion-right">
+            <a href="#" class="icono-usuario-login"><i class="fas fa-user fa-2x"></i></a>
+            <a href="#" class="icono-carrito-de-compras"><i class="fas fa-cart-plus fa-2x"></i></a>
+            
+        </section>
+    </nav>
+    <link rel="stylesheet" href="static\css\register.css">
+</header>
 <body>
-    <h1>Página para registrarse</h1>
+    <section class="form-registro">
+        <h4>Formulario de Registro</h4>
+        <input class="controles" type="text" name="Nombre" id="nombres" placeholder="Ingrese su Nombre">
+        <input class="controles" type="text" name="Apellido" id="apellido" placeholder="Ingrese su Apellido">
+        <input class="controles" type="email" name="Correo" id="corre" placeholder="Ingrese su Correo">
+        <input class="controles" type="password" name="Contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
+        <p>Estoy de acuerdo con <a href="">Terminos y Condiciones</a></p>
+        <input class="boton" type="submit" value="Registrar">
+        <p><a href="#">Ya tengo Cuenta?</a></p>    
+    </section>
 </body>
 </html>
