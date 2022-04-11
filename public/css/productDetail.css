@@ -26,6 +26,8 @@ body{
 /* BARRA DE NAVEGACION */
 header{
     width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 nav {
@@ -73,11 +75,17 @@ main {
 }
 
 .imagen-producto {
-    height: 50vh;
     width: 100%;
 }
 
 .marca-precio {
+    font-size: var(--descripciones);
+    font-weight: var(--negrita);
+}
+
+
+
+.titulo-talles {
     font-size: var(--descripciones);
     font-weight: var(--negrita);
 }
@@ -112,5 +120,48 @@ main {
     font-size: var(--descripciones);
 }
 
+@media (min-width: 720px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
+    }
+
+
+    .imagen-producto {
+        height: auto;
+        width: 45%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-top: 20px;
+    }
+
+    .info-producto {
+        width: 50%;
+        text-align: start;
+        margin-top: 20px;
+    }
+
+    .nombre-producto {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .descripcion {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .section-talles {
+        margin-bottom: 20px;
+    }
+
+    .div-talles {
+        justify-content: space-between;
+        margin-left: 0;
+        width: 20%
+    }
+
+}
 
