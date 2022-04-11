@@ -46,7 +46,7 @@ nav i{
 
 nav i:hover{
     color: var(--color);
-    padding: 8px;
+    font-size: 2.5rem;
 }
 
 .logo-zapas-design-white{
@@ -98,7 +98,7 @@ main{
     width: 60%;
     text-align: center;
     margin: 75px;
-    font-size: var(--descripciones);
+    font-size: 1rem;
 }
 
 
@@ -123,8 +123,7 @@ article{
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin: 15px;
-    
+    margin: 15px; 
 }
 
 article img{
@@ -140,6 +139,13 @@ article h3{
     font-weight: var(--normal);
     text-align: center;
     color: white;
+}
+
+
+article img:hover{
+    -webkit-box-shadow: 0px 4px 10px 1px var(--color);
+    -moz-box-shadow: 0px 4px 10px 1px var(--color);
+    box-shadow: 0px 4px 10px 1px var(--color);
 }
 
 .titulo-articulo{
@@ -164,5 +170,28 @@ footer{
 
 .redes-sociales a:hover{
     color: var(--color);
-    padding: 5px;
+    padding: 8px;
+}
+
+
+@media (min-width: 480px) {
+    .section-descripcion{
+        height: 1000px;
+    }
+    
+    .section-descripcion p{
+        font-size: 1.5rem;
+    }
+
+    article{
+        width: 15%;      
+    }
+    article h3{
+        font-size: 1.5rem;
+    }
+
+    .redes-sociales i{
+        font-size: 30px;
+        margin: 0px 5px;
+    }
 }
