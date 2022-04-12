@@ -45,6 +45,7 @@ nav i{
 
 nav i:hover{
     color: var(--color);
+    font-size: 2.5rem;
 }
 
 .logo-Zapas-Design{
@@ -62,6 +63,10 @@ nav i:hover{
     justify-content: flex-end;
     gap: 10px;
     align-items: center;
+}
+
+.icono-flecha{
+    margin-right: 10px;
 }
 
 /*MAIN*/
