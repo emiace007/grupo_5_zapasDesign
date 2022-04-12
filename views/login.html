@@ -12,9 +12,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <title>Zapas Design</title>
+    <title>Login</title>
 </head>
 <body>
-    <h1>Página para iniciar sesion</h1>
+    <header>
+        <nav>
+            <section class="opciones-barra-navegacion-left">    
+                <a href="#" class="icono-flecha"><i class="fas fa-arrow-left fa-2x"></i></a>
+            </section>
+            
+            <a href="#" class="logo-zapas-design-white"><img src="static/img/logo-zapas-design-white.svg" alt="logo-zapas-design-white"></a>
+            
+            <section class="opciones-barra-navegacion-right">
+                <a href="#" class="icono-menu-hamburguesa"><i class="fas fa-bars fa-2x"></i></a>
+            </section>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portada">
+            <h2>BIENVENIDO</h2>     
+        </section>
+
+        <section class="formulario">
+            <h1>INICIAR SESION</h1>
+            
+            <form action="/login" method="get">
+                <div class="email-password">
+                    <input type="email" name="email" placeholder="Correo electrónico"  class="placeholder" >
+                </div>
+                <div class="email-password">
+                    <input type="password" name="password" placeholder="Contraseña" class="placeholder">
+                </div>
+                <div class="login-register">
+                    <button class="login" class="placeholder" type="submit">Iniciar Sesion</button>
+                </div>
+            </form>
+
+            <div class="login-register">
+                <a href="#" class="register" target="_blank">Registrarse</a>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <section class="redes-sociales">
+            <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.whatsapp.com/?lang=es" target="_blank class="wpp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </section>        
+    </footer>
 </body>
 </html>

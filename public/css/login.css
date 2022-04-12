@@ -1,3 +1,182 @@
-h1{
-    color: green;
+:root{
+    --titulos: 21px;
+    --subtitulos: 18px;
+    --descripciones: 16px;
+    --infomación-secundaria: 12px;
+    --fuente-de-texto: 'Khand', sans-serif;
+    --ligth:300;
+    --normal: 500;
+    --negrita: 700;
+    --gris:#222226;
+    --color:#6DE51E;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--fuente-de-texto);
+    background-image: url(../images/login/foto-login.jpg); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover;
+}
+
+/* BARRA DE NAVEGACION */
+
+header{
+    width: 100%;
+}
+
+
+nav {
+    margin: 0;
+    display: grid;
+    grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
+    grid-template-rows: 50px;
+    align-items: center;
+    border-bottom: 1px solid #7c7777;
+}
+
+nav i{
+    color: white;
+}
+
+nav i:hover{
+    color: var(--color);
+    font-size: 2.5rem;
+}
+
+.logo-zapas-design-white{
+    text-align: center;    
+}
+
+.logo-zapas-design-white img{
+    width: 200px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.opciones-barra-navegacion-left{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+}
+.opciones-barra-navegacion-right{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
+
+
+/* CUERPO */
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+main section{
+    text-align: center;
+}
+
+
+
+.portada h2{
+    font-size: 4rem;
+    color: white;
+    font-weight: var(--ligth);
+    margin: 5% 0px auto 0px;
+    padding: 0px;
+}
+
+
+
+
+/* FORMULARIO // LOGIN */
+
+
+
+.formulario h1{
+    color: var(--color);
+    font-size: 2rem;
+}
+
+.email-password{
+    margin: 15px auto;
+}
+
+
+form input{
+    width: 50%;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-register{
+    margin: 10px;
+}
+
+.login{
+    width: 40%;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--gris);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.login:hover{
+    color: #222226;
+    background-color: var(--color);
+}
+
+.register{
+    text-decoration: none;
+    color: white;    
+}
+
+.register:hover{
+    color: var(--color);
+}
+
+.placeholder{
+    font-family: var(--fuente-de-texto);
+    font-size: 1rem;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top: 10px;
+}
+
+.redes-sociales{
+    text-align: center;
+}
+
+.redes-sociales a{
+    color: white;
+    margin: 4px;
+}
+
+.redes-sociales a:hover{
+    color: var(--gris);
+    padding: 8px;
+    
+}
+
+
+@media (min-width: 480px){
+    .login{
+        width: 25%;
+    }
 }
