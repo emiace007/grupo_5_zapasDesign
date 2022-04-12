@@ -36,15 +36,32 @@
     <link rel="stylesheet" href="static\css\register.css">
 </header>
 <body>
-    <section class="form-registro">
-        <h4>Formulario de Registro</h4>
-        <input class="controles" type="text" name="Nombre" id="nombres" placeholder="Ingrese su Nombre">
-        <input class="controles" type="text" name="Apellido" id="apellido" placeholder="Ingrese su Apellido">
-        <input class="controles" type="email" name="Correo" id="corre" placeholder="Ingrese su Correo">
-        <input class="controles" type="password" name="Contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
-        <p>Estoy de acuerdo con <a href="">Terminos y Condiciones</a></p>
-        <input class="boton" type="submit" value="Registrar">
-        <p><a href="#">Ya tengo Cuenta?</a></p>    
+    <main>
+    <section class="formulario">
+        <h1>REGISTRARSE</h1>
+        
+        <form action="/login" method="get">
+            <div class="email-password">
+                <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" >
+            </div>
+            <div class="email-password">
+                <input type="text" name="apellido" placeholder="Apellido" class="placeholder">
+            </div>
+            <div class="email-password">
+                <input type="email" name="email" placeholder="Email" class="placeholder">
+            </div>
+            <div class="email-password">
+                <input type="password" name="password" placeholder="Contraseña" class="placeholder">
+            </div>
+            <div class="login-register">
+                <button class="login" class="placeholder" type="submit">REGISTRARSE</button>
+            </div>
+        </form>
+
+        <div class="login-register">
+            <a href="#" class="register" target="_blank">Acepto Terminos y Condiciones</a>
+        </div>
+        </main>
     </section>
 </body>
 </html>

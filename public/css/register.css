@@ -11,7 +11,6 @@
     --gris:#222226;
     --color:#6DE51E;
 }
-
 *{
     box-sizing: border-box;
 }
@@ -25,10 +24,11 @@ body{
     background-attachment:fixed;
     background-size: cover;
     font-family: var(--fuente-de-texto);
-    font-weight: var(--normal);
+    font-weight: var(--ligth);
 }
 
 /* BARRA DE NAVEGACION */
+
 header{
     width: 100%;
 }
@@ -40,6 +40,7 @@ nav {
     grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
     grid-template-rows: 50px;
     align-items: center;
+    border-bottom: 1px solid #7c7777;
 }
 
 nav i{
@@ -48,7 +49,7 @@ nav i{
 
 nav i:hover{
     color: var(--color);
-    padding: 8px;
+    font-size: 2.5rem;
 }
 
 .logo-zapas-design-white{
@@ -76,78 +77,109 @@ nav i:hover{
 
 
 
+
+
 /* CUERPO */
 
 main{
-    width: 100%;
-    min-height: 1000px;
-}
-
-
-/* PAGINA PRINCIPAL */
-
-.section-descripcion{
-    color: white;
-    width: 100%;
-    height: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-.section-descripcion p{
-    width: 60%;
+main section{
     text-align: center;
-    margin: 75px;
-    font-size: var(--descripciones);
-}
-.form-registro{
-    width: 400px;
-    background-color: #222226;
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 4px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white; 
-    box-shadow: 7px 13px 37px #000;
-}
-.form-registro h4{
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-.controles{
-    width: 100%;
-    background-color:white;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border: 1px solid white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
-   
 }
 
-.form-registro p{
-    height: 40 px;
+
+
+.portada h2{
+    font-size: 4rem;
+    color: white;
+    font-weight: var(--ligth);
+    margin: 5% 0px auto 0px;
+    padding: 0px;
+}
+
+
+
+
+/* FORMULARIO // LOGIN */
+
+
+
+.formulario h1{
+    color: var(--color);
+    font-size: 2rem;
+}
+
+.email-password{
+    margin: 15px auto;
+}
+
+
+form input{
+    width: 50%;
+    height: 40px;
+    border-radius: 8px;
     text-align: center;
-    font-size: 18px;
 }
 
-.form-registro a:hover{
+.login-register{
+    margin: 10px;
+}
+
+.login{
+    width: 40%;
+    font-size: 1rem;
     color: white;
-    text-decoration:underline ;
+    background-color: var(--gris);
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.form-registro .boton{
-    width: 100%;
-    border: none;
-    background: blue;
-    border: #222226;
-    padding: 12px;
+.login:hover{
+    color: #222226;
+    background-color: var(--color);
+}
+
+.register{
+    text-decoration: none;
+    color: white;    
+}
+
+.register:hover{
+    color: var(--color);
+}
+
+.placeholder{
+    font-family: var(--fuente-de-texto);
+    font-size: 1rem;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top: 10px;
+}
+
+.redes-sociales{
+    text-align: center;
+}
+
+.redes-sociales a{
     color: white;
-    margin: 16px 0;
-    font-size: 16px;
+    margin: 4px;
 }
 
+.redes-sociales a:hover{
+    color: var(--gris);
+    padding: 8px;
+    
+}
+
+
+@media (min-width: 480px){
+    .login{
+        width: 25%;
+    }
+}
