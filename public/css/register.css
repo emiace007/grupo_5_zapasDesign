@@ -45,6 +45,7 @@ nav {
 
 nav i{
     color: white;
+    transition: all 250ms;
 }
 
 nav i:hover{
@@ -135,6 +136,7 @@ form input{
     background-color: var(--gris);
     padding: 5px;
     border-radius: 5px;
+    transition: all 500ms;
 }
 
 .login:hover{
@@ -145,6 +147,7 @@ form input{
 .register{
     text-decoration: none;
     color: white;    
+    transition: all 500ms;
 }
 
 .register:hover{
@@ -169,6 +172,7 @@ footer{
 .redes-sociales a{
     color: white;
     margin: 4px;
+    transition: all 500ms;
 }
 
 .redes-sociales a:hover{

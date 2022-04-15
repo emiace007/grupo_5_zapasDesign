@@ -38,6 +38,7 @@ nav {
 
 nav i{
     color: var(--gris);
+    transition: all 250ms;
 }
 
 nav i:hover{
@@ -192,6 +193,7 @@ footer{
 .redes-sociales a{
     color: var(--gris);
     margin: 4px;
+    transition: all 500ms;
 }
 
 .redes-sociales a:hover{
