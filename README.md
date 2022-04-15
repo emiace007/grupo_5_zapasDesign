@@ -16,7 +16,7 @@ INTEGRANTES DEL GRUPO 5:
 
 1. Acevedo, Emiliano // habil en HTML, CSS y habilidades en diseño web.
 2. Cueto Quinto, Alan Ramiro // habil en la programacion y resolucion de problemas.
-3. Pareja, Juan //
+3. Pareja, Juan // Resolución de problemas, habíl en diseño web.
 4. Lobo, Gastón // Editor de video y locutor.
 
 REFERENCIAS:
