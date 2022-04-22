@@ -117,6 +117,11 @@ main {
     color: white;
 }
 
+.radio-talle:checked + .boton-talle {
+    background-color: var(--celeste);
+    color: white;
+}
+
 .añadir-al-carrito {
     margin-top: 10px;
     background-color: black;
