@@ -33,3 +33,8 @@ WIREFRAMES:
 Mobile: https://miro.com/welcomeonboard/Rm9Ya3UzTkNJQ2lZWkQ5UGhnWEFxOGJGUHVZWkM5djJpMFdyTkJtQ0ZZUXlsbTVRc3pESVFzbk9hYWN5a2Vua3wzNDU4NzY0NTIxNTcwNjY2NDUz?invite_link_id=605657002737
 
 Web: https://miro.com/welcomeonboard/R1VHckpncTNzYTNuNHV4THdKcjlHblBCc1lwVDB6SXFGRlFaczVBdzhmMEJvbFEwYjh0YWpFT3U1dUVpclh4cXwzNDU4NzY0NTIxNTcwNjY2NDUz?invite_link_id=808936524439
+
+
+
+Tablero de trabajo: Zapas Design - Grupo 5
+https://github.com/users/gastylobo/projects/1
