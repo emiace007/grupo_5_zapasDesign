@@ -24,47 +24,6 @@ body{
     flex-wrap: wrap;
 }
 
-/* BARRA DE NAVEGACIÓN */
-header{
-    width: 100vw;
-}
-
-nav {
-    margin: 0;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
-    grid-template-rows: 100%;
-    align-items: center;
-    border-bottom: 1px solid #7c7777;
-}
-
-nav i{
-    color: var(--gris);
-    transition: all 250ms;
-}
-
-nav i:hover{
-    color: var(--color);
-    padding: 8px;
-}
-
-.logo-Zapas-Design{
-    text-align: center;
-    
-}
-
-.logo-Zapas-Design img{
-    width: 200px;
-    height: 45px;
-    object-fit: contain;
-}
-.opciones-barra-navegacion-right{
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    align-items: center;
-}
 
 /* RESUMEN PRODUCTOS A COMPRAR */
 main{
@@ -171,61 +130,9 @@ main{
 }
 
 
-/* BARRA DE NAVEGACIÓN FOOTER */
-
-footer{
-    width: 100vw;
-}
-
-.contenedor-footer{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.links-informacion-adicional{
-    font-size: var(--descripciones);
-    width: 90%;
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-}
-.links-informacion-adicional a{
-    color: var(--gris);
-    font-weight: 500;
-    text-decoration: none;
-}
-.redes-sociales{
-    color: var(--gris);
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.redes-sociales a{
-    color: var(--gris);
-    margin: 4px;
-    transition: all 500ms;
-}
-
-.redes-sociales a:hover{
-    color: var(--color);
-    padding: 8px;
-}
-
 /* Configuración responsive */
 @media (min-width: 480px) {
-
-    nav { 
-        padding: 10px 30px;
-    }
-    
-    .icono-menu-hamburguesa{
-        margin-left: 50px;
-    }
+   
     .opciones-barra-navegacion{
         margin-right: 50px ;
         gap: 30px;

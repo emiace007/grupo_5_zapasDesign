@@ -23,52 +23,6 @@ body{
     font-weight: var(--normal);
 }
 
-/* BARRA DE NAVEGACION */
-header{
-    width: 100%;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-nav {
-    margin: 0;
-    display: grid;
-    grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
-    grid-template-rows: 50px;
-    align-items: center;
-    border-bottom: 1px solid #7c7777;
-}
-
-nav i{
-    color: var(--gris);
-    transition: all 250ms;
-}
-
-nav i:hover{
-    color: var(--color);
-    font-size: 2.5rem;
-}
-
-.logo-Zapas-Design{
-    text-align: center;
-    
-}
-
-.logo-Zapas-Design img{
-    width: 200px;
-    height: 45px;
-    object-fit: contain;
-}
-.opciones-barra-navegacion-right{
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    align-items: center;
-}
-
-.icono-flecha{
-    margin-right: 10px;
-}
 
 /*MAIN*/
 
@@ -131,6 +85,8 @@ main {
     padding: 8px;
     font-size: var(--descripciones);
 }
+
+
 
 @media (min-width: 720px) {
     main {

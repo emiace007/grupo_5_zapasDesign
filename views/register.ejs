@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+
+    <link rel="stylesheet" href="static/css/register.css">
+    <link rel="stylesheet" href="static/css/partials/headerWhite.css">
+    <link rel="stylesheet" href="static/css/partials/footerWhite.css">
+    
+    <title>Formulario Registro</title>  
+</head>
+
+
+<%- include('./partials/header') %>
+
+<body>
+    <main>
+    <section class="formulario">
+        <h1>REGISTRARSE</h1>
+        
+        <form action="/login" method="get">
+            <div class="email-password">
+                <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" >
+            </div>
+            <div class="email-password">
+                <input type="text" name="apellido" placeholder="Apellido" class="placeholder">
+            </div>
+            <div class="email-password">
+                <input type="email" name="email" placeholder="Email" class="placeholder">
+            </div>
+            <div class="email-password">
+                <input type="password" name="password" placeholder="Contraseña" class="placeholder">
+            </div>
+            <div class="login-register">
+                <button class="login" class="placeholder" type="submit">REGISTRARSE</button>
+            </div>
+        </form>
+        </main>
+    </section>
+    
+    <%- include('./partials/footer') %>
+</body>
+</html>

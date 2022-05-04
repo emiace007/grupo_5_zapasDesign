@@ -27,59 +27,6 @@ body{
     font-weight: var(--ligth);
 }
 
-/* BARRA DE NAVEGACION */
-
-header{
-    width: 100%;
-}
-
-
-nav {
-    margin: 0;
-    display: grid;
-    grid-template-columns: [column1] 1fr [column2] 1fr [column3] 1fr ;
-    grid-template-rows: 50px;
-    align-items: center;
-    border-bottom: 1px solid #7c7777;
-}
-
-nav i{
-    color: white;
-    transition: all 250ms;
-}
-
-nav i:hover{
-    color: var(--color);
-    font-size: 2.5rem;
-}
-
-.logo-zapas-design-white{
-    text-align: center;    
-}
-
-.logo-zapas-design-white img{
-    width: 200px;
-    height: 45px;
-    object-fit: contain;
-}
-
-.opciones-barra-navegacion-left{
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    align-items: center;
-}
-.opciones-barra-navegacion-right{
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    align-items: center;
-}
-
-
-
-
-
 /* CUERPO */
 
 main{
@@ -157,28 +104,6 @@ form input{
 .placeholder{
     font-family: var(--fuente-de-texto);
     font-size: 1rem;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top: 10px;
-}
-
-.redes-sociales{
-    text-align: center;
-}
-
-.redes-sociales a{
-    color: white;
-    margin: 4px;
-    transition: all 500ms;
-}
-
-.redes-sociales a:hover{
-    color: var(--gris);
-    padding: 8px;
-    
 }
 
 

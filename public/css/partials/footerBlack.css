@@ -1,0 +1,57 @@
+:root{
+    --titulos: 21px;
+    --subtitulos: 18px;
+    --descripciones: 16px;
+    --infomación-secundaria: 12px;
+    --fuente-de-texto: 'Khand', sans-serif;
+    --ligth:300;
+    --normal: 500;
+    --negrita: 700;
+    --gris:#222226;
+    --color:#6DE51E;
+}
+
+
+/* BARRA DE NAVEGACIÓN FOOTER */
+
+footer{
+    width: 100vw;
+}
+
+.contenedor-footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-informacion-adicional{
+    font-size: var(--descripciones);
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.links-informacion-adicional a{
+    color: var(--gris);
+    font-weight: 400;
+    text-decoration: none;
+}
+.redes-sociales{
+    color: var(--gris);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.redes-sociales a{
+    color: var(--gris);
+    margin: 4px;
+    transition: all 500ms;
+}
+
+.redes-sociales a:hover{
+    color: var(--color);
+    margin: 0px 8px;
+}
