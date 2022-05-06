@@ -1,12 +1,10 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head', {
+    css:"login", 
+    header:"headerWhite", 
+    footer: "footerWhite",
+    title: "login"
+} )%>
     
-    <link rel="stylesheet" href="static/css/login.css">
-    <link rel="stylesheet" href="static/css/partials/headerWhite.css">
-    <link rel="stylesheet" href="static/css/partials/footerWhite.css">
-    
-    <title>Login</title>
-</head>
-
 
 <body>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design-white.svg"}) %>

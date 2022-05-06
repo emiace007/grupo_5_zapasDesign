@@ -1,12 +1,10 @@
-<%- include('./partials/head') %>
-
-    <link rel="stylesheet" href="static/css/listaProductos.css">
-    <link rel="stylesheet" href="static/css/partials/headerBlack.css">
-    <link rel="stylesheet" href="static/css/partials/footerBlack.css">
+<%- include('./partials/head', {
+    css:"listaProductos", 
+    header:"headerBlack", 
+    footer: "footerBlack",
+    title: "Lista de Productos"
+} )%>
     
-    <title>Lista de Productos</title>
-</head>
-
 
 <body>
     <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>

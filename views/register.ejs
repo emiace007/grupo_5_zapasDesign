@@ -1,11 +1,9 @@
-<%- include('./partials/head') %>
-
-    <link rel="stylesheet" href="static/css/register.css">
-    <link rel="stylesheet" href="static/css/partials/headerWhite.css">
-    <link rel="stylesheet" href="static/css/partials/footerWhite.css">
-    
-    <title>Formulario Registro</title>  
-</head>
+<%- include('./partials/head', {
+    css:"register", 
+    header:"headerWhite", 
+    footer: "footerWhite",
+    title: "Formulario Registro"
+} )%>
 
 
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design-white.svg"}) %>
