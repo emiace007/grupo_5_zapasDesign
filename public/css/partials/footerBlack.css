@@ -33,12 +33,21 @@ footer{
     display: flex;
     gap: 5px;
     justify-content: center;
+    align-items: center;
 }
 .links-informacion-adicional a{
     color: var(--gris);
     font-weight: 400;
     text-decoration: none;
+    transition: all 500ms;
 }
+
+.links-informacion-adicional a:hover{
+    color: var(--color);
+    
+}
+
+
 .redes-sociales{
     color: var(--gris);
     display: flex;

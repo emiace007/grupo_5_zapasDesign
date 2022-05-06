@@ -39,6 +39,11 @@ footer{
     color: white;
     font-weight: 400;
     text-decoration: none;
+    transition: all 500ms;
+}
+
+.links-informacion-adicional a:hover{
+    color: var(--color);
 }
 
 .links-informacion-adicional p{
