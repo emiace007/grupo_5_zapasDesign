@@ -1,0 +1,47 @@
+:root{
+    --titulos: 21px;
+    --subtitulos: 18px;
+    --descripciones: 16px;
+    --infomación-secundaria: 12px;
+    --fuente-de-texto: 'Khand', sans-serif;
+    --ligth:300;
+    --normal: 500;
+    --negrita: 700;
+    --gris:#222226;
+    --color:#6DE51E;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--fuente-de-texto);
+    font-weight: var(--normal);
+}
+
+h1{
+    text-align: center;
+}
+
+.div-listas{
+    flex-direction: flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.lista-productos{
+    width: 33%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;    
+}
+
+.lista-productos img{
+    width: 50%;
+}
+

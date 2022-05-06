@@ -1,0 +1,37 @@
+<%- include('./partials/head') %>
+
+    <link rel="stylesheet" href="static/css/listaProductos.css">
+    <link rel="stylesheet" href="static/css/partials/headerBlack.css">
+    <link rel="stylesheet" href="static/css/partials/footerBlack.css">
+    
+    <title>Lista de Productos</title>
+</head>
+
+
+<body>
+    <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
+
+    <main>
+
+        <h1>LISTA PRODUCTOS</h1>
+        
+        <div class="div-listas">
+
+            <% productos.forEach(lista => { %>
+                
+                <div class="lista-productos">
+                <h3><%= lista.titulo %></h3>
+                
+                <img src="static/images/productos/<%= lista.img%>" alt="imagen">
+                
+                                             
+                <p> $ <%= lista.precio %></p>
+            </div>
+            <% }) %>
+            
+        </div>
+    </main>
+
+ <%- include('./partials/footer') %>
+</body>
+</html>
