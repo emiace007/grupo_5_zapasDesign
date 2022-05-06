@@ -44,7 +44,6 @@ nav i:hover{
 .logo-zapas-design img{
     width: 200px;
     height: 45px;
-    object-fit: contain;
 }
 
 .opciones-barra-navegacion-left{
