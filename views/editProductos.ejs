@@ -19,18 +19,21 @@
         <h1>Editor De Productos</h1>
         
         <form action="/login" method="get">
-            <input type="text" list="browsers" />
+            <h3>Producto:</h3>
+            <input type="text" list="browsers" name="producto"/>
             <datalist id="browsers">
             <% productos.forEach(lista => { %> 
                 <option value="<%=lista.titulo%>"></option>
             <% }) %>
             </datalist>
+
+            <div class="modificar-cargar">
+                <label for="files" class="login">Cargar imagen</label>
+                <input id="files" style="visibility:hidden;" type="file">
+            </div>
             
-            
-    
-           
-            
-            <input type="text" list="browsers-colores" />
+            <h3>Color:</h3>
+            <input type="text" list="browsers-colores" name="color" />
             <datalist id="browsers-colores">
                 <option value="Rojo"></option>
                 <option value="Verde"></option>
@@ -40,9 +43,14 @@
                 <option value="Amarillo"></option>
             </datalist>
 
-     
+            <h3>Marca:</h3>
+            <input type="text" name="marca">
 
-            <div class="div-talles">
+            <h3>Descripción:</h3>
+            <input type="text" name="descripcion">
+
+            <h3>Talle:</h3>
+            <div class="div-talles" name="talles">
                 <div class="div-check-talle">
                     <input class="check-talle" type="checkbox" value="38" id="talle38" name="talle" hidden>
                     <label class="boton-talle" for="talle38">38</label>
@@ -64,12 +72,13 @@
            
             <br>
             
-            <input type="currency" placeholder="MONEY BITCH">
+            <input type="number" placeholder="$" name="precio">
             
 
         
-            <div class="login-register">
+            <div class="modificar-cargar">
                 <button class="login" class="placeholder" type="submit">Modificar</button>
+                <button class="login" class="placeholder" type="submit">Cargar</button>
             </div>
         </form>
         </main>
