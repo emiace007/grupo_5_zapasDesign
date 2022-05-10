@@ -1,0 +1,84 @@
+<%- include('./partials/head', {
+    css:"editProductos", 
+    header:"headerBlack", 
+    footer: "footerBlack",
+    title: "editProductos"
+} )%>
+
+
+<body>
+<%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
+
+    <main>
+
+        <main>
+            <section class="portada">
+                <h2>BIENVENIDO</h2>     
+            </section>
+    <section class="formulario">
+        <h1>Editor De Productos</h1>
+        
+        <form action="/login" method="get">
+            <input type="text" list="browsers" />
+            <datalist id="browsers">
+            <% productos.forEach(lista => { %> 
+                <option value="<%=lista.titulo%>"></option>
+            <% }) %>
+            </datalist>
+            
+            
+    
+           
+            
+            <input type="text" list="browsers-colores" />
+            <datalist id="browsers-colores">
+                <option value="Rojo"></option>
+                <option value="Verde"></option>
+                <option value="Azul"></option>
+                <option value="Negro"></option>
+                <option value="Blanco"></option>
+                <option value="Amarillo"></option>
+            </datalist>
+
+     
+
+            <div class="div-talles">
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="38" id="talle38" name="talle" hidden>
+                    <label class="boton-talle" for="talle38">38</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="40" id="talle40" name="talle" hidden>
+                    <label class="boton-talle" for="talle40">40</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="41" id="talle41" name="talle" hidden>
+                    <label class="boton-talle" for="talle41">41</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="42" id="talle42" name="talle" hidden>
+                    <label class="boton-talle" for="talle42">42</label>
+                </div>
+            </div>
+            <br>
+           
+            <br>
+            
+            <input type="currency" placeholder="MONEY BITCH">
+            
+
+        
+            <div class="login-register">
+                <button class="login" class="placeholder" type="submit">Modificar</button>
+            </div>
+        </form>
+        </main>
+    </section>
+    
+    <%- include('./partials/footer') %>
+</body>
+</html>
+
+
+
+

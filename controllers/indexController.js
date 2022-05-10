@@ -5,6 +5,7 @@ const controller = {
   productDetail: (req, res) => res.render("productDetail"),
   register: (req, res) => res.render("register"),
   listaProductos: (req, res) => res.render("listaProductos", {productos:productos}),
+  editProductos: (req, res) => res.render("editProductos", {productos:productos}),
 };
 
 const productos = [

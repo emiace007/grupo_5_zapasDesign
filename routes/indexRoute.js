@@ -15,5 +15,7 @@ router.get('/register', controller.register);
 
 router.get('/listaProductos', controller.listaProductos);
 
+router.get('/editProductos', controller.editProductos);
+
 
 module.exports = router;    
