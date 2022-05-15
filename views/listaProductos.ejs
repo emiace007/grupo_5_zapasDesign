@@ -18,12 +18,12 @@
             <% productos.forEach(lista => { %>
                 
                 <div class="lista-productos">
-                <h3><%= lista.titulo %></h3>
+                <h3><%= lista.nombreProducto %></h3>
                 
-                <img src="static/images/productos/<%= lista.img%>" alt="imagen">
+                <img src="static/images/productos/<%= lista.image%>" alt="imagen">
                 
                                              
-                <p> $ <%= lista.precio %></p>
+                <p> $ <%= lista.price %></p>
             </div>
             <% }) %>
             

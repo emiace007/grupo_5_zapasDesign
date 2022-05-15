@@ -1,3 +1,9 @@
+const fs = require('fs')
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/productos.json');
+const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const controller = {
   index: (req, res) => res.render("index"),
   login: (req, res) => res.render("login"),
@@ -8,55 +14,55 @@ const controller = {
   editProductos: (req, res) => res.render("editProductos", {productos:productos}),
 };
 
-const productos = [
-  {
-    id:1,
-    titulo: 'Airmax',
-    talle: '42',
-    color: 'rojo',
-    precio: '65.50',
-    img: 'zapas-prueba.jpg'
-  },
-  {
-    id:2,
-    titulo: 'Jordan',
-    talle: '42',
-    color: 'negro',
-    precio: '65.50',
-    img: 'zapas-prueba.jpg'
-  },
-  {
-    id:3,
-    titulo: 'Dior',
-    talle: '45',
-    color: 'blanco',
-    precio: '150',
-    img: 'zapas-prueba.jpg'
-  },
-  {
-    id:3,
-    titulo: 'Dior',
-    talle: '45',
-    color: 'blanco',
-    precio: '150',
-    img: 'zapas-prueba.jpg'
-  },
-  {
-    id:3,
-    titulo: 'Dior',
-    talle: '45',
-    color: 'blanco',
-    precio: '150',
-    img: 'zapas-prueba.jpg'
-  },
-  {
-    id:3,
-    titulo: 'Dior',
-    talle: '45',
-    color: 'blanco',
-    precio: '150',
-    img: 'zapas-prueba.jpg'
-  },
-]
+// const productos = [
+//   {
+//     id:1,
+//     titulo: 'Airmax',
+//     talle: '42',
+//     color: 'rojo',
+//     precio: '65.50',
+//     img: 'zapas-prueba.jpg'
+//   },
+//   {
+//     id:2,
+//     titulo: 'Jordan',
+//     talle: '42',
+//     color: 'negro',
+//     precio: '65.50',
+//     img: 'zapas-prueba.jpg'
+//   },
+//   {
+//     id:3,
+//     titulo: 'Dior',
+//     talle: '45',
+//     color: 'blanco',
+//     precio: '150',
+//     img: 'zapas-prueba.jpg'
+//   },
+//   {
+//     id:3,
+//     titulo: 'Dior',
+//     talle: '45',
+//     color: 'blanco',
+//     precio: '150',
+//     img: 'zapas-prueba.jpg'
+//   },
+//   {
+//     id:3,
+//     titulo: 'Dior',
+//     talle: '45',
+//     color: 'blanco',
+//     precio: '150',
+//     img: 'zapas-prueba.jpg'
+//   },
+//   {
+//     id:3,
+//     titulo: 'Dior',
+//     talle: '45',
+//     color: 'blanco',
+//     precio: '150',
+//     img: 'zapas-prueba.jpg'
+//   },
+// ]
 
 module.exports = controller;
