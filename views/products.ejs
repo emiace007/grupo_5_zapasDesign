@@ -1,5 +1,5 @@
 <%- include('./partials/head', {
-    css:"listaProductos", 
+    css:"products", 
     header:"headerBlack", 
     footer: "footerBlack",
     title: "Lista de Productos"
@@ -16,14 +16,15 @@
         <div class="div-listas">
 
             <% productos.forEach(lista => { %>
-                
                 <div class="lista-productos">
+                <a href="/products/<%=lista.id%>" > 
                 <h3><%= lista.nombreProducto %></h3>
                 
                 <img src="static/images/productos/<%= lista.image%>" alt="imagen">
                 
                                              
                 <p> $ <%= lista.price %></p>
+                </a>
             </div>
             <% }) %>
             
@@ -33,3 +34,4 @@
  <%- include('./partials/footer') %>
 </body>
 </html>
+

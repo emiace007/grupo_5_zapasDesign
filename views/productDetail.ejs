@@ -5,17 +5,16 @@
     title: "Product Detail"
 } )%>
 
-
 <body>
 
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
     <main>
-        <img class="imagen-producto" src="static/images/productos/zapas-prueba.jpg" alt="imagen producto">
+        <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.image%>" alt="imagen producto">
         <div class="info-producto">
-            <h1 class="nombre-producto">Nombre del producto</h1>
-            <p class="marca-precio">Marca y precio</p>
-            <p class="descripcion">Descripción Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis odit natus laudantium possimus accusantium quisquam reprehenderit deserunt illo, illum quos, officiis sed. Earum dicta odit debitis culpa quam quis iste?</p>
+            <h1 class="nombre-producto"><%= productoBuscado.nombreProducto%></h1>
+            <p class="marca-precio">$<%= productoBuscado.price %></p>
+            <p class="descripcion"><%= productoBuscado.description %></p>
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
                 <div class="div-talles">

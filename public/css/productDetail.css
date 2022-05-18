@@ -30,8 +30,8 @@ main {
     text-align: center;
 }
 
-.nombre-prodcuto {
-    font-size: var(--titulos);
+.nombre-producto{
+    font-size: 2rem;
 }
 
 .imagen-producto {
@@ -39,8 +39,9 @@ main {
 }
 
 .marca-precio {
-    font-size: var(--descripciones);
+    font-size: 1.5rem;
     font-weight: var(--negrita);
+    margin-bottom: 20px;
 }
 
 
@@ -112,7 +113,6 @@ main {
     }
 
     .nombre-producto {
-        margin-left: 20px;
         margin-bottom: 20px;
     }
 

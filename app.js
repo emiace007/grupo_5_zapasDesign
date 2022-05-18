@@ -10,5 +10,7 @@ app.set('view engine', 'ejs')
 app.use("/static", express.static(__dirname + "/public"));
 
 let indexRoute = require('./routes/indexRoute')
-
 app.use('/', indexRoute);
+
+let productsRoute = require('./routes/productsRoute')
+app.use('/products', productsRoute);
