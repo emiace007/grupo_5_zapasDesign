@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/gastylobo/grupo_5_zapasDesign#readme",
   "dependencies": {
     "ejs": "^3.1.7",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.16"
   }
 }
