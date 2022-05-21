@@ -36,7 +36,15 @@
                     </div>
                 </div>
             </section>
-            <button class="añadir-al-carrito">Añadir al carrito</button>
+
+            <div class="botones">
+                <button class="añadir-al-carrito"><a href="#"> Añadir al carrito</a></button>
+                <button class="editar"><a href="<%= productoBuscado.id %>/editProductos">Editar</a></button>
+                
+                <form action="/products/<%= productoBuscado.id %>?_method=delete" method="POST">
+                    <button type="submit" class="Eliminar">Eliminar</button>
+                </form>
+            </div>
         </div>
     </main>
     <%- include('./partials/footer') %>

@@ -16,39 +16,21 @@
                 <h2>BIENVENIDO</h2>     
             </section>
     <section class="formulario">
-        <h1>Editor De Productos</h1>
+        <h1>Editar Producto</h1>
         
         <form action="/products/create" method="POST" enctype="multipart/form-data">
             <h3>Producto:</h3>
-            <input type="text" list="browsers" name="producto"/>
-            <datalist id="browsers">
-            <% productos.forEach(lista => { %> 
-                <option value="<%=lista.titulo%>"></option>
-            <% }) %>
-            </datalist>
-
-            <div class="modificar-cargar">
-                <label for="files" class="login">Cargar imagen</label>
-                <input id="files" style="visibility:hidden;" type="file" name="imagen">
-            </div>
+            <input type="text" list="browsers" name="producto" placeholder="<%= producto.nombreProducto %>">
             
-            <h3>Color:</h3>
-            <input type="text" list="browsers-colores" name="color" />
-            <datalist id="browsers-colores">
-                <option value="Rojo"></option>
-                <option value="Verde"></option>
-                <option value="Azul"></option>
-                <option value="Negro"></option>
-                <option value="Blanco"></option>
-                <option value="Amarillo"></option>
-            </datalist>
 
+                     
+           
             <h3>Marca:</h3>
-            <input type="text" name="marca">
+            <input type="text" name="marca" placeholder="<%= producto.marca %>" >
 
             <h3>Descripción:</h3>
-            <input type="text" name="descripcion">
-
+            <textarea name="descripcion" class="descripcion" type="textarea" placeholder="<%= producto.description %>"></textarea>
+            
             <h3>Talle:</h3>
             <div class="div-talles" name="talles">
                 <div class="div-check-talle">
@@ -72,15 +54,27 @@
            
             <br>
             
-            <input type="number" placeholder="$" name="precio">
+            <input type="number" placeholder="$<%= producto.price %>" name="precio">
             
-
+            <div class="modificar-cargar">
+                <label for="files" class="login">Cargar imagen</label>
+                <input id="files" style="visibility:hidden;" type="file" name="imagen">
+            </div>
         
             <div class="modificar-cargar">
-                <button class="login" class="placeholder" type="submit">Modificar</button>
-                <button class="login" class="placeholder" type="submit">Cargar</button>
+
+                <form action="/products/:<%= producto.id %>?_method=PUT" method="post">
+                    <button type="submit" class="login">Actualizar</button>
+                </form>
+
+
+                <button class="login" class="placeholder" type="submit"> <a href="/products/<%= producto.id %>/editProductos">Restaurar</a> </button>
             </div>
         </form>
+
+
+       
+
         </main>
     </section>
     

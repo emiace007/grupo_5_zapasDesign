@@ -30,11 +30,13 @@ router.get('/', productController.products); //products
 
 router.get('/productCart', productController.productCart); //products/cart
 
-router.get('/editProductos', productController.editProductos); //products/edit/:id?
+router.get('/:idProduct', productController.productDetail); //products/:id  detalle
 
-router.get('/:idProduct', productController.productDetail); //products/detail/:id
+// router.post('/create', fileUpload.single('imagen'), productController.createProduct)
 
-router.post('/create', fileUpload.single('imagen'), productController.createProduct)
+router.get('/:idProduct/editProductos', productController.editProductos); //products/:id/edit
 
+router.put('/:idProduct/editProductos', productController.edit); //editar
+router.delete('/:idProduct', productController.deleteProduct); //eliminar
 
 module.exports = router;   

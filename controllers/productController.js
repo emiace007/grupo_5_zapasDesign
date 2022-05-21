@@ -5,15 +5,41 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
+  
+  products: (req, res) => res.render("products", {productos:productos}),
+
   productCart: (req, res) => res.render("productCart"),
+  
   productDetail: (req, res) => {
     let {idProduct} = req.params;
     let productoBuscado = productos.find(product => product.id == idProduct);
     res.render("productDetail", {'productoBuscado' : productoBuscado});
   }, 
-  products: (req, res) => res.render("products", {productos:productos}),
-  editProductos: (req, res) => res.render("editProductos", {productos:productos}),
+  
+  
+  editProductos: (req, res) => {
+    let {idProduct} = req.params;
+    let productoBuscado = productos.find(product => product.id == idProduct);
+    res.render("editProductos", {producto:productoBuscado})
+  },
+  
+  edit: (req, res) => {
+    let id = req.params.idProduct
+    let nuevaInfo = req.body
+    res.redirect("/")
+    
+  },
 
+  deleteProduct: (req, res) => {
+    let id = req.params.idProduct
+
+    newList = productos.filter(productos => productos.id != id);
+    fs.writeFileSync(productsFilePath, JSON.stringify(newList, null, " "))
+    res.redirect("/products")
+  },
+  
+  
+   
   createProduct: (req, res) => {
     let newProduct = {
       id: generarId(),
@@ -21,6 +47,7 @@ const controller = {
       nombreProducto: req.body.producto,
       image: req.file.filename,
       category: ["deportes"],
+      marca: req.file.marca,
       description: req.body.descripcion,
     }
 
@@ -28,7 +55,7 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(productos))
 
     res.redirect('/products')
-  }
+  },
 
 
 };

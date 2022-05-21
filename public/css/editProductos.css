@@ -109,6 +109,14 @@ form input{
     text-align: center;
 }
 
+.descripcion{
+    width: 50%;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+    height: 100px;
+    
+}
 .modificar-cargar{
     margin: 30px;
     display: flex;
@@ -131,6 +139,11 @@ form input{
     padding: 5px;
     border-radius: 5px;
     transition: all 500ms;
+}
+
+.login a{
+    text-decoration: none;
+    color: white;
 }
 
 .login:hover{
