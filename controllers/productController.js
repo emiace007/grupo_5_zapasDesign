@@ -57,6 +57,8 @@ const controller = {
     res.redirect('/products')
   },
 
+  createView: (req, res) => { res.render("create") }
+
 
 };
 

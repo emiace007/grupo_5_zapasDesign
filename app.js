@@ -3,6 +3,9 @@ const app = express();
 const methodOverride = require ("method-override")
 const path = require("path");
 
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
 app.listen(3000, () => console.log("Puerto 3000 funcionando correctamente"));
 
 app.set('view engine', 'ejs')

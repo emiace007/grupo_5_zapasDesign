@@ -1,0 +1,83 @@
+<%- include('./partials/head', {
+    css:"editProductos", 
+    header:"headerBlack", 
+    footer: "footerBlack",
+    title: "editProductos"
+} )%>
+
+
+<body>
+<%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
+
+    <main>
+
+        <main>
+            <section class="portada">
+                <h2>BIENVENIDO</h2>     
+            </section>
+    <section class="formulario">
+        <h1>Cargar Producto</h1>
+        
+        <form action="/products/create" method="POST" enctype="multipart/form-data">
+            <h3>Producto:</h3>
+            <input type="text" list="browsers" name="producto">
+            
+            
+                     
+           
+            <h3>Marca:</h3>
+            <input type="text" name="marca">
+
+            <h3>Descripción:</h3>
+            <textarea name="descripcion" class="descripcion" type="textarea" name="descripcion"></textarea>
+            
+            <h3>Talle:</h3>
+            <div class="div-talles" name="talles">
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="38" id="talle38" name="talle" hidden>
+                    <label class="boton-talle" for="talle38">38</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="40" id="talle40" name="talle" hidden>
+                    <label class="boton-talle" for="talle40">40</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="41" id="talle41" name="talle" hidden>
+                    <label class="boton-talle" for="talle41">41</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="42" id="talle42" name="talle" hidden>
+                    <label class="boton-talle" for="talle42">42</label>
+                </div>
+            </div>
+            <br>
+           
+            <br>
+            
+            <input type="number" name="precio">
+            
+            <div class="modificar-cargar">
+                <label for="files" class="login">Cargar imagen</label>
+                <input id="files" style="visibility:hidden;" type="file" name="imagen">
+            </div>
+        
+            <div class="modificar-cargar">
+            
+            <input type="submit" class="login">
+
+            </div>
+        </form>
+
+
+       
+
+        </main>
+    </section>
+    
+    <%- include('./partials/footer') %>
+</body>
+</html>
+
+
+
+

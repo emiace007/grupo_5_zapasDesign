@@ -30,9 +30,13 @@ router.get('/', productController.products); //products
 
 router.get('/productCart', productController.productCart); //products/cart
 
+router.get('/create', productController.createView)
+router.post('/create', fileUpload.single('imagen'), productController.createProduct)
+
 router.get('/:idProduct', productController.productDetail); //products/:id  detalle
 
-// router.post('/create', fileUpload.single('imagen'), productController.createProduct)
+
+
 
 router.get('/:idProduct/editProductos', productController.editProductos); //products/:id/edit
 
