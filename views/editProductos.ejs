@@ -18,12 +18,10 @@
     <section class="formulario">
         <h1>Editar Producto</h1>
         
-        <form action="/products/create" method="POST" enctype="multipart/form-data">
+        <form action="/products/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <h3>Producto:</h3>
             <input type="text" list="browsers" name="producto" placeholder="<%= producto.nombreProducto %>">
-            
-
-                     
+                    
            
             <h3>Marca:</h3>
             <input type="text" name="marca" placeholder="<%= producto.marca %>" >
@@ -54,6 +52,7 @@
            
             <br>
             
+            <h3>Precio:</h3>
             <input type="number" placeholder="$<%= producto.price %>" name="precio">
             
             <div class="modificar-cargar">
@@ -63,12 +62,8 @@
         
             <div class="modificar-cargar">
 
-                <form action="/products/:<%= producto.id %>?_method=PUT" method="post">
-                    <button type="submit" class="login">Actualizar</button>
-                </form>
-
-
-                <button class="login" class="placeholder" type="submit"> <a href="/products/<%= producto.id %>/editProductos">Restaurar</a> </button>
+               <button type="submit" class="login">Actualizar</button>
+               <button class="login" class="placeholder" type="submit"> <a href="/products/<%= producto.id %>/editProductos">Restaurar</a> </button>
             </div>
         </form>
 

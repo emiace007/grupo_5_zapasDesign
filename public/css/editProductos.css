@@ -183,3 +183,9 @@ form input{
     }
     
 }
+
+
+.error{
+    color: red;
+    font-weight: 800;
+}

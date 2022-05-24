@@ -1,5 +1,7 @@
 const fs = require('fs')
 const path = require('path');
+const productFunctions = require('../models/Products');
+const {validationResult} = require('express-validator')
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -12,69 +14,54 @@ const controller = {
   
   productDetail: (req, res) => {
     let {idProduct} = req.params;
-    let productoBuscado = productos.find(product => product.id == idProduct);
+    let productoBuscado = productFunctions.findPK(idProduct)
     res.render("productDetail", {'productoBuscado' : productoBuscado});
   }, 
   
   
   editProductos: (req, res) => {
     let {idProduct} = req.params;
-    let productoBuscado = productos.find(product => product.id == idProduct);
+    let productoBuscado = productFunctions.findPK(idProduct)
     res.render("editProductos", {producto:productoBuscado})
   },
   
   edit: (req, res) => {
     let id = req.params.idProduct
     let nuevaInfo = req.body
-    res.redirect("/")
+    res.redirect("/products")
     
   },
 
   deleteProduct: (req, res) => {
     let id = req.params.idProduct
-
-    newList = productos.filter(productos => productos.id != id);
-    fs.writeFileSync(productsFilePath, JSON.stringify(newList, null, " "))
+    productFunctions.delete(id)
     res.redirect("/products")
   },
   
-  
    
   createProduct: (req, res) => {
-    let newProduct = {
-      id: generarId(),
-      price: req.body.precio,
-      nombreProducto: req.body.producto,
-      image: req.file.filename,
-      category: ["deportes"],
-      marca: req.file.marca,
-      description: req.body.descripcion,
-    }
+    let error = validationResult(req);
 
-    productos.push(newProduct);
-    fs.writeFileSync(productsFilePath, JSON.stringify(productos))
 
-    res.redirect('/products')
+    if (error.isEmpty()) {
+      let newProduct = {
+        ...req.body,
+        image: req.file.filename,
+        category: ["deportes"],    
+      }
+  
+      productFunctions.create(newProduct)
+  
+      res.redirect('/products')
+      
+    } else res.render("create", {error:error.mapped(), old: req.body})
+
   },
 
-  createView: (req, res) => { res.render("create") }
+  createView: (req, res) => { res.render("create")}
 
 
 };
-
-//Hice esta función más que nada por miedo a que se puedan pisar las ids
-function generarId() {
-  let id = productos.length + 1;
-  while (true) {
-    if (productos.find(product => product.id == id)){
-      id++
-    }
-    else {
-      break
-    }
-  }
-  return id;
-}
 
 
 module.exports = controller;
