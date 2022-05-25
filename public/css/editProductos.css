@@ -169,9 +169,44 @@ form input{
 .div-talles label{
     margin: 0px 20px;
  }
+
+ 
+.error{
+    color: red;
+    font-weight: 800;
+}
+
+/* CHECKBOX */
+
+.contenedor-de-categorias{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content:space-between;
+}
+
+.categoria{
+    display: flex;
+    flex-direction: column;
+}
+
+.categoria input{
+    width: 100%;
+}
+
+.categoria label{
+    font-size: 1rem;
+}
+
+
+
 @media (min-width: 480px){
     .login{
         width: 25%;
+    }
+    /* CHECKBOX */
+    .contenedor-de-categorias{
+        width: 40%;
     }
 }
 
@@ -184,8 +219,3 @@ form input{
     
 }
 
-
-.error{
-    color: red;
-    font-weight: 800;
-}

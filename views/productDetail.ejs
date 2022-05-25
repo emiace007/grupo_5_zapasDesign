@@ -15,25 +15,16 @@
             <h1 class="nombre-producto"><%= productoBuscado.nombreProducto%></h1>
             <p class="marca-precio">$<%= productoBuscado.price %></p>
             <p class="descripcion"><%= productoBuscado.description %></p>
+
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
-                <div class="div-talles">
+                <div class="div-talles">        
+                    <% productoBuscado.talle.forEach(talle => { %>
                     <div class="div-radio-talle">
-                        <input class="radio-talle" type="radio" value="38" id="talle38" name="talle" hidden>
-                        <label class="boton-talle" for="talle38">38</label>
+                        <input class="radio-talle" type="radio" value="<%= talle %>" id="talle<%= talle %>" name="talle" hidden>
+                        <label class="boton-talle" for="talle<%= talle %>"><%= talle %></label>
                     </div>
-                    <div class="div-radio-talle">
-                        <input class="radio-talle" type="radio" value="40" id="talle40" name="talle" hidden>
-                        <label class="boton-talle" for="talle40">40</label>
-                    </div>
-                    <div class="div-radio-talle">
-                        <input class="radio-talle" type="radio" value="41" id="talle41" name="talle" hidden>
-                        <label class="boton-talle" for="talle41">41</label>
-                    </div>
-                    <div class="div-radio-talle">
-                        <input class="radio-talle" type="radio" value="42" id="talle42" name="talle" hidden>
-                        <label class="boton-talle" for="talle42">42</label>
-                    </div>
+                    <% }) %>
                 </div>
             </section>
 

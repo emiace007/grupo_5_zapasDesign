@@ -15,8 +15,17 @@
         
         <div class="div-listas">
 
+            
+                <div class="lista-productos">
+                <a href="/products/create" > 
+                <img class="plus" src="static/images/productos/plus.png" alt="imagen">
+                
+                </a>
+            </div>
+
             <% productos.forEach(lista => { %>
                 <div class="lista-productos">
+                    
                 <a href="/products/<%=lista.id%>" > 
                 <h3><%= lista.nombreProducto %></h3>
                 

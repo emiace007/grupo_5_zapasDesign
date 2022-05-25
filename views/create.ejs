@@ -32,6 +32,28 @@
             <% if (locals.error && error.marca){ %>
                 <p class="error"> <%= error.marca.msg %> </p>
             <% } %>
+           
+            <h3>Categoria:</h3>
+            <div class="contenedor-de-categorias">
+                <div class="categoria">
+                    <label><input type="checkbox" name="category" value="hombre" > Hombre </label>
+                </div>
+                <div class="categoria">
+                    <label><input type="checkbox" name="category" value="mujer"> Mujer </label>
+                </div>
+                <div class="categoria">
+                    <label><input type="checkbox" name="category" value="deportes"> Deportes </label>
+                </div>
+                <div class="categoria">
+                    <label><input type="checkbox" name="category" value="coleccion"> Coleccion </label>
+                </div>
+
+            </div>
+
+            <% if (locals.error && error.category){ %>
+                <p class="error"> <%= error.category.msg %> </p>
+            <% } %>
+           
 
             <h3>Descripción:</h3>
             <textarea class="descripcion" type="textarea" name="description" value="<%= locals.old && old.description ? old.description:  ''%>"></textarea>
@@ -46,6 +68,10 @@
                     <label class="boton-talle" for="talle38">38</label>
                 </div>
                 <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="39" id="talle39" name="talle" hidden>
+                    <label class="boton-talle" for="talle39">39</label>
+                </div>
+                <div class="div-check-talle">
                     <input class="check-talle" type="checkbox" value="40" id="talle40" name="talle" hidden>
                     <label class="boton-talle" for="talle40">40</label>
                 </div>
@@ -57,10 +83,19 @@
                     <input class="check-talle" type="checkbox" value="42" id="talle42" name="talle" hidden>
                     <label class="boton-talle" for="talle42">42</label>
                 </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="43" id="talle43" name="talle" hidden>
+                    <label class="boton-talle" for="talle43">43</label>
+                </div>
+                <div class="div-check-talle">
+                    <input class="check-talle" type="checkbox" value="44" id="talle44" name="talle" hidden>
+                    <label class="boton-talle" for="talle44">44</label>
+                </div>
             </div>
-            <br>
+            <% if (locals.error && error.talle){ %>
+                <p class="error"> <%= error.talle.msg %> </p>
+            <% } %>
            
-            <br>
             <h3>Precio:</h3>
             <input type="number" name="price" value="<%= locals.old && old.price ? old.price:  ''%>">
             <% if (locals.error && error.price){ %>

@@ -44,6 +44,8 @@ h1{
 
 
 .lista-productos{
+    display: flex;
+    align-items: center;
     width: 25%;
     margin: 30px 5px;
     border-radius: 10px;
@@ -76,3 +78,10 @@ h3{
     width: 50%;
 }
 
+.plus{
+    transition: all 500ms;
+}
+
+.lista-productos:hover .plus{
+    transform:scale(110%);
+}

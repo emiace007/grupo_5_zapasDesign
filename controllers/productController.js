@@ -29,6 +29,8 @@ const controller = {
     let id = req.params.idProduct
     let nuevaInfo = req.body
     res.redirect("/products")
+
+
     
   },
 
@@ -46,8 +48,7 @@ const controller = {
     if (error.isEmpty()) {
       let newProduct = {
         ...req.body,
-        image: req.file.filename,
-        category: ["deportes"],    
+        image: req.file.filename,   
       }
   
       productFunctions.create(newProduct)
