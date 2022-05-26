@@ -18,11 +18,10 @@
     <section class="formulario">
         <h1>Editar Producto</h1>
         
-        <form action="/products/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/products/<%= producto.id %>/editProducts?_method=PUT" method="POST" enctype="multipart/form-data">
             <h3>Producto:</h3>
-            <input type="text" list="browsers" name="producto" value="<%= producto.nombreProducto %>">
-                    
-           
+            <input type="text" list="browsers" name="nombreProducto" value="<%= producto.nombreProducto %>">
+                              
             <h3>Marca:</h3>
             <input type="text" name="marca" value="<%= producto.marca %>" >
 
@@ -44,10 +43,10 @@
             </div>
             
             <h3>Descripción:</h3>
-            <textarea name="descripcion" class="descripcion" type="textarea" placeholder="<%= producto.description %>"></textarea>
+            <textarea name="description" class="descripcion" type="textarea" placeholder="<%= producto.description %>"></textarea>
             
             <h3>Talle:</h3>
-            <div class="div-talles" name="talles">
+            <div class="div-talles" name="talle">
                 <div class="div-check-talle">
                     <input class="check-talle" type="checkbox" value="38" id="talle38" name="talle" hidden>
                     <label class="boton-talle" for="talle38">38</label>
@@ -79,11 +78,11 @@
             </div>
             
             <h3>Precio:</h3>
-            <input type="number" placeholder="$<%= producto.price %>" name="precio">
+            <input type="number" placeholder="$<%= producto.price %>" name="price">
             
             <div class="modificar-cargar">
                 <label for="files" class="login">Cargar imagen</label>
-                <input id="files" style="visibility:hidden;" type="file" name="imagen">
+                <input id="files" style="visibility: hidden;" type="file" name="imagenActualizada">
             </div>
         
             <div class="modificar-cargar">
@@ -92,9 +91,6 @@
                <button class="login" class="placeholder" type="submit"> <a href="/products/<%= producto.id %>/editProductos">Restaurar</a> </button>
             </div>
         </form>
-
-
-       
 
         </main>
     </section>

@@ -56,9 +56,9 @@ router.post('/create', fileUpload.single('imagen'),validacion, productController
 router.get('/:idProduct', productController.productDetail); //products/:id  detalle
 
 
-router.get('/:idProduct/editProductos', productController.editProductos); //products/:id/edit
+router.get('/:idProduct/editProducts', productController.editProductos); //products/:id/edit
 
-router.put('/:idProduct', productController.edit); //editar
+router.put('/:idProduct/editProducts',fileUpload.single('imagenActualizada'), productController.edit); //editar
 
 router.delete('/:idProduct', productController.deleteProduct); //eliminar
 

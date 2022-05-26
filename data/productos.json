@@ -1,169 +1,169 @@
 [
- {
-  "id": 739,
-  "price": 130,
-  "nombreProducto": "adidas Yeezy 500 Granite",
-  "image": "adidasYeezy500.jpg",
-  "category": [
-   "deportes",
-   "hombre"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "adidas",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 94,
-  "price": 154,
-  "nombreProducto": "Nike Air Force 1 '07 Shroud",
-  "image": "NikeAirForce107Shroud.jpg",
-  "category": [
-   "deportes",
-   "mujer"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "nike",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 123,
-  "price": 134,
-  "nombreProducto": "adidas ZX 8000 Lego",
-  "image": "adidasZX8000Lego.jpg",
-  "category": [
-   "coleccion",
-   "hombre"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "adidas",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 36154,
-  "price": 893,
-  "nombreProducto": "Air Jordan 1 Dark Marina Blue",
-  "image": "AirJordan1DarkMarinaBlue.jpg",
-  "category": [
-   "deportes"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "nike",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 40,
-  "price": 334,
-  "nombreProducto": "Nike Air Huarache Black",
-  "image": "NikeAirHuaracheBlack.jpg",
-  "category": [
-   "mujer"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "nike",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 6,
-  "price": 385,
-  "nombreProducto": "adidas Stan Smith Unisex",
-  "image": "adidasStanSmithUnisex.jpg",
-  "category": [
-   "deportes",
-   "hombre"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "adidas",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 23,
-  "price": 953,
-  "nombreProducto": "New Balance MS997 JEA",
-  "image": "NewBalanceMS997JEA.jpg",
-  "category": [
-   "deportes",
-   "mujer"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "new balance",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 0,
-  "price": 672,
-  "nombreProducto": "adidas Forum Low 84 Green m&ms x adidas",
-  "image": "adidasForumLow84Greenm&msxadidas.jpg",
-  "category": [
-   "coleccion",
-   "hombre"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "adidas",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 362,
-  "price": 518,
-  "nombreProducto": "Nike Air Max 97 SE",
-  "image": "NikeAirMax97SE.jpg",
-  "category": [
-   "hombre"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "nike",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- },
- {
-  "id": 5782,
-  "price": 369,
-  "nombreProducto": "Air Jordan 3 Cardinal Red",
-  "image": "AirJordan3CardinalRed.jpg",
-  "category": [
-   "deportes",
-   "mujer"
-  ],
-  "talle": [
-   "39",
-   "40",
-   "42"
-  ],
-  "marca": "nike",
-  "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
- }
-]
+    {
+     "id": 739,
+     "price": 130,
+     "nombreProducto": "adidas Yeezy 500 Granite",
+     "image": "adidasYeezy500.jpg",
+     "category": [
+      "deportes",
+      "hombre"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "adidas",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 94,
+     "price": 154,
+     "nombreProducto": "Nike Air Force 1 '07 Shroud",
+     "image": "NikeAirForce107Shroud.jpg",
+     "category": [
+      "deportes",
+      "mujer"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "nike",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 123,
+     "price": 134,
+     "nombreProducto": "adidas ZX 8000 Lego",
+     "image": "adidasZX8000Lego.jpg",
+     "category": [
+      "coleccion",
+      "hombre"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "adidas",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 36154,
+     "price": 893,
+     "nombreProducto": "Air Jordan 1 Dark Marina Blue",
+     "image": "AirJordan1DarkMarinaBlue.jpg",
+     "category": [
+      "deportes"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "nike",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 40,
+     "price": 334,
+     "nombreProducto": "Nike Air Huarache Black",
+     "image": "NikeAirHuaracheBlack.jpg",
+     "category": [
+      "mujer"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "nike",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 6,
+     "price": 385,
+     "nombreProducto": "adidas Stan Smith Unisex",
+     "image": "adidasStanSmithUnisex.jpg",
+     "category": [
+      "deportes",
+      "hombre"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "adidas",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 23,
+     "price": 953,
+     "nombreProducto": "New Balance MS997 JEA",
+     "image": "NewBalanceMS997JEA.jpg",
+     "category": [
+      "deportes",
+      "mujer"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "new balance",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 0,
+     "price": 672,
+     "nombreProducto": "adidas Forum Low 84 Green m&ms x adidas",
+     "image": "adidasForumLow84Greenm&msxadidas.jpg",
+     "category": [
+      "coleccion",
+      "hombre"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "adidas",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 362,
+     "price": 518,
+     "nombreProducto": "Nike Air Max 97 SE",
+     "image": "NikeAirMax97SE.jpg",
+     "category": [
+      "hombre"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "nike",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    },
+    {
+     "id": 5782,
+     "price": 369,
+     "nombreProducto": "Air Jordan 3 Cardinal Red",
+     "image": "AirJordan3CardinalRed.jpg",
+     "category": [
+      "deportes",
+      "mujer"
+     ],
+     "talle": [
+      "39",
+      "40",
+      "42"
+     ],
+     "marca": "nike",
+     "description": "Inspiradas en los patrones de energía que irradian de la tierra, como el flujo de lava y las ondas rítmicas del océano, las Nike Air Max 200 cuentan con la unidad Max Air más grande hasta la fecha. Con una amortiguación excepcional y detalles modernos, esta zapatilla irradia una sensación de frescor."
+    }
+   ]

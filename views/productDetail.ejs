@@ -30,7 +30,7 @@
 
             <div class="botones">
                 <button class="añadir-al-carrito"><a href="#"> Añadir al carrito</a></button>
-                <button class="editar"><a href="<%= productoBuscado.id %>/editProductos">Editar</a></button>
+                <button class="editar"><a href="/products/<%= productoBuscado.id %>/editProducts">Editar</a></button>
                 
                 <form action="/products/<%= productoBuscado.id %>?_method=delete" method="POST">
                     <button type="submit" class="Eliminar">Eliminar</button>

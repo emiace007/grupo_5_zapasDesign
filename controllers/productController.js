@@ -4,6 +4,7 @@ const productFunctions = require('../models/Products');
 const {validationResult} = require('express-validator')
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
+
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
@@ -26,18 +27,40 @@ const controller = {
   },
   
   edit: (req, res) => {
-    let id = req.params.idProduct
-    let nuevaInfo = req.body
-    res.redirect("/products")
+    let {idProduct} = req.params;
+    let image;
 
+    function indexProduct() {			
+			let selectedProduct = productos.find(element => element.id == idProduct);
+			return productos.indexOf(selectedProduct);		
+		};
 
+    console.log(indexProduct());
+
+		if(req.file != undefined) {
+			image = req.file.filename
+		}
+    let nuevaInfo = req.body 
+		let productoEditado = {
+			"id" : idProduct,
+			...nuevaInfo,
+			"image": image,
+		};
     
+    productos[indexProduct()] = productoEditado;
+
+  
+  
+    let archivoJSON = JSON.stringify(productos);
+    fs.writeFileSync(productsFilePath, archivoJSON);
+
+    res.redirect("/products");
   },
 
   deleteProduct: (req, res) => {
-    let id = req.params.idProduct
-    productFunctions.delete(id)
-    res.redirect("/products")
+    let id = req.params.idProduct;
+    productFunctions.delete(id);
+    res.redirect("/products");
   },
   
    
