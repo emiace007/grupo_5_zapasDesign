@@ -58,7 +58,7 @@ router.get('/:idProduct', productController.productDetail); //products/:id  deta
 
 router.get('/:idProduct/editProducts', productController.editProductos); //products/:id/edit
 
-router.put('/:idProduct/editProducts',fileUpload.single('imagenActualizada'), productController.edit); //editar
+router.put('/:idProduct/editProducts',fileUpload.single('imagenActualizada'),validacion, productController.edit); //editar
 
 router.delete('/:idProduct', productController.deleteProduct); //eliminar
 

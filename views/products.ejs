@@ -16,7 +16,7 @@
         <div class="div-listas">
 
             
-                <div class="lista-productos">
+            <div class="lista-productos">
                 <a href="/products/create" > 
                 <img class="plus" src="static/images/productos/plus.png" alt="imagen">
                 
@@ -24,15 +24,21 @@
             </div>
 
             <% productos.forEach(lista => { %>
-                <div class="lista-productos">
+            <div class="lista-productos">
                     
                 <a href="/products/<%=lista.id%>" > 
-                <h3><%= lista.nombreProducto %></h3>
                 
-                <img src="static/images/productos/<%= lista.image%>" alt="imagen">
+                <div class="nombre-producto">
+                    <h3><%= lista.nombreProducto %></h3>
+                </div>
                 
-                                             
-                <p> $ <%= lista.price %></p>
+                <div class="imagen">
+                    <img src="static/images/productos/<%= lista.image%>" alt="imagen">
+                </div>
+                
+                <div class="precio">
+                    <p> $ <%= lista.price %></p>
+                </div>                             
                 </a>
             </div>
             <% }) %>
@@ -40,7 +46,7 @@
         </div>
     </main>
 
- <%- include('./partials/footer') %>
+    <%- include('./partials/footer') %>
 </body>
 </html>
 

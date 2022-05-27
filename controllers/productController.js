@@ -29,32 +29,54 @@ const controller = {
   edit: (req, res) => {
     let {idProduct} = req.params;
     let image;
+    
+    // let error = validationResult(req);
+    // HACER ERRORS
+   
 
-    function indexProduct() {			
+      function indexProduct() {			
 			let selectedProduct = productos.find(element => element.id == idProduct);
 			return productos.indexOf(selectedProduct);		
 		};
 
     console.log(indexProduct());
 
-		if(req.file != undefined) {
+    
+    if(req.file != undefined) {
 			image = req.file.filename
-		}
+		} else {
+      image = 'zapasDefault.png'
+    }
+
+
+    let talle = []
+    let talleBody = req.body.talle
+    if (typeof talleBody == 'string') {
+      talle.push(talleBody)
+    } else {
+      talle = talleBody
+      }
+
     let nuevaInfo = req.body 
 		let productoEditado = {
 			"id" : idProduct,
 			...nuevaInfo,
 			"image": image,
+      "talle": talle
 		};
     
     productos[indexProduct()] = productoEditado;
 
   
   
-    let archivoJSON = JSON.stringify(productos);
+    let archivoJSON = JSON.stringify(productos, null, ' ');
     fs.writeFileSync(productsFilePath, archivoJSON);
 
     res.redirect("/products");
+      
+    
+
+
   },
 
   deleteProduct: (req, res) => {
@@ -67,12 +89,24 @@ const controller = {
   createProduct: (req, res) => {
     let error = validationResult(req);
 
+   
 
     if (error.isEmpty()) {
+     
+      let talle = []
+      let talleBody = req.body.talle
+      if (typeof talleBody == 'string') {
+        talle.push(talleBody)
+      } else {
+        talle = talleBody
+        }
+  
+      let nuevaInfo = req.body 
       let newProduct = {
-        ...req.body,
-        image: req.file.filename,   
-      }
+        ...nuevaInfo,
+        "image": req.file.filename,
+        "talle": talle
+      };
   
       productFunctions.create(newProduct)
   

@@ -17,7 +17,8 @@
     box-sizing: border-box;
 }
 
-a {
+.div-listas a {
+    width: 100%;
     color: var(--gris);
     text-decoration: none;
     flex-direction: column;
@@ -67,6 +68,7 @@ h1{
 h3{
     font-size: 1.2rem;
     transition: all 500ms;
+    text-align: center;
 }
 
 .lista-productos:hover h3{
@@ -84,4 +86,12 @@ h3{
 
 .lista-productos:hover .plus{
     transform:scale(110%);
+}
+
+.imagen{
+    text-align: center;
+}
+
+.nombre-producto{
+    margin: 10px;
 }
