@@ -1,4 +1,5 @@
-[{
+[
+ {
   "id": 4358,
   "firstName": "Karon",
   "lastName": "Clubb",
@@ -6,7 +7,8 @@
   "password": "zZcU6yJYvRkm",
   "category": "Female",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 1887,
   "firstName": "Symon",
   "lastName": "Thorold",
@@ -14,7 +16,8 @@
   "password": "9MQIHC",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 8706,
   "firstName": "Quinta",
   "lastName": "Batteson",
@@ -22,7 +25,8 @@
   "password": "RABQaL",
   "category": "Female",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 8908,
   "firstName": "Tannie",
   "lastName": "Maharry",
@@ -30,7 +34,8 @@
   "password": "LmKyd7cBZ",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 7399,
   "firstName": "Nonie",
   "lastName": "Giff",
@@ -38,7 +43,8 @@
   "password": "slYqtqOY",
   "category": "Polygender",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 4470,
   "firstName": "Joseph",
   "lastName": "Torra",
@@ -46,7 +52,8 @@
   "password": "nUS2AS",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 8472,
   "firstName": "Goddart",
   "lastName": "Darrigoe",
@@ -54,7 +61,8 @@
   "password": "x8XCrtobUAfZ",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 4100,
   "firstName": "Olin",
   "lastName": "Karchowski",
@@ -62,7 +70,8 @@
   "password": "xmR2kDAnD8o",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 7670,
   "firstName": "Marnia",
   "lastName": "Daborn",
@@ -70,7 +79,8 @@
   "password": "5AFN64vVv3g",
   "category": "Female",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 9794,
   "firstName": "Daisey",
   "lastName": "Darnell",
@@ -78,7 +88,8 @@
   "password": "7e99xG",
   "category": "Female",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 6630,
   "firstName": "Domenico",
   "lastName": "Canto",
@@ -86,7 +97,8 @@
   "password": "tR3d1Zu",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 3671,
   "firstName": "Merrick",
   "lastName": "MacNeice",
@@ -94,7 +106,8 @@
   "password": "wI6DsqcEqkWw",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 6023,
   "firstName": "Frank",
   "lastName": "Lewtey",
@@ -102,7 +115,8 @@
   "password": "3UeD7nQ",
   "category": "Female",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 6592,
   "firstName": "Aluin",
   "lastName": "Haily",
@@ -110,7 +124,8 @@
   "password": "pR0lZod",
   "category": "Male",
   "image": "osd.jpg"
-}, {
+ },
+ {
   "id": 7956,
   "firstName": "Emmet",
   "lastName": "Cisco",
@@ -118,4 +133,5 @@
   "password": "u86rlSskD",
   "category": "Male",
   "image": "osd.jpg"
-}]
+ }
+]

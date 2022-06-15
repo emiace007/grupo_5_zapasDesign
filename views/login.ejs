@@ -17,12 +17,18 @@
         <section class="formulario">
             <h1>INICIAR SESION</h1>
             
-            <form action="/login" method="get">
+            <form action="/user/login/loginPost" method="post">
                 <div class="email-password">
-                    <input type="email" name="email" placeholder="Correo electrónico"  class="placeholder" >
+                    <input type="email" name="email" placeholder="Correo electrónico"  class="placeholder" value="<%= locals.old && old.email ? old.email : ''%>">
+                    <% if (locals.error && error.email){ %>
+                        <p class="error"> <%= error.email.msg %> </p>
+                    <% } %>
                 </div>
                 <div class="email-password">
                     <input type="password" name="password" placeholder="Contraseña" class="placeholder">
+                    <% if (locals.error && error.password){ %>
+                        <p class="error"> <%= error.password.msg %> </p>
+                    <% } %>
                 </div>
                 <div class="login-register">
                     <button class="login" class="placeholder" type="submit">Iniciar Sesion</button>

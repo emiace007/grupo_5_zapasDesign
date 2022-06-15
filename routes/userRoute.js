@@ -11,18 +11,29 @@ const userControllers = require('../controllers/userController')
 // >>>> Express Validator
 
 const validacion = [
-    body('name').notEmpty().withMessage('Debes agregar un nombre'),
-    body('apellido').notEmpty().withMessage('Debes agregar nombre de usuario'),
-    body('email').notEmpty().withMessage('Debes poner un email'),
-    body('password').notEmpty().withMessage('Debes asignar una contraseña'),    
+    body("nombre").notEmpty().withMessage("El campo nombre es obligatorio"),
+    body("apellido").notEmpty().withMessage("El campo apellido es obligatorio"),
+    body("email")
+      .notEmpty()
+      .withMessage("El campo email es obligatorio")
+      .bail()
+      .isEmail()
+      .withMessage("El email debe ser valido"),
+    body("password")
+      .notEmpty()
+      .withMessage("El campo contraseña es obligatorio")
+      .bail()
+      .isLength({ min: 5 })
+      .withMessage("Debe contener minimo 5 caracteres")
 ]
 
 // >>>>> Rutas 
 
 // router.get('/', userControllers.users); //products
 router.get('/login', userControllers.login);
+router.post('/login/loginPost', userControllers.loginPost);
 
 router.get('/register', userControllers.register);
-router.post('/register/create', userControllers.registerProcess);
+router.post('/register/create', validacion, userControllers.registerPost);
 
 module.exports = router;   

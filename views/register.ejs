@@ -13,23 +13,35 @@
     <section class="formulario">
         <h1>REGISTRARSE</h1>
         
-        <form action="/register/registerProcess" method="post">
+        <form action="/user/register/create" method="POST">
             <div class="email-password">
-                <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" >
-                
+                <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" value="<%= locals.old && old.nombre ? old.nombre : ''%>">
+                <% if (locals.error && error.nombre){ %>
+                    <p class="error"> <%= error.nombre.msg %> </p>
+                <% } %>
             </div>
             <div class="email-password">
-                <input type="text" name="apellido" placeholder="Apellido" class="placeholder">
+                <input type="text" name="apellido" placeholder="Apellido" class="placeholder" value="<%= locals.old && old.apellido ? old.apellido : ''%>">
+                <% if (locals.error && error.apellido){ %>
+                    <p class="error"> <%= error.apellido.msg %> </p>
+                <% } %>
             </div>
             <div class="email-password">
-                <input type="email" name="email" placeholder="Email" class="placeholder">
+                <input type="text" name="email" placeholder="Email" class="placeholder" value="<%= locals.old && old.email ? old.email : ''%>">
+                <% if (locals.error && error.email){ %>
+                    <p class="error"> <%= error.email.msg %> </p>
+                <% } %>
             </div>
             <div class="email-password">
                 <input type="password" name="password" placeholder="Contraseña" class="placeholder">
+                <% if (locals.error && error.password){ %>
+                    <p class="error"> <%= error.password.msg %> </p>
+                <% } %>
             </div>
             <div class="login-register">
                 <button class="login" class="placeholder" type="submit">REGISTRARSE</button>
             </div>
+            
         </form>
         </main>
     </section>
