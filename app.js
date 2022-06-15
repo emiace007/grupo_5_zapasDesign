@@ -20,3 +20,6 @@ app.use('/', indexRoute);
 
 let productsRoute = require('./routes/productsRoute')
 app.use('/products', productsRoute);
+
+let userRoute = require('./routes/userRoute')
+app.use('/user', userRoute);

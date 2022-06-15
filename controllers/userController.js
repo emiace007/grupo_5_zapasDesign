@@ -1,18 +1,20 @@
-const {users,products,writeUsersJSON} = require('../data/dataBase');
+
 let { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs')
 
 const controller = {
-	login: (req, res) => {
-		res.render("users/login",{
-			session: req.session
-		})
-	},
-	register: (req, res) => {
-		res.render("/register",{
-			session: req.session
-		})
-	},
+	login: (req, res) => res.render("login"),
+	register: (req, res) => res.render("register"),
+	// login: (req, res) => {
+	// 	res.render("users/login",{
+	// 		session: req.session
+	// 	})
+	// },
+	// register: (req, res) => {
+	// 	res.render("/register",{
+	// 		session: req.session
+	// 	})
+	// },
     profile: (req, res) => {
 		let userProfile = users.find(user => user.id === req.session.user.id)
 
