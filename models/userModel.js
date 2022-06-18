@@ -46,7 +46,7 @@ const usersFunctions = {
   findAlgo: (categoria, texto) => {
     let dataset = users
     let categoriaBuscada = dataset.find(
-      (user) => dataset[categoria] == texto
+      (user) => user[categoria] == texto
     );
 
     return categoriaBuscada;

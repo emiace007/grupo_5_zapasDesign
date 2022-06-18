@@ -6,7 +6,7 @@
   "email": "kclubb0@histats.com",
   "password": "zZcU6yJYvRkm",
   "category": "Female",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 1887,
@@ -15,7 +15,7 @@
   "email": "sthorold1@people.com.cn",
   "password": "9MQIHC",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 8706,
@@ -24,7 +24,7 @@
   "email": "qbatteson2@sfgate.com",
   "password": "RABQaL",
   "category": "Female",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 8908,
@@ -33,7 +33,7 @@
   "email": "tmaharry3@nasa.gov",
   "password": "LmKyd7cBZ",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 7399,
@@ -42,7 +42,7 @@
   "email": "ngiff4@bloglines.com",
   "password": "slYqtqOY",
   "category": "Polygender",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 4470,
@@ -51,7 +51,7 @@
   "email": "jtorra5@vimeo.com",
   "password": "nUS2AS",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 8472,
@@ -60,7 +60,7 @@
   "email": "gdarrigoe6@mapy.cz",
   "password": "x8XCrtobUAfZ",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 4100,
@@ -69,7 +69,7 @@
   "email": "okarchowski7@time.com",
   "password": "xmR2kDAnD8o",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 7670,
@@ -78,7 +78,7 @@
   "email": "mdaborn8@marriott.com",
   "password": "5AFN64vVv3g",
   "category": "Female",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 9794,
@@ -87,7 +87,7 @@
   "email": "ddarnell9@go.com",
   "password": "7e99xG",
   "category": "Female",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 6630,
@@ -96,7 +96,7 @@
   "email": "dcantoa@phoca.cz",
   "password": "tR3d1Zu",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 3671,
@@ -105,7 +105,7 @@
   "email": "mmacneiceb@wufoo.com",
   "password": "wI6DsqcEqkWw",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 6023,
@@ -114,7 +114,7 @@
   "email": "flewteyc@nhs.uk",
   "password": "3UeD7nQ",
   "category": "Female",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 6592,
@@ -123,7 +123,7 @@
   "email": "ahailyd@unicef.org",
   "password": "pR0lZod",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
  },
  {
   "id": 7956,
@@ -132,6 +132,30 @@
   "email": "eciscoe@gmpg.org",
   "password": "u86rlSskD",
   "category": "Male",
-  "image": "osd.jpg"
+  "imagen": "osd.jpg"
+ },
+ {
+  "id": 16,
+  "nombre": "Gaston",
+  "apellido": "Lobo",
+  "email": "gastonlobo@gmail.com",
+  "password": "$2a$12$fn2RrXPL/.qnY1HGsAPahuUeJCTOqpX0RqloL.Dn/yZiDlcq87vPW",
+  "imagen": "userDefault.png"
+ },
+ {
+  "id": 17,
+  "nombre": "Gaston",
+  "apellido": "Lobo",
+  "email": "kmila@gmail.com",
+  "password": "$2a$12$i7/V5rqoNFTxC8Cm5Q0U5.0vmAT76X7BKFvBBQVw.QdZ8QgE2pMiq",
+  "imagen": "newUser-1655582044657.jpg"
+ },
+ {
+  "id": 18,
+  "nombre": "Gaston",
+  "apellido": "Lobo",
+  "email": "kmila@gmail.com",
+  "password": "$2a$12$wxjgpZ0Cs8jwx6q4.H.dAuKAbMWwO1kM.IhdYJ2PIoOFSQqXO0Jre",
+  "imagen": "userDefault.png"
  }
 ]

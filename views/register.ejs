@@ -13,7 +13,7 @@
     <section class="formulario">
         <h1>REGISTRARSE</h1>
         
-        <form action="/user/register/create" method="POST">
+        <form action="/user/register/create" method="POST" enctype="multipart/form-data">
             <div class="email-password">
                 <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" value="<%= locals.old && old.nombre ? old.nombre : ''%>">
                 <% if (locals.error && error.nombre){ %>
@@ -38,6 +38,15 @@
                     <p class="error"> <%= error.password.msg %> </p>
                 <% } %>
             </div>
+
+            <div class="email-password">
+                <label for="files" class="login">Cargar imagen</label>
+                <input id="files" style="visibility:hidden;" type="file" name="imagen">
+            </div>
+            <% if (locals.error && error.imagen){ %>
+                <p class="error"> <%= error.imagen.msg %> </p>
+            <% } %>
+
             <div class="login-register">
                 <button class="login" class="placeholder" type="submit">REGISTRARSE</button>
             </div>

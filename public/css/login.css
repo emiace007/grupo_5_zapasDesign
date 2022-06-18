@@ -104,7 +104,10 @@ form input{
     font-size: 1rem;
 }
 
-
+.error{
+    color: red;
+    font-weight: bold;
+  }
 
 @media (min-width: 480px){
     .login{

@@ -7,10 +7,33 @@ const {body} = require('express-validator')
 
 const userControllers = require('../controllers/userController')
 
+// >>>> MiddleWares
+const userLogiado = require('../middlewares/userLogiado')
+
+// >>>> Multer
+
+const multer = require('multer');
+// const res = require("express/lib/response");
+
+
+const storage = multer.diskStorage({
+  destination: function(req, file, callback){
+      callback(null, __dirname + '/../public/images/users')
+  },
+
+  filename: function(req, file, callback){
+      const newFileName = 'newUser-' + Date.now() + path.extname(file.originalname);
+      callback(null, newFileName);
+  }
+})
+
+
+const fileUpload = multer({storage: storage})
+
 
 // >>>> Express Validator
 
-const validacion = [
+const validacion_registro = [
     body("nombre").notEmpty().withMessage("El campo nombre es obligatorio"),
     body("apellido").notEmpty().withMessage("El campo apellido es obligatorio"),
     body("email")
@@ -24,16 +47,18 @@ const validacion = [
       .withMessage("El campo contraseña es obligatorio")
       .bail()
       .isLength({ min: 5 })
-      .withMessage("Debe contener minimo 5 caracteres")
+      .withMessage("Debe contener minimo 5 caracteres"),
 ]
 
 // >>>>> Rutas 
 
 // router.get('/', userControllers.users); //products
-router.get('/login', userControllers.login);
-router.post('/login/loginPost', userControllers.loginPost);
+router.get('/login',userLogiado, userControllers.login);
+router.post('/login/loginPost',validacion_registro, userControllers.loginPost);
 
-router.get('/register', userControllers.register);
-router.post('/register/create', validacion, userControllers.registerPost);
+router.get('/register',userLogiado, userControllers.register);
+router.post('/register/create', fileUpload.single('imagen'), validacion_registro, userControllers.registerPost);
+
+router.get('/perfil', userControllers.perfil)
 
 module.exports = router;   
