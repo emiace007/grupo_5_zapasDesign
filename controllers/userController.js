@@ -21,6 +21,12 @@ const controller = {
 		// ANTES DE REDIRIGIR A PERFIL, GUARDAMOS LA INFO EN SESSION (sin su password, por seguridad)
 			delete usuarioALogiarse.password
 			req.session.usuarioLogiado = usuarioALogiarse
+
+		// RECORDAR USUARIO
+		if(req.body.recordar){
+			res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60)} )
+		}
+
 			res.redirect('/user/perfil')
 		} else{
 			res.render("login", {
@@ -105,16 +111,16 @@ const controller = {
 
     console.log(req.file.filename);
   },
-  logout: (req, res) => {
+  logout: (req, res) => { // AL CERRAR SESION Y QUERER INICIAR NUEVAMENTE, TRAE UN ERROR
     req.session.destroy();
-    if (req.cookies.userZapasDesing) {
-      res.cookie("userZapasDesing", "", { maxAge: -1 });
-    }
-
-    res.redirect("/");
+    // if (req.cookies.userZapasDesing) {
+    //   res.cookie("userZapasDesing", "", { maxAge: -1 });
+    // }
+    res.redirect("/user/login");
   },
 
   perfil: (req, res) => {
+
 	res.render('perfil', {
 		user: req.session.usuarioLogiado
 	})

@@ -6,7 +6,7 @@
 } )%>
 
 <body>
-
+  <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
     <div class = "perfilUsuario">
 
@@ -21,7 +21,7 @@
             </li>
         </ul>
 
-        <form action="" method="POST">
+        <form action="/user/logout" method="get">
             <button type="submit"> Log Out </button>
         </form>
       

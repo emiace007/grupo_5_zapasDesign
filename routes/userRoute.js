@@ -9,6 +9,7 @@ const userControllers = require('../controllers/userController')
 
 // >>>> MiddleWares
 const userLogiado = require('../middlewares/userLogiado')
+const noLogeado = require('../middlewares/noLogeado')
 
 // >>>> Multer
 
@@ -59,6 +60,7 @@ router.post('/login/loginPost',validacion_registro, userControllers.loginPost);
 router.get('/register',userLogiado, userControllers.register);
 router.post('/register/create', fileUpload.single('imagen'), validacion_registro, userControllers.registerPost);
 
-router.get('/perfil', userControllers.perfil)
+router.get('/perfil',noLogeado, userControllers.perfil)
+router.get('/logout', userControllers.logout)
 
 module.exports = router;   

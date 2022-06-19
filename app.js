@@ -4,6 +4,10 @@ const app = express();
 const methodOverride = require ("method-override")
 const path = require("path");
 const session = require('express-session')
+const cookies = require('cookie-parser')
+
+// const cookieUser = require('./middlewares/cookieUser')
+// app.use(cookieUser)
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -19,6 +23,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+app.use(cookies())
+
+
 
 // RUTAS
 
