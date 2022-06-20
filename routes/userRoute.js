@@ -9,6 +9,7 @@ const userControllers = require('../controllers/userController')
 
 // >>>> MiddleWares
 const userLogiado = require('../middlewares/userLogiado')
+const recordarUsuarioMiddleware = require('../middlewares/recordarUsuarioMiddleware')
 const noLogeado = require('../middlewares/noLogeado')
 
 // >>>> Multer
@@ -55,7 +56,7 @@ const validacion_registro = [
 
 // router.get('/', userControllers.users); //products
 router.get('/login',userLogiado, userControllers.login);
-router.post('/login/loginPost',validacion_registro, userControllers.loginPost);
+router.post('/login/loginPost',validacion_registro, recordarUsuarioMiddleware, userControllers.loginPost);
 
 router.get('/register',userLogiado, userControllers.register);
 router.post('/register/create', fileUpload.single('imagen'), validacion_registro, userControllers.registerPost);

@@ -10,7 +10,7 @@ const usersFilePath = path.join(__dirname, "../data/users.json");
 const user = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 // Para el login estamos utilizando la funcion findPk que hizo Gasty y esta en models, es temporal y se va a reemplazar cuandoconectemos con la base de dato con sequsalize
 const controller = {
-  login: (req, res) => res.render("login"),
+  login: (req, res) => res.render("login", {emailRecordado: req.cookies.emailRecordado, passwordRecordada: req.cookies.passwordRecordada }),
 
   loginPost: (req, res) => {
 	let usuarioALogiarse = usersFunctions.findAlgo('email', req.body.email)
@@ -34,7 +34,10 @@ const controller = {
 					email: {
 						msg: 'Su email y contraseña no coinciden'
 					}
-				}
+				},
+        old: req.body,
+        emailRecordado: req.cookies.emailRecordado,
+        passwordRecordada: req.cookies.passwordRecordada
 			} )
 		}
 
@@ -44,7 +47,9 @@ const controller = {
 				email: {
 					msg: 'Este email no se encuentra en nuestra base de datos'
 				}
-			}
+			},
+      emailRecordado: req.cookies.emailRecordado,
+      passwordRecordada: req.cookies.passwordRecordada
 		} );
 	}
   },

@@ -157,5 +157,13 @@
   "email": "kmila@gmail.com",
   "password": "$2a$12$wxjgpZ0Cs8jwx6q4.H.dAuKAbMWwO1kM.IhdYJ2PIoOFSQqXO0Jre",
   "imagen": "userDefault.png"
+ },
+ {
+  "id": 19,
+  "nombre": "asdadasdas",
+  "apellido": "1233",
+  "email": "alan@god.com",
+  "password": "$2a$12$RQzeZERcobtxN4E2MIK3vuf9OwXYwyPco08AdwKv0w3gRc/7iklBK",
+  "imagen": "userDefault.png"
  }
 ]
