@@ -35,6 +35,20 @@ nav i:hover{
     font-size: 2.5rem;
 }
 
+nav i:hover + span{
+    color: var(--color);
+}
+
+nav span{
+    color: var(--gris);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
 .logo-zapas-design{
     text-align: center;   
 }
@@ -58,6 +72,13 @@ nav i:hover{
     align-items: center;
 }
 
+.icono-usuario-login{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

@@ -25,6 +25,11 @@ app.use(session({
 }))
 app.use(cookies())
 
+//Middleware para que todas las vistas puedan tener acceso al usuario
+app.use(function(req, res, next) {
+    res.locals.user = req.session.usuarioLogiado;
+    next();
+  });
 
 
 // RUTAS
