@@ -36,8 +36,12 @@ const fileUpload = multer({storage: storage})
 // >>>> Express Validator
 
 const validacion_registro = [
-    body("nombre").notEmpty().withMessage("El campo nombre es obligatorio"),
-    body("apellido").notEmpty().withMessage("El campo apellido es obligatorio"),
+    body("nombre")
+      .notEmpty()
+      .withMessage("El campo nombre es obligatorio"),
+    body("apellido")
+      .notEmpty()
+      .withMessage("El campo apellido es obligatorio"),
     body("email")
       .notEmpty()
       .withMessage("El campo email es obligatorio")
@@ -65,3 +69,6 @@ router.get('/perfil',noLogeado, userControllers.perfil)
 router.get('/logout', userControllers.logout)
 
 module.exports = router;   
+
+
+

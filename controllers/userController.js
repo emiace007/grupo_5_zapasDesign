@@ -100,6 +100,20 @@ const controller = {
       image = "userDefault.png";
     }
 
+    // Validación si el usuario esta ingresando un correo que ya se encuentra registrado en la base de datos
+
+    let validacionEmailExistente = usersFunctions.findAlgo("email", req.body.email);
+
+    if (validacionEmailExistente) {
+      res.render("register", { 
+        errors: {          
+            email: {
+              msg: 'Este email ya se encuentra registrado'
+            }},
+        old: req.body 
+      });
+    }
+
     if (errors.isEmpty()) {
       let pass = req.body.password;
       let newUser = {
@@ -152,3 +166,5 @@ const controller = {
 };
 
 module.exports = controller;
+
+
