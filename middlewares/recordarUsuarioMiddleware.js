@@ -10,3 +10,23 @@ let recordarUsuarioMiddleware = (req, res, next) => {
 }
 
 module.exports = recordarUsuarioMiddleware
+
+///
+
+function userLoggedMiddleware (req,res,next) {
+	res.locals.usuarioEstaLogiado = false;
+
+	let emailInCookie = req.cookies.userEmail
+	let userFromCookie = User.findByField('email', emailInCookie);
+
+	if(userFromCookie){
+		req.session.usuarioLogiado = userFromCookie;
+	}
+
+	if (req.session && req.session.usuarioLogiado) {
+		res.locals.usuarioEstaLogiado = true;
+		res.locals.usuarioLogiado = req.session.usuarioLogiado;
+	}
+}
+
+module.exports = userLoggedMiddleware;

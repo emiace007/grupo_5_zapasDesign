@@ -131,6 +131,7 @@ const controller = {
     console.log(req.file.filename);
   },
   logout: (req, res) => { // AL CERRAR SESION Y QUERER INICIAR NUEVAMENTE, TRAE UN ERROR
+    res.clearCookie('userEmail')
     req.session.destroy();
     // if (req.cookies.userZapasDesing) {
     //   res.cookie("userZapasDesing", "", { maxAge: -1 });
