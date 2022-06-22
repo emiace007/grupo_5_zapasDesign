@@ -14,8 +14,8 @@
     <div class="contenedor-imgPerfil">
       <img class="imgPerfil" src="/static/images/users/<%= user.imagen %>" alt="imagen-perfil">
     </div>
-    <span><%= user.nombre %></span>
-    <p class="emailUsuario"> <%= user.email %></p>
+    <span><%= user.nombre %> <%= user.apellido %></span>
+    <p class="emailUsuario"> <%= user.email %></p> 
     <form action="/user/logout" method="get" class = "submit">
       <button> Log Out </button>
     </form>
