@@ -64,6 +64,15 @@ main section{
     margin: 15px auto;
 }
 
+.cargarImagen{
+    margin: 35px;
+}
+
+.cargarImagen input{
+    display: none;
+}
+
+
 
 form input{
     width: 50%;
@@ -112,6 +121,8 @@ form input{
     color: red;
     font-weight: bold;
   }
+
+
   
 @media (min-width: 480px){
     .login{

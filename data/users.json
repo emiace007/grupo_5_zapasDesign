@@ -165,5 +165,13 @@
   "email": "alan@god.com",
   "password": "$2a$12$RQzeZERcobtxN4E2MIK3vuf9OwXYwyPco08AdwKv0w3gRc/7iklBK",
   "imagen": "userDefault.png"
+ },
+ {
+  "id": 20,
+  "nombre": "zapas",
+  "apellido": "design",
+  "email": "zp@gmail.com",
+  "password": "$2a$12$1lt.Uv.TxMOdBcyajRleLer2Ggxo4Q.Gl8ZcU0TJvpH3OjQjNbs2K",
+  "imagen": "userDefault.png"
  }
 ]

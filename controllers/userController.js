@@ -19,9 +19,9 @@ const controller = {
 		let passwordOk = bcrypt.compareSync(req.body.password, usuarioALogiarse.password)
 		if (passwordOk) {
 		// ANTES DE REDIRIGIR A PERFIL, GUARDAMOS LA INFO EN SESSION (sin su password, por seguridad)
-			delete usuarioALogiarse.password
-			req.session.usuarioLogiado = usuarioALogiarse
-
+		delete usuarioALogiarse.password
+		req.session.usuarioLogiado = usuarioALogiarse
+   
 		// RECORDAR USUARIO
 		if(req.body.recordar){
 			res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60)} )
@@ -54,42 +54,6 @@ const controller = {
 	}
   },
 
-
-
-  // login: (req, res) => {
-  // 	res.render("users/login",{
-  // 		session: req.session
-  // 	})
-  // },
-  // register: (req, res) => {
-  // 	res.render("/register",{
-  // 		session: req.session
-  // 	})
-  // },
-
-
-//   loginProcess: (req, res) => {
-//     let errors = validationResult(req);
-
-//     if (errors.isEmpty()) {
-//       let user = users.find((user) => user.username === req.body.username);
-
-//       req.session.user = {
-//         id: user.id,
-//         name: user.name,
-//         username: user.username,
-//         email: user.email,
-//       };
-
-//       res.locals.user = req.session.user;
-//       res.redirect("/profile");
-//     } else {
-//       res.render("users/login", {
-//         errors: errors.mapped(),
-//         session: req.session,
-//       });
-//     }
-//   },
   register: (req, res) => res.render("register"),
   registerPost: (req, res) => {
     let errors = validationResult(req);
@@ -130,6 +94,14 @@ const controller = {
 
     console.log(req.file.filename);
   },
+
+  perfil: (req, res) => {
+
+    res.render('perfil', {
+      user: req.session.usuarioLogiado
+    })
+    },
+  
   logout: (req, res) => { // AL CERRAR SESION Y QUERER INICIAR NUEVAMENTE, TRAE UN ERROR
     res.clearCookie('userEmail')
     req.session.destroy();
@@ -139,30 +111,6 @@ const controller = {
     res.redirect("/user/login");
   },
 
-  perfil: (req, res) => {
-
-	res.render('perfil', {
-		user: req.session.usuarioLogiado
-	})
-  },
-
-  // DUDAS
-  
-  purchases: (req, res) => {
-    let userProfile = users.find((user) => user.id === req.session.user.id);
-    let userName = userProfile.name;
-
-    let productPurchased = products.find(
-      (productPurchased) => productPurchased.id === 9
-    );
-
-    res.render("users/purchases", {
-      userProfile,
-      userName,
-      productPurchased,
-      session: req.session,
-    });
-  },
 
 };
 

@@ -5,6 +5,7 @@ const methodOverride = require ("method-override")
 const path = require("path");
 const session = require('express-session')
 const cookies = require('cookie-parser')
+const recordarUsuarioMiddleware = require('./middlewares/recordarUsuarioMiddleware')
 
 // const cookieUser = require('./middlewares/cookieUser')
 // app.use(cookieUser)
@@ -23,6 +24,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+
 app.use(cookies())
 
 //Middleware para que todas las vistas puedan tener acceso al usuario
@@ -31,6 +33,7 @@ app.use(function(req, res, next) {
     next();
   });
 
+app.use(recordarUsuarioMiddleware)
 
 // RUTAS
 
@@ -42,3 +45,4 @@ app.use('/products', productsRoute);
 
 let userRoute = require('./routes/userRoute')
 app.use('/user', userRoute);
+

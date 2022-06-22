@@ -2,17 +2,17 @@ const fs = require("fs");
 const path = require("path");
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const users = ()=> JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const usersFunctions = {
   findPK: (id) => {
-    let dataset = users
+    let dataset = users()
     let idBuscado = dataset.find((productos) => productos.id == id);
     return idBuscado;
   },
 
   generarId: () => {
-    let dataset = users
+    let dataset = users()
     let id = dataset.length + 1;
     while (true) {
       if (usersFunctions.findPK(id)) {
@@ -25,7 +25,7 @@ const usersFunctions = {
   },
 
   create: (data) => {
-    let dataset = users
+    let dataset = users()
     let nuevoProducto = {
       id: usersFunctions.generarId(),
       ...data,
@@ -35,7 +35,7 @@ const usersFunctions = {
   },
 
   delete: (id) => {
-    let dataset = users
+    let dataset = users()
     let todosMenosUno = dataset.filter((prod) => prod.id != id);
     fs.writeFileSync(
       usersFilePath,
@@ -44,7 +44,7 @@ const usersFunctions = {
   },
 
   findAlgo: (categoria, texto) => {
-    let dataset = users
+    let dataset = users()
     let categoriaBuscada = dataset.find(
       (user) => user[categoria] == texto
     );
