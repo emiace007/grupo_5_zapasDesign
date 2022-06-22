@@ -22,7 +22,7 @@ const controller = {
 		delete usuarioALogiarse.password
 		req.session.usuarioLogiado = usuarioALogiarse
    
-		// RECORDAR USUARIO
+		// RECORDAR USUARIO EN LAS COOKIES
 		if(req.body.recordar){
 			res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60)} )
 		}
