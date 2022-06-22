@@ -93,26 +93,25 @@ const controller = {
   register: (req, res) => res.render("register"),
   registerPost: (req, res) => {
     let errors = validationResult(req);
-
+  
+    // Validación si hay un correo existente
+    
     if (req.file != undefined) {
       image = req.file.filename;
     } else {
       image = "userDefault.png";
     }
 
-    // Validación si el usuario esta ingresando un correo que ya se encuentra registrado en la base de datos
-
-    let validacionEmailExistente = usersFunctions.findAlgo("email", req.body.email);
-
-    if (validacionEmailExistente) {
-      res.render("register", { 
-        errors: {          
-            email: {
-              msg: 'Este email ya se encuentra registrado'
-            }},
-        old: req.body 
-      });
-    }
+    let userInDb = usersFunctions.findAlgo('email', req.body.email);
+    if (userInDb){
+        return res.render("register", { 
+          error:{
+            emailRepetido:{
+              msg: "Este email ya se encuentra registrado"
+            }	},
+            oldData: req.body
+        }
+      )};
 
     if (errors.isEmpty()) {
       let pass = req.body.password;

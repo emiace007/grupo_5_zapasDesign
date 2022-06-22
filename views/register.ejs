@@ -18,7 +18,8 @@
                 <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" value="<%= locals.old && old.nombre ? old.nombre : ''%>">
                 <% if (locals.error && error.nombre){ %>
                     <p class="error"> <%= error.nombre.msg %> </p>
-                <% } %>
+                <% } %> 
+
             </div>
             <div class="email-password">
                 <input type="text" name="apellido" placeholder="Apellido" class="placeholder" value="<%= locals.old && old.apellido ? old.apellido : ''%>">
@@ -31,12 +32,16 @@
                 <% if (locals.error && error.email){ %>
                     <p class="error"> <%= error.email.msg %> </p>
                 <% } %>
+                <% if (locals.error && error.emailRepetido){ %>
+                    <p class="error"> <%= error.emailRepetido.msg %> </p>
+                <% } %>
             </div>
             <div class="email-password">
                 <input type="password" name="password" placeholder="Contraseña" class="placeholder">
                 <% if (locals.error && error.password){ %>
                     <p class="error"> <%= error.password.msg %> </p>
                 <% } %>
+                
             </div>
 
             <div class="email-password">
