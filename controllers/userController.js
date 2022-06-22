@@ -109,7 +109,7 @@ const controller = {
             emailRepetido:{
               msg: "Este email ya se encuentra registrado"
             }	},
-            oldData: req.body
+            old: req.body
         }
       )};
 
