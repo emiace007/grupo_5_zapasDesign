@@ -3,7 +3,8 @@ const router = express.Router();
 
 const path = require('path')
 const {body} = require('express-validator')
-// >>>> Requiere
+
+// >>>> Controller
 
 const userControllers = require('../controllers/userController')
 
@@ -15,8 +16,6 @@ const noLogeado = require('../middlewares/noLogeado')
 // >>>> Multer
 
 const multer = require('multer');
-// const res = require("express/lib/response");
-
 
 const storage = multer.diskStorage({
   destination: function(req, file, callback){
