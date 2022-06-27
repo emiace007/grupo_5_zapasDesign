@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path');
 const productFunctions = require('../models/Products');
 const {validationResult} = require('express-validator')
+const db = require('../database/models');
+
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 
@@ -9,7 +11,11 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
   
-  products: (req, res) => res.render("products", {productos:productos}),
+  products: (req, res) => {
+     res.render("products", {productos:productos})
+    // db.Producto.findAll()
+    //   .then(productoInfo => res.render("products", {productos:productoInfo}))
+},
 
   productCart: (req, res) => res.render("productCart"),
   
@@ -17,6 +23,10 @@ const controller = {
     let {idProduct} = req.params;
     let productoBuscado = productFunctions.findPK(idProduct)
     res.render("productDetail", {'productoBuscado' : productoBuscado});
+    // res.render("productDetail", {'productoBuscado' : productoBuscado});
+    //   db.Producto.findByPk(idProduct)
+    //   // Aun no estan configuradas las relaciones entre tablas es por eso que hay una variable de más llamada talle
+    //     .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado, talle: [36,37,38] }))
   }, 
   
   
@@ -88,9 +98,6 @@ const controller = {
    
   createProduct: (req, res) => {
     let error = validationResult(req);
-
-   
-
     if (error.isEmpty()) {
      
       let talle = []
@@ -100,6 +107,7 @@ const controller = {
       } else {
         talle = talleBody
         }
+      
   
       let nuevaInfo = req.body 
       let newProduct = {
