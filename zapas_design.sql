@@ -1,0 +1,1 @@
+product_categorySELECT * FROM zapas_design.product;
