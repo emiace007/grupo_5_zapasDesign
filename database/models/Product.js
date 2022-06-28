@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = "Producto"
+    const alias = "Product"
     const cols = {
         id:{
             autoIncrement: true, 
@@ -24,11 +24,18 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100)
         }}
     const config = {      
-            tableName: "product",
+            tableName: "Product",
             timestamps: false      
         }
     
     const Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Brand, { 
+            as: "marca",
+            foreignKey: "brand_id"
+        })
+    }
 
     return Product;
 }

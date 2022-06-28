@@ -20,9 +20,11 @@ const controller = {
   productCart: (req, res) => res.render("productCart"),
   
   productDetail: (req, res) => {
-    let {idProduct} = req.params;
-    let productoBuscado = productFunctions.findPK(idProduct)
-    res.render("productDetail", {'productoBuscado' : productoBuscado});
+    // let {idProduct} = req.params.id;
+    db.Product.findByPk(1 , {include: ['marca']})
+      .then (data => res.send(data))
+    // let productoBuscado = productFunctions.findPK(idProduct)
+    // res.render("productDetail", {'productoBuscado' : productoBuscado});
     // res.render("productDetail", {'productoBuscado' : productoBuscado});
     //   db.Producto.findByPk(idProduct)
     //   // Aun no estan configuradas las relaciones entre tablas es por eso que hay una variable de más llamada talle

@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false      
         }
     
-    const Product = sequelize.define(alias, cols, config);
+    const Category = sequelize.define(alias, cols, config);
 
-    return Product;
+    return Category;
 }
