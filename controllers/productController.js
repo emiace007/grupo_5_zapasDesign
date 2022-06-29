@@ -20,15 +20,12 @@ const controller = {
   productCart: (req, res) => res.render("productCart"),
   
   productDetail: (req, res) => {
-    // let {idProduct} = req.params.id;
-    db.Product.findByPk(1 , {include: ['marca']})
-      .then (data => res.send(data))
-    // let productoBuscado = productFunctions.findPK(idProduct)
-    // res.render("productDetail", {'productoBuscado' : productoBuscado});
-    // res.render("productDetail", {'productoBuscado' : productoBuscado});
-    //   db.Producto.findByPk(idProduct)
-    //   // Aun no estan configuradas las relaciones entre tablas es por eso que hay una variable de más llamada talle
-    //     .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado, talle: [36,37,38] }))
+    let {idProduct} = req.params;
+    let productoBuscado = productFunctions.findPK(idProduct)
+    res.render("productDetail", {'productoBuscado' : productoBuscado});
+    // >>>>>>>> Conexion a ase de datos SQL
+    // db.Product.findByPk(idProduct , {include: ['marca','categorias','talle']})     
+    // .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
   }, 
   
   
@@ -97,18 +94,26 @@ const controller = {
     res.redirect("/products");
   },
   
-   
+  //  >>>>>>>>>>>> CREACIÓN PRODUCTO EN BASE DE DATOS
   createProduct: (req, res) => {
     let error = validationResult(req);
     if (error.isEmpty()) {
      
-      let talle = []
+      let talleInput = []
       let talleBody = req.body.talle
       if (typeof talleBody == 'string') {
-        talle.push(talleBody)
+        talleInput.push(talleBody)
       } else {
-        talle = talleBody
+        talleInput = talleBody
         }
+      
+        let categoryInput = []
+        let categoryBody = req.body.category
+        if (typeof categoryBody == 'string') {
+          categoryInput.push(categoryBody)
+        } else {
+          categoryInput = categoryBody
+          }
       
   
       let nuevaInfo = req.body 
@@ -119,14 +124,27 @@ const controller = {
       };
   
       productFunctions.create(newProduct)
-  
-      res.redirect('/products')
+
+      // >>>>>>>>> cONEXION A BASE DE DATOS !!!!!!!! FALTA PODE RPASAR LOS DATOS DE TALLE Y CATEGORIA PARA QUE PUEDAN QUEDAR GUARDADOS EN LA BD
+
+      // db.Product.create({
+      //   precio: req.body.price,
+      //   nombre: req.body.nombreProducto,
+      //   imagen: req.file.filename,
+      //   descripcion: req.body.description,
+      //   brand_id: req.body.marca,
+      // }).then(() => res.redirect("/products"));
+      
       
     } else res.render("create", {error:error.mapped(), old: req.body})
 
   },
 
-  createView: (req, res) => { res.render("create")}
+  createView: (req, res) => {
+    db.Brand.findAll()
+    .then(marcas => res.render("create", {allBrands:marcas}))
+     
+    }
 
 
 };

@@ -25,13 +25,15 @@
                 <p class="error"> <%= error.nombreProducto.msg %> </p>
             <% } %>
             
-                     
-           
+                    
+
             <h3>Marca:</h3>
-            <input type="text" name="marca" value="<%= locals.old && old.marca ? old.marca: ''%>">
-            <% if (locals.error && error.marca){ %>
-                <p class="error"> <%= error.marca.msg %> </p>
-            <% } %>
+            <select name="marca" id="">
+                <option value="" disabled selected>- Seleccione el género - </option>
+                    <% allBrands.forEach(brand => { %>
+                    <option value="<%= brand.id %>"><%= brand.marcas %></option>
+                    <% }); %>
+            </select>
            
             <h3>Categoria:</h3>
             <div class="contenedor-de-categorias">

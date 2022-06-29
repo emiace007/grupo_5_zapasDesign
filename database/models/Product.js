@@ -22,7 +22,9 @@ module.exports = (sequelize, dataTypes) => {
         descripcion:{
             allowNull: false,
             type: dataTypes.STRING(100)
-        }}
+        },
+        brand_id: dataTypes.INTEGER
+    }
     const config = {      
             tableName: "Product",
             timestamps: false      
@@ -35,7 +37,25 @@ module.exports = (sequelize, dataTypes) => {
             as: "marca",
             foreignKey: "brand_id"
         })
+
+        Product.belongsToMany(models.Category, {
+            as: "categorias",
+            through: "product_category",
+            foreignKey: "product_id",
+            otherKey: "category_id",
+            timestamps: false
+            });
+        
+        Product.belongsToMany(models.Size, {
+            as: "talle",
+            through: "product_size",
+            foreignKey: "product_id",
+            otherKey: "size_id",
+            timestamps: false
+            });
     }
+
+
 
     return Product;
 }

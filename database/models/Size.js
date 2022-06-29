@@ -1,13 +1,13 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = "Talle"
+    const alias = "Size"
     const cols = {
         id:{
             autoIncrement: true, 
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        marcas:{
+        talle:{
             allowNull: false,
             type: dataTypes.INTEGER
         },
@@ -18,6 +18,17 @@ module.exports = (sequelize, dataTypes) => {
         }
     
     const Size = sequelize.define(alias, cols, config);
+
+    Size.asociate = function (models)  {
+
+        Size.belongsToMany(models.Product, {
+            as: "talle",
+            through: "product_size",
+            foreignKey: "size_id",
+            otherKey: "product_id",
+            timestamps: false
+            });
+    }
 
     return Size;
 }
