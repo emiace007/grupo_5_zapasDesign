@@ -13,7 +13,7 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
   
   products: (req, res) => {
-    db.Producto.findAll()
+    db.Product.findAll()
       .then(productoInfo => res.render("products", {productos:productoInfo}))
 },
 
