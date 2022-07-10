@@ -10,19 +10,19 @@
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
     <main>
-        <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.image%>" alt="imagen producto">
+        <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.imagen%>" alt="imagen producto">
         <div class="info-producto">
-            <h1 class="nombre-producto"><%= productoBuscado.nombreProducto%></h1>
-            <p class="marca-precio">$<%= productoBuscado.price %></p>
-            <p class="descripcion"><%= productoBuscado.description %></p>
+            <h1 class="nombre-producto"><%= productoBuscado.nombre%></h1>
+            <p class="marca-precio">$<%= productoBuscado.precio %></p>
+            <p class="descripcion"><%= productoBuscado.descripcion %></p>
 
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
                 <div class="div-talles">        
-                    <% productoBuscado.talle.forEach(talle => { %>
+                    <% productoBuscado.talle.forEach(producto=> { %>
                     <div class="div-radio-talle">
-                        <input class="radio-talle" type="radio" value="<%= talle %>" id="talle<%= talle %>" name="talle" hidden>
-                        <label class="boton-talle" for="talle<%= talle %>"><%= talle %></label>
+                        <input class="radio-talle" type="radio" value="<%= producto.talle %>" id="talle<%= producto.talle %>" name="talle" hidden>
+                        <label class="boton-talle" for="talle<%= producto.talle %>"><%= producto.talle %></label>
                     </div>
                     <% }) %>
                 </div>

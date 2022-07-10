@@ -21,8 +21,13 @@ const controller = {
   
   productDetail: (req, res) => {
     let {idProduct} = req.params;
-    db.Product.findByPk(idProduct , {include: [{association: 'marca'},{association: 'categorias'},{association: 'talle'}]})     
-    .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
+    db.Product.findByPk(idProduct , {include: [
+      {association: 'marca'},
+      {association: 'categorias'},
+      {association: 'talle'}
+    ]})    
+      // .then(data => res.send(data)) 
+      .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
   }, 
   
   
