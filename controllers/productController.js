@@ -3,6 +3,7 @@ const path = require('path');
 const productFunctions = require('../models/Products');
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
+// const { Association } = require('sequelize/types');
 
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
@@ -12,20 +13,16 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
   
   products: (req, res) => {
-     res.render("products", {productos:productos})
-    // db.Producto.findAll()
-    //   .then(productoInfo => res.render("products", {productos:productoInfo}))
+    db.Producto.findAll()
+      .then(productoInfo => res.render("products", {productos:productoInfo}))
 },
 
   productCart: (req, res) => res.render("productCart"),
   
   productDetail: (req, res) => {
     let {idProduct} = req.params;
-    let productoBuscado = productFunctions.findPK(idProduct)
-    res.render("productDetail", {'productoBuscado' : productoBuscado});
-    // >>>>>>>> Conexion a ase de datos SQL
-    // db.Product.findByPk(idProduct , {include: ['marca','categorias','talle']})     
-    // .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
+    db.Product.findByPk(idProduct , {include: [{association: 'marca'},{association: 'categorias'},{association: 'talle'}]})     
+    .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
   }, 
   
   
@@ -107,45 +104,38 @@ const controller = {
         talleInput = talleBody
         }
       
-        let categoryInput = []
-        let categoryBody = req.body.category
-        if (typeof categoryBody == 'string') {
-          categoryInput.push(categoryBody)
-        } else {
-          categoryInput = categoryBody
-          }
+      let categoryInput = []
+      let categoryBody = req.body.category
+      if (typeof categoryBody == 'string') {
+        categoryInput.push(categoryBody)
+      } else {
+        categoryInput = categoryBody
+        }
+ 
+      db.Product.create({
+        precio: req.body.price,
+        nombre: req.body.nombreProducto,
+        imagen: req.file.filename,
+        descripcion: req.body.description,
+        brand_id: req.body.marca,
+        categorias: req.body.categoria
+      })   
       
-  
-      let nuevaInfo = req.body 
-      let newProduct = {
-        ...nuevaInfo,
-        "image": req.file.filename,
-        "talle": talle
-      };
-  
-      productFunctions.create(newProduct)
-
-      // >>>>>>>>> cONEXION A BASE DE DATOS !!!!!!!! FALTA PODE RPASAR LOS DATOS DE TALLE Y CATEGORIA PARA QUE PUEDAN QUEDAR GUARDADOS EN LA BD
-
-      // db.Product.create({
-      //   precio: req.body.price,
-      //   nombre: req.body.nombreProducto,
-      //   imagen: req.file.filename,
-      //   descripcion: req.body.description,
-      //   brand_id: req.body.marca,
-      // }).then(() => res.redirect("/products"));
+      db.Product.addProfile('Size', {})
+        .then(() => res.redirect("/products"));
       
       
     } else res.render("create", {error:error.mapped(), old: req.body})
 
   },
 
-  createView: (req, res) => {
-    db.Brand.findAll()
-    .then(marcas => res.render("create", {allBrands:marcas}))
+  createView: async (req, res) => {
+    const marcas = await db.Brand.findAll()
+    const categorias  = await db.Category.findAll()
+
+    return  res.render("create", {allBrands:marcas, allCategories: categorias})
      
     }
-
 
 };
 

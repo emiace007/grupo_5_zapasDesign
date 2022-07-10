@@ -182,12 +182,14 @@ form input{
     margin: auto;
     width: 80%;
     display: flex;
+    flex-direction: column;
     justify-content:space-between;
+    align-items: center;
 }
 
 .categoria{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .categoria input{

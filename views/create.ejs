@@ -23,9 +23,7 @@
             <input type="text" list="browsers" name="nombreProducto" value="<%= locals.old && old.nombreProducto ? old.nombreProducto : ''%>">
             <% if (locals.error && error.nombreProducto){ %>
                 <p class="error"> <%= error.nombreProducto.msg %> </p>
-            <% } %>
-            
-                    
+            <% } %> 
 
             <h3>Marca:</h3>
             <select name="marca" id="">
@@ -38,8 +36,11 @@
             <h3>Categoria:</h3>
             <div class="contenedor-de-categorias">
                 <div class="categoria">
-                    <label><input type="checkbox" name="category" value="hombre" > Hombre </label>
-                </div>
+                    <% allCategories.forEach(category => { %>
+                        <label><input type="checkbox" name="category" value="<%-category.categoria%>" > <%- category.categoria %>   </label>
+                    <% }) %>
+                    
+                <!-- </div>
                 <div class="categoria">
                     <label><input type="checkbox" name="category" value="mujer"> Mujer </label>
                 </div>
@@ -48,7 +49,7 @@
                 </div>
                 <div class="categoria">
                     <label><input type="checkbox" name="category" value="coleccion"> Coleccion </label>
-                </div>
+                </div> -->
 
             </div>
 
