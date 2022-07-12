@@ -12,6 +12,7 @@
     <main>
         <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.imagen%>" alt="imagen producto">
         <div class="info-producto">
+<<<<<<< HEAD
             <h1 class="nombre-producto"><%= productoBuscado.nombre%></h1>
             <p class="marca-precio">$<%= productoBuscado.precio %></p>
             <p class="descripcion"><%= productoBuscado.descripcion %></p>
@@ -26,14 +27,24 @@
                  
                 
             </section>
+=======
+            <h1 class="nombre-producto"><%= productoBuscado.nombreProducto%></h1>
+            <p class="marca-precio">$<%= productoBuscado.precio %></p>
+            <p class="descripcion"><%= productoBuscado.descripcion %></p>
+>>>>>>> 2296d094b81c6d469e7d126a6b321fc51a28885b
 
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
                 <div class="div-talles">        
                     <% productoBuscado.talle.forEach(producto=> { %>
                     <div class="div-radio-talle">
+<<<<<<< HEAD
                         <input class="radio-talle" type="radio" value="<%= producto.talle %>" id="talle<%= producto.talle %>" name="talle" hidden>
                         <label class="boton-talle" for="talle<%= producto.talle %>"><%= producto.talle %></label>
+=======
+                        <input class="radio-talle" type="radio" value="<%= talle.dataValues.talle %>" id="talle<%= talle.dataValues.talle %>" name="talle" hidden>
+                        <label class="boton-talle" for="talle<%= talle.dataValues.talle %>"><%= talle.dataValues.talle %></label>
+>>>>>>> 2296d094b81c6d469e7d126a6b321fc51a28885b
                     </div>
                     <% }) %>
                 </div>
@@ -41,11 +52,15 @@
 
             <div class="botones">
                 <button class="añadir-al-carrito"><a href="#"> Añadir al carrito</a></button>
+                
+                <%if ( user ) {%>
                 <button class="editar"><a href="/products/<%= productoBuscado.id %>/editProducts">Editar</a></button>
                 
                 <form action="/products/<%= productoBuscado.id %>?_method=delete" method="POST">
                     <button type="submit" class="Eliminar">Eliminar</button>
                 </form>
+                <% } %>
+                
             </div>
         </div>
     </main>
