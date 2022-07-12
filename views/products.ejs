@@ -15,13 +15,14 @@
         
         <div class="div-listas">
 
-            
+            <%if ( user ) {%>
             <div class="lista-productos">
                 <a href="/products/create" > 
                 <img class="plus" src="static/images/productos/plus.png" alt="imagen">
                 
                 </a>
             </div>
+            <% } %>
 
             <% productos.forEach(lista => { %>
             <div class="lista-productos">

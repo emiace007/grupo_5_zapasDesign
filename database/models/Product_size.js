@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     
-    const Product_size = sequelize.define(alias, cols,  { timestamps: false });
+    const Product_size = sequelize.define(alias, cols,  { tableName: "product_size", timestamps: false });
 
     return Product_size;
 }

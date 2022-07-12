@@ -10,19 +10,19 @@
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
     <main>
-        <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.image%>" alt="imagen producto">
+        <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.imagen%>" alt="imagen producto">
         <div class="info-producto">
             <h1 class="nombre-producto"><%= productoBuscado.nombreProducto%></h1>
-            <p class="marca-precio">$<%= productoBuscado.price %></p>
-            <p class="descripcion"><%= productoBuscado.description %></p>
+            <p class="marca-precio">$<%= productoBuscado.precio %></p>
+            <p class="descripcion"><%= productoBuscado.descripcion %></p>
 
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
                 <div class="div-talles">        
                     <% productoBuscado.talle.forEach(talle => { %>
                     <div class="div-radio-talle">
-                        <input class="radio-talle" type="radio" value="<%= talle %>" id="talle<%= talle %>" name="talle" hidden>
-                        <label class="boton-talle" for="talle<%= talle %>"><%= talle %></label>
+                        <input class="radio-talle" type="radio" value="<%= talle.dataValues.talle %>" id="talle<%= talle.dataValues.talle %>" name="talle" hidden>
+                        <label class="boton-talle" for="talle<%= talle.dataValues.talle %>"><%= talle.dataValues.talle %></label>
                     </div>
                     <% }) %>
                 </div>
@@ -30,11 +30,15 @@
 
             <div class="botones">
                 <button class="añadir-al-carrito"><a href="#"> Añadir al carrito</a></button>
+                
+                <%if ( user ) {%>
                 <button class="editar"><a href="/products/<%= productoBuscado.id %>/editProducts">Editar</a></button>
                 
                 <form action="/products/<%= productoBuscado.id %>?_method=delete" method="POST">
                     <button type="submit" class="Eliminar">Eliminar</button>
                 </form>
+                <% } %>
+                
             </div>
         </div>
     </main>

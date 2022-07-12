@@ -14,7 +14,8 @@ const controller = {
   
   products: (req, res) => {
     db.Product.findAll()
-      .then(productoInfo => res.render("products", {productos:productoInfo}))
+      .then(productoInfo => {
+        res.render("products", {productos:productoInfo})})
 },
 
   productCart: (req, res) => res.render("productCart"),
@@ -22,7 +23,9 @@ const controller = {
   productDetail: (req, res) => {
     let {idProduct} = req.params;
     db.Product.findByPk(idProduct , {include: [{association: 'marca'},{association: 'categorias'},{association: 'talle'}]})     
-    .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
+    .then(productoBuscado=> {
+      res.render("productDetail", {productoBuscado: productoBuscado})
+      })
   }, 
   
   
