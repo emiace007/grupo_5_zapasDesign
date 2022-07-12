@@ -16,6 +16,17 @@
             <p class="marca-precio">$<%= productoBuscado.precio %></p>
             <p class="descripcion"><%= productoBuscado.descripcion %></p>
 
+            <section class="section-categoria">
+                
+                <ul>
+                        <% productoBuscado.categorias.forEach(producto=> { %>
+                        <li> <%= producto.categoria %> </li>
+                        <% }) %>
+                </ul>
+                 
+                
+            </section>
+
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
                 <div class="div-talles">        

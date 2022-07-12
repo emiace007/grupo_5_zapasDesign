@@ -14,7 +14,8 @@ const controller = {
   
   products: (req, res) => {
     db.Product.findAll()
-      .then(productoInfo => res.render("products", {productos:productoInfo}))
+      .then(productoInfo => res.render("products", {productos:productoInfo}))     
+
 },
 
   productCart: (req, res) => res.render("productCart"),
@@ -97,10 +98,10 @@ const controller = {
   },
   
   //  >>>>>>>>>>>> CREACIÓN PRODUCTO EN BASE DE DATOS
-  createProduct: (req, res) => {
+  createProduct: async (req, res) => {
     let error = validationResult(req);
     if (error.isEmpty()) {
-     
+
       let talleInput = []
       let talleBody = req.body.talle
       if (typeof talleBody == 'string') {
@@ -112,23 +113,31 @@ const controller = {
       let categoryInput = []
       let categoryBody = req.body.category
       if (typeof categoryBody == 'string') {
-        categoryInput.push(categoryBody)
+        categoryInput.push(Number(categoryBody))
       } else {
         categoryInput = categoryBody
         }
  
-      db.Product.create({
+      const newProduct =  await db.Product.create({
         precio: req.body.price,
         nombre: req.body.nombreProducto,
         imagen: req.file.filename,
         descripcion: req.body.description,
         brand_id: req.body.marca,
-        categorias: req.body.categoria
-      })   
+      });
       
-      db.Product.addProfile('Size', {})
-        .then(() => res.redirect("/products"));
-      
+      // CATEGORIES
+      const categories = categoryInput;
+      await newProduct.addCategorias(categories)
+
+      // SIZES
+
+      const sizes = categoryInput;
+      await newProduct.addTalle(sizes)
+
+      // res.send(categories)
+    
+      return res.redirect("/products")
       
     } else res.render("create", {error:error.mapped(), old: req.body})
 
