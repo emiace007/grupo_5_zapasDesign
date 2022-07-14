@@ -16,6 +16,10 @@
     </div>
     <span><%= user.nombre %> <%= user.apellido %></span>
     <p class="emailUsuario"> <%= user.email %></p> 
+    
+    <form action="/user/edit" method="get" class = "submit">
+      <button> Editar </button>
+    </form>
     <form action="/user/logout" method="get" class = "submit">
       <button> Log Out </button>
     </form>

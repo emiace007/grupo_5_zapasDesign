@@ -67,6 +67,9 @@ router.post('/register/create', fileUpload.single('imagen'), validacion_registro
 router.get('/perfil',noLogeado, userControllers.perfil)
 router.get('/logout', userControllers.logout)
 
+router.get('/edit',noLogeado, userControllers.edit);
+router.post('/edit/update', fileUpload.single('imagen'), validacion_registro, userControllers.editPost);
+
 module.exports = router;   
 
 
