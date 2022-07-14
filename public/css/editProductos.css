@@ -132,7 +132,7 @@ form input{
 }
 
 .login{
-    width: 40%;
+
     font-size: 1rem;
     color: white;
     background-color: var(--gris);
@@ -203,9 +203,9 @@ form input{
 
 
 @media (min-width: 480px){
-    .login{
+    /* .login{
         width: 25%;
-    }
+    } */
     /* CHECKBOX */
     .contenedor-de-categorias{
         width: 40%;

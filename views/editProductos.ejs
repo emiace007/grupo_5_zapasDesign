@@ -20,124 +20,43 @@
         
         <form action="/products/<%= producto.id %>/editProducts?_method=PUT" method="POST" enctype="multipart/form-data">
             <h3>Producto:</h3>
-            <input type="text" list="browsers" name="nombreProducto" value="<%= producto.nombreProducto %>">
+            <input type="text" list="browsers" name="nombreProducto" value="<%= producto.nombre %>">
                               
             <h3>Marca:</h3>
-            <input type="text" name="marca" value="<%= producto.marca %>" >
+            <select name="marca" id="">
+                <option value="" disabled selected>- Seleccione la marca - </option>
+                    <% marcas.forEach(marca => { %>
+                    <option value="<%= marca.id %>"><%= marca.marcas %></option>
+                    <% }); %>
+            </select>
 
             <h3>Categoria:</h3>
             <div class="contenedor-de-categorias">
                 <div class="categoria">
-                    <input type="checkbox" name="category" value="hombre" id="hombreId" 
-
-                    <% if(producto.category.includes('hombre')){ %>
-                        <%= 'checked' %> 
-                     <% } %> > 
-
-                     <label> Hombre </label>
-                </div>
-                <div class="categoria">
-                    <input type="checkbox" name="category" value="mujer" id="mujerId"
-
-                     <% if(producto.category.includes('mujer')){ %>
-                        <%= 'checked' %> 
-                     <% } %> >  
-
-                     <label> Mujer </label>
-                </div>
-                <div class="categoria">
-                    <input type="checkbox" name="category" value="deportes" id="deportesId" 
-
-                    <% if(producto.category.includes('deportes')){ %>
-                        <%= 'checked' %> 
-                     <% } %> >  
-
-                     <label> Deportes </label>
-                </div>
-                <div class="categoria">
-                    <input type="checkbox" name="category" value="coleccion" id="coleccionId" 
-
-                    <% if(producto.category.includes('coleccion')){ %>
-                        <%= 'checked' %> 
-                     <% } %> > 
-
-                     <label> Coleccion </label>
-                </div>
+                    <% categorias.forEach(element => {%>
+                        <input type="checkbox" name="category" value="<%=element.id %>" id="categoria" >
+                        <label for="categoria"><%- element.categoria %></label>
+                    <% }) %> 
                     
-            </div>
-            
+                </div>
+                          
             <h3>Descripción:</h3>
-            <textarea name="description" class="descripcion" type="textarea" ><%= producto.description %></textarea>
+            <textarea name="description" class="descripcion" type="textarea" ><%= producto.descripcion %></textarea>
             
             <h3>Talle:</h3>
+            
             <div class="div-talles" name="talle">
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="38" id="talle38" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('38')){ %>
-                       <%= 'checked' %> 
-                    <% } %> >
-                    
-                    <label class="boton-talle" for="talle38">38</label>
-                </div>
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="39" id="talle39" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('39')){ %>
-                        <%= 'checked' %> 
-                        <% } %> >
-                    
-                        <label class="boton-talle" for="talle39">39</label>
-                </div>
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="40" id="talle40" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('40')){ %>
-                        <%= 'checked' %> 
-                        <% } %> >
-                    
-                        <label class="boton-talle" for="talle40">40</label>
-                </div>
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="41" id="talle41" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('41')){ %>
-                        <%= 'checked' %> 
-                        <% } %> > 
-                    
-                        <label class="boton-talle" for="talle41">41</label>
-                </div>
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="42" id="talle42" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('42')){ %>
-                        <%= 'checked' %> 
-                        <% } %> >
-                    
-                        <label class="boton-talle" for="talle42">42</label>
-                </div>
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="43" id="talle43" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('43')){ %>
-                        <%= 'checked' %> 
-                        <% } %> > 
-                    
-                        <label class="boton-talle" for="talle43">43</label>
-                </div>
-                <div class="div-check-talle">
-                    <input class="check-talle" type="checkbox" value="44" id="talle44" name="talle" hidden 
-                    
-                    <% if(producto.talle.includes('44')){ %>
-                        <%= 'checked' %> 
-                        <% } %> >
-                    
-                        <label class="boton-talle" for="talle44">44</label>
-                </div>
+                <% talles.forEach(element => {%>
+                    <div class="div-check-talle">
+                        <input class="check-talle" type="checkbox" value="<%-element.id%>" id="talleLabel" name="talle" >                        
+                        <label class="boton-talle" for="talleLabel"><%- element.talle%></label>
+                    </div>
+                <% }) %>
             </div>
             
+            
             <h3>Precio:</h3>
-            <input type="number" name="price" value="<%= producto.price.toString() %>">
+            <input type="number" name="price" value="<%= producto.precio.toString() %>">
             
             <div class="modificar-cargar">
                 <label for="files" class="login">Cargar imagen</label>

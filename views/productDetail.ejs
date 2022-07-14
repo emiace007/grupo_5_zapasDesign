@@ -12,39 +12,32 @@
     <main>
         <img class="imagen-producto" src="/static/images/productos/<%= productoBuscado.imagen%>" alt="imagen producto">
         <div class="info-producto">
-<<<<<<< HEAD
             <h1 class="nombre-producto"><%= productoBuscado.nombre%></h1>
             <p class="marca-precio">$<%= productoBuscado.precio %></p>
             <p class="descripcion"><%= productoBuscado.descripcion %></p>
 
-            <section class="section-categoria">
-                
-                <ul>
-                        <% productoBuscado.categorias.forEach(producto=> { %>
-                        <li> <%= producto.categoria %> </li>
-                        <% }) %>
-                </ul>
-                 
-                
+
+            
+
+            <section class="section-talles">
+                <p class="titulo-talles">Categorias:</p>
+                <div class="div-talles">        
+                    <% productoBuscado.categorias.forEach(producto=> { %>
+                    <div class="div-radio-talle">
+                        <input class="radio-talle" type="radio" value="<%= producto.categoria %>" id="talle<%= producto.categoria%>" name="categorias" hidden>
+                        <label class="boton-talle" for="categorias<%= producto.categoria%>"><%= producto.categoria%></label>
+                    </div>
+                    <% }) %>
+                </div>
             </section>
-=======
-            <h1 class="nombre-producto"><%= productoBuscado.nombreProducto%></h1>
-            <p class="marca-precio">$<%= productoBuscado.precio %></p>
-            <p class="descripcion"><%= productoBuscado.descripcion %></p>
->>>>>>> 2296d094b81c6d469e7d126a6b321fc51a28885b
 
             <section class="section-talles">
                 <p class="titulo-talles">Talles:</p>
                 <div class="div-talles">        
                     <% productoBuscado.talle.forEach(producto=> { %>
                     <div class="div-radio-talle">
-<<<<<<< HEAD
                         <input class="radio-talle" type="radio" value="<%= producto.talle %>" id="talle<%= producto.talle %>" name="talle" hidden>
                         <label class="boton-talle" for="talle<%= producto.talle %>"><%= producto.talle %></label>
-=======
-                        <input class="radio-talle" type="radio" value="<%= talle.dataValues.talle %>" id="talle<%= talle.dataValues.talle %>" name="talle" hidden>
-                        <label class="boton-talle" for="talle<%= talle.dataValues.talle %>"><%= talle.dataValues.talle %></label>
->>>>>>> 2296d094b81c6d469e7d126a6b321fc51a28885b
                     </div>
                     <% }) %>
                 </div>
