@@ -55,6 +55,21 @@ const validacion_registro = [
       .withMessage("Debe contener minimo 5 caracteres"),
 ]
 
+const validacion_edit = [
+    body("nombre")
+      .notEmpty()
+      .withMessage("El campo nombre es obligatorio"),
+    body("apellido")
+      .notEmpty()
+      .withMessage("El campo apellido es obligatorio"),
+    body("email")
+      .notEmpty()
+      .withMessage("El campo email es obligatorio")
+      .bail()
+      .isEmail()
+      .withMessage("El email debe ser valido"),
+]
+
 // >>>>> Rutas 
 
 // router.get('/', userControllers.users); //products
@@ -67,8 +82,9 @@ router.post('/register/create', fileUpload.single('imagen'), validacion_registro
 router.get('/perfil',noLogeado, userControllers.perfil)
 router.get('/logout', userControllers.logout)
 
-router.get('/edit',noLogeado, userControllers.edit);
-router.post('/edit/update', fileUpload.single('imagen'), validacion_registro, userControllers.editPost);
+router.get('/edit/:id',noLogeado, userControllers.edit);
+// Actualiza perfectamente pero hay que cerrar sesion y volver a iniciar.
+router.post('/edit/update/:id', fileUpload.single('imagen'), validacion_edit, userControllers.editPost);
 
 module.exports = router;   
 

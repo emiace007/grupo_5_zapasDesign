@@ -25,7 +25,9 @@ body{
     font-family: var(--fuente-de-texto);
     font-weight: var(--normal);
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 /* CUERPO */
 
 main{
@@ -52,10 +54,41 @@ main{
     font-size: 1rem;
 }
 
+.boton-productos{
+    width: 100%;
+border: 3px white solid;
+border-radius: 15px;
+transition: all 250ms ease-in-out;
+}
+
+.boton-productos h1{
+padding: 8px;
+text-align: center;
+transition: all 250ms ease-in-out;
+}
+
+a{
+text-decoration: none;
+color: white;
+}
+
+.boton-productos:hover{
+    border: 3px var(--color) solid;
+}
+
+.boton-productos:hover h1{
+    color: var(--color);
+}
+
 
 
 
 /* ARTICULOS */
+.titulo-categorias{
+width: 100%;
+text-align: center;
+color: white;
+}
 
 .section-articulos{
     margin: auto;
@@ -107,6 +140,7 @@ article img:hover{
 
 
 
+
 @media (min-width: 480px) {
 
     main{
@@ -128,4 +162,9 @@ article img:hover{
         font-size: 1rem;
     }
 
+}
+
+.arrow a{
+    text-decoration: none;
+    color: white;
 }

@@ -12,15 +12,25 @@
 
     <main>
         <section class="section-descripcion">
+            <a href="/products">
+             <div class="boton-productos">
+                    <h1>TODOS NUESTROS PRODUCTOS</h1>
+                </div>
+             </a>
             <p>
                 Breve descripcion de la imagen. Esto es Zapas Design. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <i class="fas fa-angle-double-down fa-2x"></i>
+            <div class="arrow">
+                <a href="#categorias">
+                    <i class="fas fa-angle-double-down fa-2x"></i>
+                </a>
+            </div>
         </section>
 
-        
-        <section class="section-articulos">
-
+        <div class="titulo-categorias">
+            <h1>NUESTRAS CATEGORIAS</h1>
+        </div>
+        <section id="categorias" class="section-articulos">
             <article class="hombre">  
                     <a href="#" class="hombre-filtro"><img src="static/images/index/foto-modelo.jpg" alt="modelo-hombre"></a>
                 <div class="titulo-articulo"> 
@@ -48,13 +58,7 @@
                     <h3>COLECCIÓN</h3> 
                 </div> 
             </article>      
-           
-            <article class="todos">  
-                <a href="/products" class="coleccion-filtro"><img src="static/images/index/foto-modelo.jpg" alt="modelo-coleccion"></a>
-                <div class="titulo-articulo"> 
-                    <h3>TODOS</h3> 
-                </div> 
-            </article>      
+                
 
          </section>
     </main>

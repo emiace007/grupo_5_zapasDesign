@@ -140,20 +140,16 @@ const controller = {
   
       if (errors.isEmpty())  {
 
-        db.Users.update( {
-          nombre: req.body.nombre,
-          apellido: req.body.apellido,
-          imagen: image,
+         db.Users.update({
+          ...req.body,
+          imagen: image
         }, {
-          where: {id:req.session.usuarioLogiado.id}
+          where: {id:req.params.id}
         }).then(()=>{
-          res.redirect("/user/perfil");
-        })
-        
-         
-  
+          return res.redirect("/user/perfil");
+        })                
       } else {
-        res.render("edit", {error: errors.mapped()});
+        return res.render("edit", {error: errors.mapped()});
       }
 
       // let userInDb = await db.Users.findOne({
@@ -170,7 +166,6 @@ const controller = {
       //     }
       //   )};
     },
-
 };
 
 module.exports = controller;

@@ -14,7 +14,7 @@
         <h1>EDITAR PERFIL</h1>
         
 <!-- NOMBRE -->
-        <form action="/user/edit/update" method="POST" enctype="multipart/form-data">
+        <form action="/user/edit/update/<%= user.id %> " method="POST" enctype="multipart/form-data">
             <div class="email-password">
                 <input type="text" name="nombre" class="placeholder" value=<%= user.nombre %>>
                 <% if (locals.error && error.nombre){ %>
@@ -45,9 +45,7 @@
                 <label for="files" class="login">Cargar imagen</label>
                 <input id="files" style="visibility:hidden;" type="file" name="imagen">
             </div>
-            <% if (locals.error && error.imagen){ %>
-                <p class="error"> <%= error.imagen.msg %> </p>
-            <% } %>
+
 <!-- BOTON -->
             <div class="login-register">
                 <button class="login" class="placeholder" type="submit">ACTUALIZAR</button>
