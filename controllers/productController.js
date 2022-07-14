@@ -164,7 +164,7 @@ const controller = {
   createView: async (req, res) => {
     const marcas = await db.Brand.findAll()
     const categorias  = await db.Category.findAll()
-
+    
     return  res.render("create", {allBrands:marcas, allCategories: categorias})
      
     }

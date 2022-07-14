@@ -1,0 +1,60 @@
+<%- include('./partials/head', {
+    css:"register", 
+    header:"headerWhite", 
+    footer: "footerWhite",
+    title: "Formulario Registro"
+} )%>
+
+
+<body>
+<%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design-white.svg"}) %>
+
+    <main>
+    <section class="formulario">
+        <h1>EDITAR PERFIL</h1>
+        
+<!-- NOMBRE -->
+        <form action="/user/edit/update/<%= user.id %> " method="POST" enctype="multipart/form-data">
+            <div class="email-password">
+                <input type="text" name="nombre" class="placeholder" value=<%= user.nombre %>>
+                <% if (locals.error && error.nombre){ %>
+                    <p class="error"> <%= error.nombre.msg %> </p>
+                <% } %> 
+
+            </div>
+<!-- APELLIDO -->
+            <div class="email-password">
+                <input type="text" name="apellido" class="placeholder" value=<%= user.apellido %>>
+                <% if (locals.error && error.apellido){ %>
+                    <p class="error"> <%= error.apellido.msg %> </p>
+                <% } %>
+            </div>
+<!-- EMAIL -->
+            <div class="email-password">
+                <input type="text" name="email" placeholder="Email" class="placeholder" value=<%= user.email %>>
+                <% if (locals.error && error.email){ %>
+                    <p class="error"> <%= error.email.msg %> </p>
+                <% } %>
+                <% if (locals.error && error.emailRepetido){ %>
+                    <p class="error"> <%= error.emailRepetido.msg %> </p>
+                <% } %>
+            </div>
+<!-- IMAGEN -->
+
+            <div class="email-password cargarImagen"> 
+                <label for="files" class="login">Cargar imagen</label>
+                <input id="files" style="visibility:hidden;" type="file" name="imagen">
+            </div>
+
+<!-- BOTON -->
+            <div class="login-register">
+                <button class="login" class="placeholder" type="submit">ACTUALIZAR</button>
+            </div>
+            
+        </form>
+        </main>
+    </section>
+    
+    <%- include('./partials/footer') %>
+</body>
+</html>

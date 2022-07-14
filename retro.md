@@ -3,12 +3,15 @@ Retrospectiva Sprint 1
 1. Comenzar a hacer?
 
 * Alinear la forma en que cada uno esta haciendo el desarrollo, de tal manera que estemos alineados en temas de diseño de componentes que son transversales a todas las paginas.
-* Organizar con mayor frecuencia reuniones para una puesta en común.
+* Cordinar las tareas de trabajo.
+
 
 2. Hacer más?
 
 * Revisión del código que hacemos entre nosotros.
 * Comenzar a hacer el tablero y tener la responsabilidad individual de completarlo con dudas, respuestas a los compañeros y más.
+* Comenzar a poner las tareas realizadas y las que no se pudieron hacer en el tablero.
+
 
 
 3. Continuar haciendo?

@@ -4,16 +4,21 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
 //DATABASE
+const db = require('../database/models');
 const fs = require("fs");
 const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const user = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 // Para el login estamos utilizando la funcion findPk que hizo Gasty y esta en models, es temporal y se va a reemplazar cuandoconectemos con la base de dato con sequsalize
+
 const controller = {
   login: (req, res) => res.render("login", {emailRecordado: req.cookies.emailRecordado, passwordRecordada: req.cookies.passwordRecordada }),
 
-  loginPost: (req, res) => {
-	let usuarioALogiarse = usersFunctions.findAlgo('email', req.body.email)
+  loginPost: async (req, res) => {
+  let usuarioALogiarse = await db.Users.findOne({
+    where: {email: req.body.email} 
+  })
+
 
 	if (usuarioALogiarse) {
 		let passwordOk = bcrypt.compareSync(req.body.password, usuarioALogiarse.password)
@@ -55,7 +60,8 @@ const controller = {
   },
 
   register: (req, res) => res.render("register"),
-  registerPost: (req, res) => {
+
+  registerPost: async (req, res) => {
     let errors = validationResult(req);
   
     // Validación si hay un correo existente
@@ -66,7 +72,11 @@ const controller = {
       image = "userDefault.png";
     }
 
-    let userInDb = usersFunctions.findAlgo('email', req.body.email);
+
+    let userInDb = await db.Users.findOne({
+      where: {email: req.body.email} 
+    })
+
     if (userInDb){
         return res.render("register", { 
           error:{
@@ -77,21 +87,22 @@ const controller = {
         }
       )};
 
-    if (errors.isEmpty()) {
+    if (errors.isEmpty())  {
       let pass = req.body.password;
-      let newUser = {
+
+      await db.Users.create( {
         ...req.body,
         imagen: image,
         password: bcrypt.hashSync(pass, 12),
-      };
-      usersFunctions.create(newUser);
+      });
 
-      res.redirect("/user/login");
+      return res.redirect("/user/login");
+
     } else {
       res.render("register", { error: errors.mapped(), old: req.body });
     }
 
-    console.log(req.file.filename);
+    // console.log(req.file.filename);
   },
 
   perfil: (req, res) => {
@@ -110,7 +121,58 @@ const controller = {
     res.redirect("/user/login");
   },
 
+  edit: (req, res) => {
+    res.render('edit', {
+      user: req.session.usuarioLogiado
+    })
+    },
 
+  editPost:  async (req, res) => {
+      let errors = validationResult(req);
+      
+      // Validación si hay un correo existente
+      
+      if (req.file != undefined) {
+        image = req.file.filename;
+      } else {
+        image = "userDefault.png";
+      }
+  
+      if (errors.isEmpty())  {
+
+         await db.Users.update({
+          ...req.body,
+          imagen: image
+        }, {
+          where: {id:req.params.id}
+        })
+        
+          let userUpdate = await db.Users.findOne({
+            where: {id:req.params.id} 
+          })
+          
+          req.session.usuarioLogiado = userUpdate
+        
+          return res.redirect("/user/perfil");
+                      
+      } else {
+        return res.render("edit", {error: errors.mapped()});
+      }
+
+      // let userInDb = await db.Users.findOne({
+      //   where: {email: req.body.email} 
+      // })
+  
+      // if (userInDb != req.session.usuarioLogiado.email){
+      //     return res.render("edit", { 
+      //       error:{
+      //         emailRepetido:{
+      //           msg: "Este email ya se encuentra registrado"
+      //         }	},
+      //         old: req.body
+      //     }
+      //   )};
+    },
 };
 
 module.exports = controller;
