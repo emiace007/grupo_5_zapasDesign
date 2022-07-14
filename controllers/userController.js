@@ -127,7 +127,7 @@ const controller = {
     })
     },
 
-  editPost:  (req, res) => {
+  editPost:  async (req, res) => {
       let errors = validationResult(req);
       
       // Validación si hay un correo existente
@@ -140,14 +140,21 @@ const controller = {
   
       if (errors.isEmpty())  {
 
-         db.Users.update({
+         await db.Users.update({
           ...req.body,
           imagen: image
         }, {
           where: {id:req.params.id}
-        }).then(()=>{
+        })
+        
+          let userUpdate = await db.Users.findOne({
+            where: {id:req.params.id} 
+          })
+          
+          req.session.usuarioLogiado = userUpdate
+        
           return res.redirect("/user/perfil");
-        })                
+                      
       } else {
         return res.render("edit", {error: errors.mapped()});
       }
