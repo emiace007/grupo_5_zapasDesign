@@ -1,14 +1,13 @@
 const fs = require('fs')
 const path = require('path');
-const productFunctions = require('../models/Products');
+// const productFunctions = require('../models/Products');
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
+
 // const { Association } = require('sequelize/types');
 
-
-const productsFilePath = path.join(__dirname, '../data/productos.json');
-
-const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const productsFilePath = path.join(__dirname, '../data/productos.json');
+// const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
   
@@ -167,7 +166,21 @@ const controller = {
     
     return  res.render("create", {allBrands:marcas, allCategories: categorias})
      
-    }
+    },
+
+  searchProduct: async (req,res) =>{
+    // const {Op} = require("sequelize");
+    const Op = db.Sequelize.Op;
+
+    let search = await db.Product.findAll ({
+      where: {
+        nombre:{[Op.like]: `%${req.body.buscar}%`}
+      }
+    })
+
+    console.log(search);
+    return res.render('products',{productos:search},)
+  }
 
 };
 

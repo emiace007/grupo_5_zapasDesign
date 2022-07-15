@@ -12,7 +12,15 @@
     <main>
 
         <h1>LISTA PRODUCTOS</h1>
-        
+
+    <div class="buscar">
+        <form action="/products/search" method="POST">
+        <input name="buscar" type="text" placeholder="¿Qué desea buscar?">    
+            <button type="submit">Buscar</button>
+        </form>
+    </div>        
+
+
         <div class="div-listas">
 
             <%if ( user ) {%>

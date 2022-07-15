@@ -73,4 +73,7 @@ router.put('/:idProduct/editProducts',fileUpload.single('imagenActualizada'),val
 
 router.delete('/:idProduct', productController.deleteProduct); //eliminar
 
+router.post('/search', productController.searchProduct)
+
+
 module.exports = router;   

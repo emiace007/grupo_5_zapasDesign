@@ -34,6 +34,27 @@ body{
 h1{
     text-align: center;
 }
+.buscar{
+width: 100%;
+text-align: center;
+}
+
+.buscar input{
+    height: 40px;
+}
+
+.buscar button{
+    height: 40px;
+    color: white;
+    background-color: var(--gris);
+    border-radius: 10px;
+    transition: all 250ms ease-in-out;
+}
+
+.buscar button:hover{
+    color: var(--gris);
+    background-color: var(--color);
+}
 
 .div-listas{
     flex-direction: flex;
