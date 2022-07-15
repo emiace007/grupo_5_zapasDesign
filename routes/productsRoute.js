@@ -36,7 +36,7 @@ const validacion = [
   body("price")
     .notEmpty()
     .withMessage("Debes agregar un precio"),
-  body("category")
+  body("categoria")
     .notEmpty()
     .withMessage("Debes seleccionar por lo menos una opcion de categoria"),
   body("marca")
@@ -56,6 +56,26 @@ const validacion = [
     return true;
   }),
 ];
+const validacionEdit = [
+  body("nombreProducto")
+    .notEmpty()
+    .withMessage("Debes agregar un nombre de producto"),
+  body("price")
+    .notEmpty()
+    .withMessage("Debes agregar un precio"),
+  body("category")
+    .notEmpty()
+    .withMessage("Debes seleccionar por lo menos una opcion de categoria"),
+  body("marca")
+    .notEmpty()
+    .withMessage("Debes asignar la marca de tu producto"),
+  body("talle")
+    .notEmpty()
+    .withMessage("Debes seleccionar por lo menos un talle"),
+  body("description")
+    .notEmpty()
+    .withMessage("Debes agregar una breve descripcion"),
+];
 
 // >>>>> Rutas 
 
@@ -69,7 +89,7 @@ router.post('/create', fileUpload.single('imagen'),validacion, productController
 router.get('/:idProduct', productController.productDetail); //products/:id  detalle
 
 router.get('/:idProduct/editProducts', productController.editProductos); //products/:id/edit
-router.put('/:idProduct/editProducts',fileUpload.single('imagenActualizada'),validacion, productController.edit); //editar
+router.put('/:idProduct/editProducts',fileUpload.single('imagenActualizada'),validacionEdit, productController.edit); //editar
 
 router.delete('/:idProduct', productController.deleteProduct); //eliminar
 

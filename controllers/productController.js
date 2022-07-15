@@ -41,61 +41,76 @@ const controller = {
       {association: 'categorias'},
       {association: 'talle'}
     ]})
-    // return res.send([categorias,  productoBuscado])
-    return res.render("editProductos", {producto:productoBuscado, categorias: categorias, talles: talles, marcas: marcas})
+
+    res.render("editProductos", {producto:productoBuscado, categorias: categorias, talles: talles, marcas: marcas})
   },
   
 
   // EDITAR EL PRODUCTO >>>>>>>>>>>>><<
   edit: async (req, res) => {
+      
     let {idProduct} = req.params;
     let image;
+
+    const categorias = await db.Category.findAll();
+    const talles = await db.Size.findAll();
+    const marcas = await db.Brand.findAll();
+    const productoBuscado = await db.Product.findByPk(idProduct,  {include: [
+      {association: 'marca'},
+      {association: 'categorias'},
+      {association: 'talle'}
+    ]});
     
-    // let error = validationResult(req);
-    // HACER ERRORS
- 
+    let error = validationResult(req);
+    if (error.isEmpty()) {
    
-    if(req.file != undefined) {
-			image = req.file.filename
-		} else {
-      image = 'zapasDefault.png'
-    }
-
-
-    let talleInput = []
-    let talleBody = req.body.talle
-    if (typeof talleBody == 'string') {
-      talleInput.push(talleBody)
-    } else {
-      talleInput = talleBody
+      if(req.file != undefined) {
+        image = req.file.filename
+      } else {
+        image = 'zapas-prueba.jpg'
       }
+  
+  
+      let talleInput = []
+      let talleBody = req.body.talle
+      if (typeof talleBody == 'string') {
+        talleInput.push(talleBody)
+      } else {
+        talleInput = talleBody
+        }
+  
+      let categoryInput = []
+      let categoryBody = req.body.category
+      if (typeof categoryBody == 'string') {
+        categoryInput.push((categoryBody))
+      } else {
+        categoryInput = (categoryBody)
+        }
+  
+  
+      await db.Product.update({
+        precio: req.body.price,
+        nombre: req.body.nombreProducto,
+        imagen: image,
+        descripcion: req.body.description,
+        brand_id: req.body.marca,
+      }, 
+      {where: {id: idProduct}}
+        );      
+  
+      const editedProduct = await db.Product.findByPk(idProduct)
+        // Set permite pasar datos a la tabla intermedia, reemplaza lo datos actuales por el input que se pase
+        await editedProduct.setCategorias(categoryInput)
+        await editedProduct.setTalle(talleInput)
+      
+      // return res.send(req.body.talle)
+      return res.redirect(`/products/${idProduct}`);
 
-    let categoryInput = []
-    let categoryBody = req.body.category
-    if (typeof categoryBody == 'string') {
-      categoryInput.push((categoryBody))
-    } else {
-      categoryInput = (categoryBody)
-      }
+    } else res.render("editProductos", {producto: productoBuscado, categorias: categorias, talles: talles, marcas: marcas, error:error.mapped()})
 
-
-    await db.Product.update({
-      precio: req.body.price,
-      nombre: req.body.nombreProducto,
-      imagen: image,
-      descripcion: req.body.description,
-      brand_id: req.body.marca,
-    }, 
-    {where: {id: idProduct}}
-      );      
-
-    const editedProduct = await db.Product.findByPk(idProduct)
-      // Set permite pasar datos a la tabla intermedia, reemplaza lo datos actuales por el input que se pase
-      await editedProduct.setCategorias(categoryInput)
-      await editedProduct.setTalle(talleInput)
+   
     
-    // return res.send(req.body.talle)
-    return res.redirect(`/products/${idProduct}`);
+
       
   },
 
@@ -116,6 +131,11 @@ const controller = {
   createProduct: async (req, res) => {
     let error = validationResult(req);
     if (error.isEmpty()) {
+      if(req.file != undefined) {
+        image = req.file.filename
+      } else {
+        image = 'zapas-prueba.jpg'
+      }
 
       let talleInput = []
       let talleBody = req.body.talle
@@ -136,7 +156,7 @@ const controller = {
       const newProduct =  await db.Product.create({
         precio: req.body.price,
         nombre: req.body.nombreProducto,
-        imagen: req.file.filename,
+        imagen: image,
         descripcion: req.body.description,
         brand_id: req.body.marca,
       });

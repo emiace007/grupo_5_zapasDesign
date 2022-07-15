@@ -17,11 +17,16 @@
             </section>
     <section class="formulario">
         <h1>Editar Producto</h1>
+
         
-        <form action="/products/<%= producto.id %>/editProducts?_method=PUT" method="POST" enctype="multipart/form-data">
+        
+        <form action="/products/<%=producto.id %>/editProducts?_method=PUT" method="POST" enctype="multipart/form-data">
             <h3>Producto:</h3>
             <input type="text" list="browsers" name="nombreProducto" value="<%= producto.nombre %>">
-                              
+            <% if (locals.error && error.nombreProducto){ %>
+                <p class="error"> <%= error.nombreProducto.msg %> </p>
+            <% } %> 
+
             <h3>Marca:</h3>
             <select name="marca" id="">
                 <option value="" disabled selected>- Seleccione la marca - </option>
@@ -29,20 +34,28 @@
                     <option value="<%= marca.id %>"><%= marca.marcas %></option>
                     <% }); %>
             </select>
-
+            <% if (locals.error && error.marca){ %>
+                <p class="error"> <%= error.marca.msg %> </p>
+            <% } %> 
+            
             <h3>Categoria:</h3>
             <div class="contenedor-de-categorias">
                 <div class="categoria">
                     <% categorias.forEach(element => {%>
                         <input type="checkbox" name="category" value="<%=element.id %>" id="categoria" >
                         <label for="categoria"><%- element.categoria %></label>
-                    <% }) %> 
-                    
+                    <% }) %>      
                 </div>
+                <% if (locals.error && error.category){ %>
+                    <p class="error"> <%= error.category.msg %> </p>
+                <% } %>
                           
             <h3>Descripción:</h3>
             <textarea name="description" class="descripcion" type="textarea" ><%= producto.descripcion %></textarea>
-            
+            <% if (locals.error && error.description){ %>
+                <p class="error"> <%= error.description.msg %> </p>
+            <% } %>
+
             <h3>Talle:</h3>
             
             <div class="div-talles" name="talle">
@@ -53,11 +66,16 @@
                     </div>
                 <% }) %>
             </div>
-            
+             <% if (locals.error && error.talle){ %>
+                <p class="error"> <%= error.talle.msg %> </p>
+            <% } %>
             
             <h3>Precio:</h3>
             <input type="number" name="price" value="<%= producto.precio.toString() %>">
-            
+            <% if (locals.error && error.price){ %>
+                <p class="error"> <%= error.price.msg %> </p>
+            <% } %>
+
             <div class="modificar-cargar">
                 <label for="files" class="login">Cargar imagen</label>
                 <input id="files" style="visibility: hidden;" type="file" name="imagenActualizada">
