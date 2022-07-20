@@ -49,10 +49,11 @@ const controller = {
     productoBuscado.talle.forEach(element => {
       tallesProducto.push(element.id)    
     });
+    const image = 'zapas-prueba.jpg'
 
     // return res.send(productoBuscado)
 
-    res.render("editProductos", {producto:productoBuscado, categorias: categorias, talles: talles, marcas: marcas, categoriasProducto, tallesProducto})
+    res.render("editProductos", {producto:productoBuscado, categorias: categorias, talles: talles, marcas: marcas, categoriasProducto, tallesProducto, image })
   },
   
 
@@ -70,6 +71,15 @@ const controller = {
       {association: 'categorias'},
       {association: 'talle'}
     ]});
+    
+    const categoriasProducto = [];
+    productoBuscado.categorias.forEach(element => {
+      categoriasProducto.push(element.id)    
+    });
+    const tallesProducto = [];
+    productoBuscado.talle.forEach(element => {
+      tallesProducto.push(element.id)    
+    });
     
     let error = validationResult(req);
     if (error.isEmpty()) {
@@ -116,7 +126,7 @@ const controller = {
       // return res.send(req.body.talle)
       return res.redirect(`/products/${idProduct}`);
 
-    } else res.render("editProductos", {producto: productoBuscado, categorias: categorias, talles: talles, marcas: marcas, error:error.mapped()})
+    } else res.render("editProductos", {producto: productoBuscado, categorias: categorias, talles: talles, marcas: marcas, categoriasProducto, tallesProducto, error:error.mapped()})
 
    
     
