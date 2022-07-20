@@ -2,10 +2,11 @@
     css:"register", 
     header:"headerWhite", 
     footer: "footerWhite",
-    title: "Formulario Registro"
+    title: "Formulario Registro",
+
 } )%>
 
-
+<script src="/static/js/register.js"></script>
 <body>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design-white.svg"}) %>
 
@@ -14,21 +15,22 @@
         <h1>REGISTRARSE</h1>
         
         <form action="/user/register/create" method="POST" enctype="multipart/form-data">
+            <ul class="errores error"></ul>
             <div class="email-password">
-                <input type="text" name="nombre" placeholder="Nombre"  class="placeholder" value="<%= locals.old && old.nombre ? old.nombre : ''%>">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre"  class="placeholder" value="<%= locals.old && old.nombre ? old.nombre : ''%>">
                 <% if (locals.error && error.nombre){ %>
                     <p class="error"> <%= error.nombre.msg %> </p>
                 <% } %> 
 
             </div>
             <div class="email-password">
-                <input type="text" name="apellido" placeholder="Apellido" class="placeholder" value="<%= locals.old && old.apellido ? old.apellido : ''%>">
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="placeholder" value="<%= locals.old && old.apellido ? old.apellido : ''%>">
                 <% if (locals.error && error.apellido){ %>
                     <p class="error"> <%= error.apellido.msg %> </p>
                 <% } %>
             </div>
             <div class="email-password">
-                <input type="text" name="email" placeholder="Email" class="placeholder" value="<%= locals.old && old.email ? old.email : ''%>">
+                <input type="text" name="email" placeholder="Email" id="email" class="placeholder" value="<%= locals.old && old.email ? old.email : ''%>">
                 <% if (locals.error && error.email){ %>
                     <p class="error"> <%= error.email.msg %> </p>
                 <% } %>
@@ -37,7 +39,7 @@
                 <% } %>
             </div>
             <div class="email-password">
-                <input type="password" name="password" placeholder="Contraseña" class="placeholder">
+                <input type="password" name="password" id="password" placeholder="Contraseña" class="placeholder">
                 <% if (locals.error && error.password){ %>
                     <p class="error"> <%= error.password.msg %> </p>
                 <% } %>
@@ -46,14 +48,14 @@
 
             <div class="email-password cargarImagen"> 
                 <label for="files" class="login">Cargar imagen</label>
-                <input id="files" style="visibility:hidden;" type="file" name="imagen">
+                <input id="files" style="visibility:hidden;" type="file" name="imagen" >
             </div>
             <% if (locals.error && error.imagen){ %>
                 <p class="error"> <%= error.imagen.msg %> </p>
             <% } %>
 
             <div class="login-register">
-                <button class="login" class="placeholder" type="submit">REGISTRARSE</button>
+                <button class="login" class="placeholder" type="submit" id="myBtn">REGISTRARSE</button>
             </div>
             
         </form>
@@ -62,4 +64,5 @@
     
     <%- include('./partials/footer') %>
 </body>
+
 </html>

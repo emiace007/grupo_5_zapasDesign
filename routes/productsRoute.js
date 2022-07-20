@@ -32,7 +32,9 @@ const fileUpload = multer({storage: storage})
 const validacion = [
   body("nombreProducto")
     .notEmpty()
-    .withMessage("Debes agregar un nombre de producto"),
+    .withMessage("Debes agregar un nombre de producto")
+    .isLength({ min: 5 })
+    .withMessage("Debe contener minimo 5 caracteres"),
   body("price")
     .notEmpty()
     .withMessage("Debes agregar un precio"),
@@ -47,7 +49,9 @@ const validacion = [
     .withMessage("Debes seleccionar por lo menos un talle"),
   body("description")
     .notEmpty()
-    .withMessage("Debes agregar una breve descripcion"),
+    .withMessage("Debes agregar una breve descripcion")
+    .isLength({ min: 20 })
+    .withMessage("Debe contener minimo 20 caracteres"),
   body("image").custom((value, { req }) => {
     let file = req.file;
     if (!file) {

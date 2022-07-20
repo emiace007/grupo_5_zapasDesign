@@ -52,6 +52,9 @@ main section{
 /* FORMULARIO // LOGIN */
 
 
+ul {
+    list-style-type: none;
+}
 
 .formulario h1{
     color: var(--color);

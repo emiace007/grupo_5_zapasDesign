@@ -5,7 +5,7 @@
     title: "editProductos"
 } )%>
 
-
+<script src="/static/js/create.js"></script>
 <body>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
@@ -20,7 +20,7 @@
         
         <form action="/products/create" method="POST" enctype="multipart/form-data">
             <h3>Producto:</h3>
-            <input type="text" list="browsers" name="nombreProducto" value="<%= locals.old && old.nombreProducto ? old.nombreProducto : ''%>">
+            <input type="text" list="browsers" name="nombreProducto" id="nombreProducto" value="<%= locals.old && old.nombreProducto ? old.nombreProducto : ''%>">
             <% if (locals.error && error.nombreProducto){ %>
                 <p class="error"> <%= error.nombreProducto.msg %> </p>
             <% } %> 
@@ -50,7 +50,7 @@
            
 
             <h3>Descripción:</h3>
-            <textarea class="descripcion" type="textarea" name="description" value="<%= locals.old && old.description ? old.description:  ''%>"></textarea>
+            <textarea class="descripcion" type="textarea" name="description" id="description" value="<%= locals.old && old.description ? old.description:  ''%>"></textarea>
             <% if (locals.error && error.description){ %>
                 <p class="error"> <%= error.description.msg %> </p>
             <% } %>

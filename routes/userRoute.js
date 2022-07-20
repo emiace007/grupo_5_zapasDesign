@@ -37,7 +37,9 @@ const fileUpload = multer({storage: storage})
 const validacion_registro = [
     body("nombre")
       .notEmpty()
-      .withMessage("El campo nombre es obligatorio"),
+      .withMessage("El campo nombre es obligatorio")
+      .isLength({ min: 2 })
+      .withMessage("Debe contener minimo 2 caracteres"),
     body("apellido")
       .notEmpty()
       .withMessage("El campo apellido es obligatorio"),
@@ -51,9 +53,18 @@ const validacion_registro = [
       .notEmpty()
       .withMessage("El campo contraseña es obligatorio")
       .bail()
-      .isLength({ min: 5 })
-      .withMessage("Debe contener minimo 5 caracteres"),
+      .isLength({ min: 8 })
+      .withMessage("Debe contener minimo 8 caracteres"),
+    // body("imagen").custom((value, { req }) => {
+    //   let aceptarExtensiones = [ '.jpg', '.jpeg', '.png', '.gif' ]
+    //   let extensionDeMiArchivo = path.extname(file.originalname);
+      
+    //   (!aceptarExtensiones.includes(extensionDeMiArchivo)) 
+    //   })
 ]
+
+
+
 
 const validacion_edit = [
     body("nombre")
