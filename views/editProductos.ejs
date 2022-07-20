@@ -29,9 +29,9 @@
 
             <h3>Marca:</h3>
             <select name="marca" id="">
-                <option value="" disabled selected>- Seleccione la marca - </option>
+                <option value="" >- Seleccione la marca - </option>
                     <% marcas.forEach(marca => { %>
-                    <option value="<%= marca.id %>"><%= marca.marcas %></option>
+                    <option value="<%= marca.id %>" <% if (marca.id === producto.brand_id) {%>  selected  <%}%>  ><%= marca.marcas %></option>
                     <% }); %>
             </select>
             <% if (locals.error && error.marca){ %>
@@ -42,7 +42,10 @@
             <div class="contenedor-de-categorias">
                 <div class="categoria">
                     <% categorias.forEach(element => {%>
-                        <input type="checkbox" name="category" value="<%=element.id %>" id="categoria" >
+                        <input type="checkbox" name="category" value="<%=element.id %>" id="categoria" 
+                        <% if (categoriasProducto.includes(element.id)) { %>
+                            checked >   
+                        <% } %>
                         <label for="categoria"><%- element.categoria %></label>
                     <% }) %>      
                 </div>
@@ -61,7 +64,10 @@
             <div class="div-talles" name="talle">
                 <% talles.forEach(element => {%>
                     <div class="div-check-talle">
-                        <input class="check-talle" type="checkbox" value="<%-element.id%>" id="talleLabel" name="talle" >                        
+                        <input class="check-talle" type="checkbox" value="<%-element.id%>" id="talleLabel" name="talle"
+                        <% if (tallesProducto.includes(element.id)) { %>
+                            checked >   
+                        <% } %>                     
                         <label class="boton-talle" for="talleLabel"><%- element.talle%></label>
                     </div>
                 <% }) %>

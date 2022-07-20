@@ -26,8 +26,8 @@ const controller = {
       {association: 'categorias'},
       {association: 'talle'}
     ]})    
-      // .then(data => res.send(data)) 
-      .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
+      
+    .then(productoBuscado=> res.render("productDetail", {productoBuscado: productoBuscado}))
   }, 
   
   
@@ -41,8 +41,18 @@ const controller = {
       {association: 'categorias'},
       {association: 'talle'}
     ]})
+    const categoriasProducto = [];
+    productoBuscado.categorias.forEach(element => {
+      categoriasProducto.push(element.id)    
+    });
+    const tallesProducto = [];
+    productoBuscado.talle.forEach(element => {
+      tallesProducto.push(element.id)    
+    });
 
-    res.render("editProductos", {producto:productoBuscado, categorias: categorias, talles: talles, marcas: marcas})
+    // return res.send(productoBuscado)
+
+    res.render("editProductos", {producto:productoBuscado, categorias: categorias, talles: talles, marcas: marcas, categoriasProducto, tallesProducto})
   },
   
 
