@@ -8,7 +8,7 @@ window.onload = function() {
         
         let h1 = document.querySelector('h1')
         
-        console.log(imagen.value);
+       
         console.log(nombre);
         
         
@@ -55,7 +55,22 @@ window.onload = function() {
 
             // IMAGEN
            
-           
+            // let fileName = imagen.files[0].name;
+            // let fileArray = fileName.split('.')
+            // let extension = fileArray[1]
+            // let extensionesValidas = [ 'jpg', 'jpeg', 'png', 'gif' ]
+            // let validacion = extensionesValidas.includes(extension)
+            
+            
+
+            // if(fileName == ""){
+            //     error.push("Debes agregar una imagen")
+            // } else if (validacion == false) {
+            //     error.push("Solo se permite archivos .jpg / .jpeg / .png / .gif")
+            // } 
+
+
+
             if (error.length>0){
                 e.preventDefault();
                 document.getElementById("myBtn").disabled = true;
