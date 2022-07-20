@@ -34,14 +34,12 @@ window.onload = function() {
             } else if (apellido.value.length < 2) {
                 error.push("El campo apellido debe tener al menos 2 caracteres")
             } else {
-                password.focus();
+                email.focus();
             }
           
             // EMAIL
             if (email.value == "") {
                 error.push("El campo email es obligatorio")
-            } else if (email.value.length < 2) {
-                error.push("El campo email debe tener al menos 2 caracteres")
             } else {
                 password.focus();
             }
