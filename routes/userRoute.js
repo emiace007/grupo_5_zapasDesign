@@ -55,6 +55,13 @@ const validacion_registro = [
       .bail()
       .isLength({ min: 8 })
       .withMessage("Debe contener minimo 8 caracteres"),
+      body("imagen").custom((value, { req }) => {
+        let file = req.file;
+        if (!file) {
+          throw new Error("Debes incluir una imagen de tu producto");
+        }
+        return true;
+      }),
     // body("imagen").custom((value, { req }) => {
     //   let aceptarExtensiones = [ '.jpg', '.jpeg', '.png', '.gif' ]
     //   let extensionDeMiArchivo = path.extname(file.originalname);
