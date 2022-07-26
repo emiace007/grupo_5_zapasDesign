@@ -54,22 +54,19 @@ window.onload = function() {
             }
 
             // IMAGEN
-           
-            let fileName = imagen.files[0].name;
-            let fileArray = fileName.split('.')
-            let extension = fileArray[1]
-            let extensionesValidas = [ 'jpg', 'jpeg', 'png', 'gif' ]
-            let validacion = extensionesValidas.includes(extension)
             
-            
-
-            if(fileName == ""){
-                error.push("Debes agregar una imagen")
-            } else if (validacion == false) {
-                error.push("Solo se permite archivos .jpg / .jpeg / .png / .gif")
-            } 
-
-
+            if (imagen.files.length == 0) {
+                error.push("Debes agregar una imagen");
+            } else {
+                let fileName = imagen.files[0].name;
+                let fileArray = fileName.split('.');
+                let extension = fileArray[1];
+                let extensionesValidas = ['jpg', 'jpeg', 'png', 'gif'];
+                let validacion = extensionesValidas.includes(extension);
+                if (!validacion) {
+                    error.push("Solo se permiten archivos .jpg / .jpeg / .png / .gid")
+                }
+            }
 
             if (error.length>0){
                 e.preventDefault();
