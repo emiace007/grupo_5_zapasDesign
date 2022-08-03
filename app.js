@@ -44,3 +44,6 @@ app.use("/products", productsRoute);
 
 let userRoute = require("./routes/userRoute");
 app.use("/user", userRoute);
+
+let apiRoute = require("./routes/api");
+app.use("/api", apiRoute);
