@@ -1,7 +1,7 @@
-import React from "react";
+import {React} from "react";
 import "./App.css";
 import Contenedor from "./components/Contenedor";
-// import apiUser from './components/ApiUser';
+import ApiUserCount from './components/ApiUserCount';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Contenedor titulo="Total de productos:" enlace="apiProductosCount" />
       <Contenedor titulo="Total de usuarios:" enlace="apiUsersCount" />
       <Contenedor titulo="Total de categorias:" enlace="apiCategoriasCount" />
+      <ApiUserCount/>
     </div>
   );
 }
