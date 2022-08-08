@@ -37,7 +37,7 @@ const controller = {
   },
 
   products: async (req, res) => {
-    const categoryNames = await db.Category.findAll();
+
     const productos = await db.Product.findAll({
       include: [{ association: "categorias" }],
     });
@@ -57,27 +57,43 @@ const controller = {
         categoria: categorias,
       });
     });
+            
+        
+    countByCategory = {
+      "Deporte": 0,
+      "Mujer": 0,
+      "Hombre": 0,
+      "Coleccion": 0,
+    }
 
-    // 'countByCategory': {deporte: 2}, {coleccion:4}
+    productos.forEach(function (productos) {
+      let categorias = productos.categorias.map((categoria) => {
+        return categoria.categoria;
+      });
 
-    // async function countByCategory() {
-    //   const categoriasDb = await db.Category.findAll({include: [{ association: "categorias" }]})
-    //   const categorias_info = await categoriasDb
-    //   return categorias_info
-    // }
+      categorias.forEach( categoria => {
+        countByCategory[categoria]++;
+      })
 
-    // let countByCategory = () => {
-    //   db.Category.findAll({include: [{ association: "categorias" }]})
-    //   .then((categorias) => {return categorias})
-    // }
+      productosNew.push({
+        id: productos.id,
+        name: productos.nombre,
+        descripcion: productos.descripcion,
+        detail: "users/detail/" + productos.id,
+        categoria: categorias
+      });
+    });
+
 
     let objetoLiteral = {
       count: productos.length,
       products: productosNew,
-      // countByCategory: countByCategory,
+      countByCategory: countByCategory
     };
 
+    
     res.send(objetoLiteral);
+
   },
   productDetail: async (req, res) => {
     let productPk = req.params.id;
@@ -112,6 +128,8 @@ const controller = {
 
     res.send(objetoLiteral);
   },
+
+    
 };
 
 module.exports = controller;
