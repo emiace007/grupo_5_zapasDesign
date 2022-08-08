@@ -27,10 +27,23 @@ const controller = {
 
         let productosNew = [];
 
+        console.log(productos);
+        
+        countByCategory = {
+          "Deporte": 0,
+          "Mujer": 0,
+          "Hombre": 0,
+          "Coleccion": 0,
+        }
+
         productos.forEach(function (productos) {
           let categorias = productos.categorias.map((categoria) => {
             return categoria.categoria;
           });
+
+          categorias.forEach( categoria => {
+            countByCategory[categoria]++;
+          })
 
           productosNew.push({
             id: productos.id,
@@ -42,21 +55,22 @@ const controller = {
         });
 
         // 'countByCategory': {deporte: 2}, {coleccion:4}
-        async function countByCategory() {
+        /* async function countByCategory() {
           const categoriasDb = await db.Category.findAll({include: [{ association: "categorias" }]})
           const categorias_info = await categoriasDb
           return categorias_info
 
-        }
+        } */
+
 
         let objetoLiteral = {
           count: productos.length,
           products: productosNew,
-          // countByCategory: ,
+          countByCategory: countByCategory
         };
 
         
-        res.send(countByCategory());
+        res.send(objetoLiteral);
       }
     ),
 };
