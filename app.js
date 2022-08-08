@@ -9,7 +9,7 @@ const recordarUsuarioMiddleware = require('./middlewares/recordarUsuarioMiddlewa
 
 //Inicio servidor para pruevas de desarrollo
 
-app.listen(3000, () => console.log("Puerto 3000 funcionando correctamente"));
+app.listen(3001, () => console.log("Puerto 3001 funcionando correctamente"));
 
 app.set('view engine', 'ejs')
 

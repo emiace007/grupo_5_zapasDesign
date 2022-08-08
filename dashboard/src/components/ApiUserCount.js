@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 function ApiUserCount() {
   const [informacion, setInformacion] = useState();
 
-  useEffect(() => {
-    const url = "http://localhost:3001/api/users";
+  const url = "http://localhost:3001/api/users";
+  // const url = "https://jsonplaceholder.typicode.com/todos";
 
-    fetch(url)
-      .then((response) => response.json)
-      .then((data) => {
-        setInformacion(data);
-      })
-      .catch((error) => console.error(error));
+  const fetchApis = async () =>{
+    const response = await fetch(url)
+    const apiJSON = await response.json() 
+    setInformacion(apiJSON)
+    console.log(apiJSON);
+  }
+
+  useEffect(() => {
+    fetchApis()
   }, []);
 
   return (
