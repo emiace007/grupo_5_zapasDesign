@@ -38,9 +38,13 @@ const controller = {
 
   products: async (req, res) => {
 
+    const categoriasDB = await db.Category.findAll({})
     const productos = await db.Product.findAll({
       include: [{ association: "categorias" }],
     });
+
+
+    // PRODUCTS
 
     let productosNew = [];
 
@@ -58,7 +62,10 @@ const controller = {
       });
     });
             
-        
+    // COUNT BY CATEGORY
+    
+  
+
     countByCategory = {
       "Deporte": 0,
       "Mujer": 0,
@@ -75,20 +82,15 @@ const controller = {
         countByCategory[categoria]++;
       })
 
-      productosNew.push({
-        id: productos.id,
-        name: productos.nombre,
-        descripcion: productos.descripcion,
-        detail: "users/detail/" + productos.id,
-        categoria: categorias
-      });
+
     });
 
 
     let objetoLiteral = {
       count: productos.length,
       products: productosNew,
-      countByCategory: countByCategory
+      countByCategory: countByCategory,
+      
     };
 
     

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ApiUltimoUser(props) {
+function ApiUltimoUser() {
   const [informacion, setInformacion] = useState([]);
 
   const url = "/api/users";

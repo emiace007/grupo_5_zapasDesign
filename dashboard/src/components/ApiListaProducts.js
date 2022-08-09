@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ApiUltimoProduct() {
+function ApiListaProducts() {
   const [informacion, setInformacion] = useState([]);
 
   const url = "/api/products";
@@ -9,9 +9,11 @@ function ApiUltimoProduct() {
     const response = await fetch(url)
     const apiJSON = await response.json()
     const busqueda = apiJSON.products
-    const ultimoObj = busqueda[Object.keys(busqueda)[Object.keys(busqueda).length - 1]]
-    const name = ultimoObj.name
-    return setInformacion(name)
+    const names = Object.keys(busqueda)
+    // const cantidad = Object.keys(busqueda).forEach(key => {
+    //   return(key, busqueda[key]);
+    // });
+    return setInformacion(busqueda)
   }
 
   useEffect(() => {
@@ -29,9 +31,17 @@ function ApiUltimoProduct() {
 
   return (
     <div>
-      <h3>{informacion}</h3>
+      {!informacion
+        ? "Cargando..."
+        : informacion.map((data) => {
+            return (
+              <div>
+                <h3>{data.name}</h3>
+              </div>
+            )
+          })}
     </div>
   );
 }
 
-export default ApiUltimoProduct;
+export default ApiListaProducts;
