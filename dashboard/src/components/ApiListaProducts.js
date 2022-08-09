@@ -21,7 +21,7 @@ function ApiListaProducts() {
   }, []);
 
   useEffect(() => {
-    console.log('Actualizado');
+    // console.log('Actualizado');
   }, [informacion]);
  
   useEffect(() => {
@@ -36,7 +36,7 @@ function ApiListaProducts() {
         : informacion.map((data) => {
             return (
               <div>
-                <h3>{data.name}</h3>
+                <p>{data.name}</p>
               </div>
             )
           })}

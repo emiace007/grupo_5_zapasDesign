@@ -19,7 +19,7 @@ function ApiUltimoProduct() {
   }, []);
 
   useEffect(() => {
-    console.log('Actualizado');
+    // console.log('Actualizado');
   }, [informacion]);
  
   useEffect(() => {
@@ -29,7 +29,7 @@ function ApiUltimoProduct() {
 
   return (
     <div>
-      <h3>{informacion}</h3>
+      <p>{informacion}</p>
     </div>
   );
 }

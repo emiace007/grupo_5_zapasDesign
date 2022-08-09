@@ -64,7 +64,17 @@ const controller = {
             
     // COUNT BY CATEGORY
     
+    // countByCategory2 = []
   
+    // categoriasDB.forEach((categorias) => {
+    //   let categoriaName = categorias.categoria
+    //   let categoriaCantidad = 0
+
+    //   countByCategory2.push({
+    //     categoria: categoriaName, 
+    //     cantidad: 0
+    //   });
+    // })
 
     countByCategory = {
       "Deporte": 0,
@@ -82,7 +92,6 @@ const controller = {
         countByCategory[categoria]++;
       })
 
-
     });
 
 
@@ -90,7 +99,6 @@ const controller = {
       count: productos.length,
       products: productosNew,
       countByCategory: countByCategory,
-      
     };
 
     

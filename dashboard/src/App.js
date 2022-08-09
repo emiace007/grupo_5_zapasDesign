@@ -14,27 +14,27 @@ function App() {
       <h1>PANEL DE CONTROL</h1>
       <Contenedor
         titulo="Total de productos:"
-        enlace=<ApiCount urlApi="/api/products" />
+        enlace={<ApiCount urlApi="/api/products" />}
       />
       <Contenedor
         titulo="Total de usuarios:"
-        enlace=<ApiCount urlApi="/api/users" />
+        enlace={<ApiCount urlApi="/api/users" />}
       />
-      <Contenedor titulo="Total de categorias:" enlace=<ApiCategoryCount /> />
+      <Contenedor titulo="Total de categorias:" enlace={<ApiCategoryCount />} />
 
       <Contenedor
         titulo="Ultimo producto creado:"
-        enlace=<ApiUltimoProduct />
+        enlace={<ApiUltimoProduct />}
       />
-      <Contenedor titulo="Ultimo usuario creado" enlace=<ApiUltimoUser /> />
+      <Contenedor titulo="Ultimo usuario creado" enlace={<ApiUltimoUser />} />
 
       <Contenedor
         titulo="Panel de categorías con el total de productos de cada una."
-        enlace=<ApiListaCategorias />
+        enlace={<ApiListaCategorias />}
       />
       <Contenedor
         titulo="Panel con el listado de productos."
-        enlace=<ApiListaProducts />
+        enlace={<ApiListaProducts />}
       />
     </div>
   );

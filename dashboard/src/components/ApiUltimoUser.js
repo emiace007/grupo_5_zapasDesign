@@ -19,7 +19,7 @@ function ApiUltimoUser() {
   }, []);
 
   useEffect(() => {
-    console.log('Actualizado');
+    // console.log('Actualizado');
   }, [informacion]);
  
   useEffect(() => {
@@ -29,7 +29,7 @@ function ApiUltimoUser() {
 
   return (
     <div>
-      <h3>{informacion}</h3>
+      <p>{informacion}</p>
     </div>
   );
 }

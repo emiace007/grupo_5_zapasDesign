@@ -16,7 +16,7 @@ function ApiCount(props) {
   }, []);
 
   useEffect(() => {
-    console.log('Actualizado');
+    // console.log('Actualizado');
   }, [informacion]);
  
   useEffect(() => {
@@ -26,7 +26,7 @@ function ApiCount(props) {
 
   return (
     <div>
-      <h3>{informacion.count}</h3>
+      <p>{informacion.count}</p>
       {/* {!informacion
         ? "Cargando..."
         : informacion.map((informacion) => {
