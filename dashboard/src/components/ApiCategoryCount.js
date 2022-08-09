@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-function ApiUserCount() {
+function ApiCount() {
   const [informacion, setInformacion] = useState([]);
 
-  const url = "/api/users";
+  const url = "/api/products";
 
   const fetchApis = async () =>{
     const response = await fetch(url)
@@ -13,6 +13,7 @@ function ApiUserCount() {
 
   useEffect(() => {
     fetchApis()
+    console.log(informacion.count);
   }, []);
 
   useEffect(() => {
@@ -23,18 +24,18 @@ function ApiUserCount() {
     return () => console.log('Componente desmontado');
   }, []);
 
+  // let countCategory = Object.keys(informacion.countByCategory)
+  
+  let countCategory = 'probando texto'
+  
+
 
   return (
     <div>
-      <h1>API USER COUNT</h1>
       <h3>{informacion.count}</h3>
-      {/* {!informacion
-        ? "Cargando..."
-        : informacion.map((informacion) => {
-            return <h3>{informacion.count}</h3>;
-          })} */}
+
     </div>
   );
 }
 
-export default ApiUserCount;
+export default ApiCount;
