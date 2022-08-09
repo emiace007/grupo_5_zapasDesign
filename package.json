@@ -31,4 +31,6 @@
     "nodemon": "^2.0.16",
     "sequelize": "^6.21.0"
   }
+  ,
+  "proxy":"http://localhost:3001"
 }
