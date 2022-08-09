@@ -3,7 +3,8 @@ import "./App.css";
 import Contenedor from "./components/Contenedor";
 import ApiCount from "./components/ApiCount";
 import ApiCategoryCount from "./components/ApiCategoryCount";
-import ApiUltimoCreado from "./components/ApiUltimoCreado";
+import ApiUltimoProduct from "./components/ApiUltimoProduct";
+import ApiUltimoUser from "./components/ApiUltimoUser";
 
 function App() {
   return (
@@ -25,12 +26,13 @@ function App() {
 
       <Contenedor
         titulo="Ultimo producto creado:"
-        enlace=<ApiUltimoCreado urlApi="/api/products" />
+        enlace=<ApiUltimoProduct/>
       />
       <Contenedor
-        titulo="Ultimo usuario creado:"
-        enlace=<ApiUltimoCreado urlApi="/api/users" />
+        titulo="Ultimo usuario creado"
+        enlace=<ApiUltimoUser/>
       />
+
       <Contenedor
         titulo="Panel de categorías con el total de productos de cada una."
         enlace="data"
