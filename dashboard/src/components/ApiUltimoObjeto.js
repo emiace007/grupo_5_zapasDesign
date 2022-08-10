@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
-function ApiCount() {
+function ApiUltimoObjeto(props) {
   const [informacion, setInformacion] = useState([]);
 
-  const url = "/api/products";
+  const url = props.url;
 
   const fetchApis = async () => {
     const response = await fetch(url);
     const apiJSON = await response.json();
-    const categorias = apiJSON.countByCategory;
-    let countCategory = Object.keys(categorias).length;
-    return setInformacion(countCategory);
+    const busqueda = apiJSON[props.api];
+    const ultimoObj =
+      busqueda[Object.keys(busqueda)[Object.keys(busqueda).length - 1]];
+    const name = ultimoObj[props.dato];
+    return setInformacion(name);
   };
 
   useEffect(() => {
@@ -32,4 +34,4 @@ function ApiCount() {
   );
 }
 
-export default ApiCount;
+export default ApiUltimoObjeto;

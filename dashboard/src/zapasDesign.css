@@ -12,11 +12,17 @@
 }
 
 body{
+    background-image: url(../../public/images/index/zapatillas-portada.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover;
     margin: 25px;
     display: flex;
     justify-content: center;
     font-family: var(--fuente-de-texto);
     font-weight: var(--normal);
+    color: white;
 }
 
 .app{
@@ -27,7 +33,7 @@ body{
 
 
 .tituloPrincipal{
-    color: red;
+    color: var(--color);
 }
 
 /* TOTALES */
@@ -36,7 +42,16 @@ body{
     margin: 0 10px;
     display: flex;
     flex-direction: column;
-    background-color: antiquewhite;
+    background-color: #222226e3;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+}
+
+.totales h2{
+    margin: 5px;
 }
 
 .contenedorTotales{
@@ -45,3 +60,75 @@ body{
 }
 
 /* ULTIMO CREADO */
+
+.ultimoCreado{
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222226e3;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+}
+
+.ultimoCreado h2{
+    margin: 5px;
+}
+
+.contenedorCreados{
+    margin: 0px 10px;
+}
+
+.creadosIndividual{
+    display: flex;
+}
+
+.creadosIndividual h3{
+    margin: auto 0;
+}
+
+.creadosIndividual p{
+    margin-left: 5px;
+}
+
+/* CATEGORIAS */
+.categorias{
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222226e3;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+}
+
+
+.name-cantidad{
+display: flex;
+justify-content: center;
+}
+
+.name{
+
+}
+.cantidad{
+    margin: 0 20px;
+}
+
+/* PRODUCTOS */
+
+.productos{
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222226e3;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+    box-shadow: 0px 0px 8px 0px rgba(109,229,30,1);
+}

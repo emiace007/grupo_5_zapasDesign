@@ -3,8 +3,7 @@ import "./App.css";
 import Contenedor from "./components/Contenedor";
 import ApiCount from "./components/ApiCount";
 import ApiCategoryCount from "./components/ApiCategoryCount";
-import ApiUltimoProduct from "./components/ApiUltimoProduct";
-import ApiUltimoUser from "./components/ApiUltimoUser";
+import ApiUltimoObjeto from "./components/ApiUltimoObjeto";
 import ApiListaCategorias from "./components/ApiListaCategorias";
 import ApiListaProducts from "./components/ApiListaProducts";
 
@@ -17,17 +16,17 @@ function App() {
         <h2>Totales</h2>
         <div className="contenedorTotales">
           <Contenedor
-            classProp="contenedorIndividual"
+            classProp="totalesIndividual"
             titulo="Productos"
             enlace={<ApiCount urlApi="/api/products" />}
           />
           <Contenedor
-            classProp="contenedorIndividual"
+            classProp="totalesIndividual"
             titulo="Usuarios"
             enlace={<ApiCount urlApi="/api/users" />}
           />
           <Contenedor
-            classProp="contenedorIndividual"
+            classProp="totalesIndividual"
             titulo="Categorias"
             enlace={<ApiCategoryCount />}
           />
@@ -36,24 +35,44 @@ function App() {
 
       <div className="ultimoCreado">
         <h2>Ultimo creado</h2>
+        <div className="contenedorCreados">
+          <Contenedor
+            classProp="creadosIndividual"
+            titulo="Producto:"
+            enlace={
+              <ApiUltimoObjeto url="/api/products" api="products" dato="name" />
+            }
+          />
+          <Contenedor
+            classProp="creadosIndividual"
+            titulo="Usuario:"
+            enlace={
+              <ApiUltimoObjeto url="/api/users" api="users" dato="name" />
+            }
+          />
+          <Contenedor
+            classProp="creadosIndividual"
+            titulo="Email:"
+            enlace={
+              <ApiUltimoObjeto url="/api/users" api="users" dato="email" />
+            }
+          />
+        </div>
+      </div>
+
+      <div className="categorias">
         <Contenedor
-          titulo="Ultimo producto creado:"
-          enlace={<ApiUltimoProduct />}
-        />
-        <Contenedor
-          titulo="Ultimo usuario creado:"
-          enlace={<ApiUltimoUser />}
+          titulo="Categorias / Cantidad"
+          enlace={<ApiListaCategorias />}
         />
       </div>
 
-      <Contenedor
-        titulo="Panel de categorías con el total de productos de cada una:"
-        enlace={<ApiListaCategorias />}
-      />
-      <Contenedor
-        titulo="Listado de productos:"
-        enlace={<ApiListaProducts />}
-      />
+      <div className="productos">
+        <Contenedor
+          titulo="Listado de productos:"
+          enlace={<ApiListaProducts />}
+        />
+      </div>
     </div>
   );
 }

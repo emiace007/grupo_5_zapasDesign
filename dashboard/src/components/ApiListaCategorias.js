@@ -28,7 +28,7 @@ function ApiListaCategorias() {
   }, []);
 
   return (
-    <div>
+    <div className="name-cantidad">
       {names.length === 0 && cantidad.length === 0 && <p>Cargando...</p>}
       <div className="name">
         {names.map((data) => {

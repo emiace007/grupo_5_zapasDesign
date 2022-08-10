@@ -5,24 +5,23 @@ function ApiCount(props) {
 
   const url = props.urlApi;
 
-  const fetchApis = async () =>{
-    const response = await fetch(url)
-    const apiJSON = await response.json()
-    return setInformacion(apiJSON)
-  }
+  const fetchApis = async () => {
+    const response = await fetch(url);
+    const apiJSON = await response.json();
+    return setInformacion(apiJSON);
+  };
 
   useEffect(() => {
-    fetchApis()
+    fetchApis();
   }, []);
 
   useEffect(() => {
     // console.log('Actualizado');
   }, [informacion]);
- 
-  useEffect(() => {
-    return () => console.log('Componente desmontado');
-  }, []);
 
+  useEffect(() => {
+    return () => console.log("Componente desmontado");
+  }, []);
 
   return (
     <div>
