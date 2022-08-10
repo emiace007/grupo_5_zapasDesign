@@ -38,7 +38,7 @@ const validacion = [
   body("price")
     .notEmpty()
     .withMessage("Debes agregar un precio"),
-  body("categoria")
+  body("category")
     .notEmpty()
     .withMessage("Debes seleccionar por lo menos una opcion de categoria"),
   body("marca")

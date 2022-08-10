@@ -150,7 +150,7 @@ const controller = {
   //CREACIÓN PRODUCTO EN BASE DE DATOS >>>>>>>>>>>>>>>>
   createProduct: async (req, res) => {
     let error = validationResult(req);
-    console.log("xddxdxdxdxdxdxxddxdx")
+    console.log(error)
     if (error.isEmpty()) {
       if(req.file != undefined) {
         image = req.file.filename
@@ -173,7 +173,7 @@ const controller = {
       } else {
         categoryInput = categoryBody
         }
- 
+        console.log('creando producto')
       const newProduct =  await db.Product.create({
         precio: req.body.price,
         nombre: req.body.nombreProducto,
@@ -201,6 +201,7 @@ const controller = {
       
       const marcas = await db.Brand.findAll()
       const categorias  = await db.Category.findAll()
+      console.log('asd')
       res.render("create", {error:error.mapped(), old: req.body, allBrands:marcas, allCategories: categorias})
     }
 
