@@ -11,29 +11,47 @@ import ApiListaProducts from "./components/ApiListaProducts";
 function App() {
   return (
     <div className="App">
-      <h1>PANEL DE CONTROL</h1>
-      <Contenedor
-        titulo="Total de productos:"
-        enlace={<ApiCount urlApi="/api/products" />}
-      />
-      <Contenedor
-        titulo="Total de usuarios:"
-        enlace={<ApiCount urlApi="/api/users" />}
-      />
-      <Contenedor titulo="Total de categorias:" enlace={<ApiCategoryCount />} />
+      <h1 className="tituloPrincipal">PANEL DE CONTROL</h1>
+
+      <div className="totales">
+        <h2>Totales</h2>
+        <div className="contenedorTotales">
+          <Contenedor
+            classProp="contenedorIndividual"
+            titulo="Productos"
+            enlace={<ApiCount urlApi="/api/products" />}
+          />
+          <Contenedor
+            classProp="contenedorIndividual"
+            titulo="Usuarios"
+            enlace={<ApiCount urlApi="/api/users" />}
+          />
+          <Contenedor
+            classProp="contenedorIndividual"
+            titulo="Categorias"
+            enlace={<ApiCategoryCount />}
+          />
+        </div>
+      </div>
+
+      <div className="ultimoCreado">
+        <h2>Ultimo creado</h2>
+        <Contenedor
+          titulo="Ultimo producto creado:"
+          enlace={<ApiUltimoProduct />}
+        />
+        <Contenedor
+          titulo="Ultimo usuario creado:"
+          enlace={<ApiUltimoUser />}
+        />
+      </div>
 
       <Contenedor
-        titulo="Ultimo producto creado:"
-        enlace={<ApiUltimoProduct />}
-      />
-      <Contenedor titulo="Ultimo usuario creado" enlace={<ApiUltimoUser />} />
-
-      <Contenedor
-        titulo="Panel de categorías con el total de productos de cada una."
+        titulo="Panel de categorías con el total de productos de cada una:"
         enlace={<ApiListaCategorias />}
       />
       <Contenedor
-        titulo="Panel con el listado de productos."
+        titulo="Listado de productos:"
         enlace={<ApiListaProducts />}
       />
     </div>
