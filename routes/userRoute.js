@@ -54,7 +54,7 @@ const validacion_registro = [
       .withMessage("El campo contraseña es obligatorio")
       .bail()
       .isLength({ min: 8 })
-      .withMessage("Debe contener minimo 8 caracteres"),
+      .withMessage("El campo contraseña debe contener minimo 8 caracteres"),
       body("imagen").custom((value, { req }) => {
         let file = req.file;
         if (!file) {

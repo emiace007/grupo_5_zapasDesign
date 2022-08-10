@@ -70,15 +70,15 @@ window.onload = function() {
 
             if (error.length>0){
                 e.preventDefault();
-                document.getElementById("myBtn").disabled = true;
+                //document.getElementById("myBtn").disabled = true;
 
                 let ulErrores = document.querySelector('.errores')
-
+                ulErrores.innerHTML = "";
             for (let i = 0; i < error.length; i++) {
                     ulErrores.innerHTML += "<li>" + error[i] + "</li>";
                   }
             } else {
-                document.getElementById("myBtn").disabled = false;
+                //document.getElementById("myBtn").disabled = false;
             }
         })
 }
