@@ -14,7 +14,7 @@ const controller = {
   products: (req, res) => {
     db.Product.findAll()
       .then(productoInfo => res.render("products", {productos:productoInfo}))     
-
+    
 },
 
   productCart: (req, res) => res.render("productCart"),
@@ -225,7 +225,7 @@ const controller = {
       }
     })
 
-    console.log(search);
+
     return res.render('products',{productos:search},)
   }
 
