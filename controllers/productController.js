@@ -150,6 +150,7 @@ const controller = {
   //CREACIÓN PRODUCTO EN BASE DE DATOS >>>>>>>>>>>>>>>>
   createProduct: async (req, res) => {
     let error = validationResult(req);
+    console.log("xddxdxdxdxdxdxxddxdx")
     if (error.isEmpty()) {
       if(req.file != undefined) {
         image = req.file.filename
@@ -196,7 +197,12 @@ const controller = {
     
       return res.redirect("/products")
       
-    } else res.render("create", {error:error.mapped(), old: req.body})
+    } else {
+      
+      const marcas = await db.Brand.findAll()
+      const categorias  = await db.Category.findAll()
+      res.render("create", {error:error.mapped(), old: req.body, allBrands:marcas, allCategories: categorias})
+    }
 
   },
 
