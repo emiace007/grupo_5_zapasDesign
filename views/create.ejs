@@ -19,6 +19,7 @@
         <h1>Cargar Producto</h1>
         
         <form action="/products/create" method="POST" enctype="multipart/form-data">
+            <ul class="errores error"></ul>
             <h3>Producto:</h3>
             <input type="text" list="browsers" name="nombreProducto" id="nombreProducto" value="<%= locals.old && old.nombreProducto ? old.nombreProducto : ''%>">
             <% if (locals.error && error.nombreProducto){ %>

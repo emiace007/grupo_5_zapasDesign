@@ -15,37 +15,53 @@ window.onload = function() {
         nombre.focus();
 
         form.addEventListener("submit", (e) => {
-            e.preventDefault();
             let error = []
 
             // NOMBRE
             if (nombre.value == "") {
                 error.push("El campo nombre es obligatorio")
-            } else if (nombre.value.length < 2) {
-                error.push("El campo nombre debe tener al menos 2 caracteres")
+            } else if (nombre.value.length < 5) {
+                error.push("El campo nombre debe tener al menos 5 caracteres")
             } else {
-                apellido.focus();
+                description.focus();
             }
            
-            // APELLIDO
-            if (apellido.value == "") {
-                error.push("El campo apellido es obligatorio")
-            } else if (apellido.value.length < 2) {
-                error.push("El campo apellido debe tener al menos 2 caracteres")
-            } else {
-                password.focus();
-            }
-
-            // PASSWORD
-            if (password.value == "") {
-                error.push("El campo password es obligatorio")
-            } else if (password.value.length < 2) {
-                error.push("El campo password debe tener al menos 2 caracteres")
+            // DESCRIPCION
+            if (description.value == "") {
+                error.push("El campo descripción es obligatorio")
+            } else if (description.value.length < 20) {
+                error.push("El campo descripción debe tener al menos 20 caracteres")
             } else {
                 imagen.focus();
             }
 
             // IMAGEN
+            if (imagen.files.length == 0) {
+                error.push("Debes agregar una imagen");
+            } else {
+                let fileName = imagen.files[0].name;
+                let fileArray = fileName.split('.');
+                let extension = fileArray[1];
+                let extensionesValidas = ['jpg', 'jpeg', 'png', 'gif'];
+                let validacion = extensionesValidas.includes(extension);
+                if (!validacion) {
+                    error.push("Solo se permiten archivos .jpg / .jpeg / .png / .gif")
+                }
+            }
+
+            if (error.length>0){
+                e.preventDefault();
+                //document.getElementById("myBtn").disabled = true;
+
+                let ulErrores = document.querySelector('.errores')
+                ulErrores.innerHTML = "";
+
+            for (let i = 0; i < error.length; i++) {
+                    ulErrores.innerHTML += "<li>" + error[i] + "</li>";
+                  }
+            } else {
+                //document.getElementById("myBtn").disabled = false;
+            }
            
         })
 }
