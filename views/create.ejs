@@ -5,9 +5,8 @@
     title: "editProductos"
 } )%>
 
+<script src="/static/js/create.js"></script>
 <body>
-    <script src="/static/js/create.js"></script>
-    <script src="/static/js/counter.js"></script>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
     <main>
@@ -28,8 +27,8 @@
             <% } %> 
 
             <h3>Marca:</h3>
-            <select name="marca" id="">
-                <option value="" disabled selected>- Seleccione la marca - </option>
+            <select name="marca" id="marca">
+                <option value="" disabled selected>- Seleccione la marca -</option>
                     <% allBrands.forEach(brand => { %>
                     <option value="<%= brand.id %>"><%= brand.marcas %></option>
                     <% }); %>
@@ -39,7 +38,7 @@
             <div class="contenedor-de-categorias">
                 <div class="categoria">
                     <% allCategories.forEach(category => { %>
-                        <label><input type="checkbox" name="category" value="<%-category.id%>" > <%- category.categoria %>   </label>
+                        <label><input  class="categoriaInput" type="checkbox" name="category" value="<%-category.id%>" > <%- category.categoria %>   </label>
                     <% }) %>
                     
 
@@ -61,7 +60,7 @@
             <% } %>
 
             <h3>Talle:</h3>
-            <div class="div-talles" name="talles">
+            <div class="div-talles" name="talles" id="talle">
                 <div class="div-check-talle">
                     <input class="check-talle" type="checkbox" value="38" id="talle38" name="talle" hidden>
                     <label class="boton-talle" for="talle38">38</label>
@@ -96,7 +95,7 @@
             <% } %>
            
             <h3>Precio:</h3>
-            <input type="number" name="price" value="<%= locals.old && old.price ? old.price:  ''%>">
+            <input type="number" name="price" id="price" value="<%= locals.old && old.price ? old.price:  ''%>">
             <% if (locals.error && error.price){ %>
                 <p class="error"> <%= error.price.msg %> </p>
             <% } %>
