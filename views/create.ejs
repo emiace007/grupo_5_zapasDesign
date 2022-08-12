@@ -6,6 +6,7 @@
 } )%>
 
 <script src="/static/js/create.js"></script>
+<script src="/static/js/counter.js"></script>
 <body>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
@@ -50,7 +51,10 @@
             <% } %>
            
 
-            <h3>Descripción:</h3>
+            <div class="descripcionCounter">
+                <h3>Descripción:</h3>
+                <h4 class="counter" id="numero"></h4>
+            </div>
             <textarea class="descripcion" type="textarea" name="description" id="description" value="<%= locals.old && old.description ? old.description:  ''%>"></textarea>
             <% if (locals.error && error.description){ %>
                 <p class="error"> <%= error.description.msg %> </p>

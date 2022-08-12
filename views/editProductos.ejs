@@ -5,7 +5,7 @@
     title: "editProductos"
 } )%>
 
-
+<script src="/static/js/counter.js"></script>
 <body>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design.svg"}) %>
 
@@ -53,8 +53,11 @@
                     <p class="error"> <%= error.category.msg %> </p>
                 <% } %>
                           
-            <h3>Descripción:</h3>
-            <textarea name="description" class="descripcion" type="textarea" ><%= producto.descripcion %></textarea>
+            <div class="descripcionCounter">
+                <h3>Descripción:</h3>
+                <h4 class="counter" id="numero"></h4>
+            </div>
+            <textarea name="description" class="descripcion" type="textarea" id="description"><%= producto.descripcion %></textarea>
             <% if (locals.error && error.description){ %>
                 <p class="error"> <%= error.description.msg %> </p>
             <% } %>

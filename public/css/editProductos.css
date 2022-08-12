@@ -200,7 +200,12 @@ form input{
     font-size: 1rem;
 }
 
-
+.descripcionCounter{
+    display: flex;
+}
+.counter{
+margin-left: 10px;
+}
 
 @media (min-width: 480px){
     /* .login{
