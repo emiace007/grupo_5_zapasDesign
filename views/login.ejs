@@ -5,7 +5,7 @@
     title: "login"
 } )%>
     
-
+    <script src="/static/js/login.js"></script>
 <body>
 <%- include('./partials/header', {urlLogo: "static/img/logo-zapas-design-white.svg"}) %>
 
@@ -18,14 +18,15 @@
             <h1>INICIAR SESION</h1>
             
             <form action="/user/login/loginPost" method="post">
+                <ul class="errores error"></ul>
                 <div class="email-password">
-                    <input type="email" name="email" placeholder="Correo electrónico"  class="placeholder" value="<%= ((locals.old && old.email) ? old.email : emailRecordado)%>">
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico"  class="placeholder" value="<%= ((locals.old && old.email) ? old.email : emailRecordado)%>">
                     <% if (locals.error && error.email){ %>
                         <p class="error"> <%= error.email.msg %> </p>
                     <% } %>
                 </div>
                 <div class="email-password">
-                    <input type="password" name="password" placeholder="Contraseña" class="placeholder" value="<%=(locals.old? '' : passwordRecordada)%>">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" class="placeholder" value="<%=(locals.old? '' : passwordRecordada)%>">
                     <% if (locals.error && error.password){ %>
                         <p class="error"> <%= error.password.msg %> </p>
                     <% } %>

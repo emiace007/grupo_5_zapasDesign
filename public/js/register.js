@@ -6,11 +6,7 @@ window.onload = function() {
         let imagen = document.getElementById('files')
         let form = document.querySelector('form')
         
-        let h1 = document.querySelector('h1')
-        
-       
-        console.log(nombre);
-        
+        let h1 = document.querySelector('h1')        
         
 
         nombre.focus();
