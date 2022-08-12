@@ -8,9 +8,6 @@ window.onload = function() {
         let talle = document.querySelectorAll('.check-talle')
         let form = document.querySelector('form')
         
-        
-        // console.log(value);
-
         nombre.focus();
 
         form.addEventListener("submit", (e) => {
