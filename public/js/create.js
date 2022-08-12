@@ -1,16 +1,10 @@
 window.onload = function() {
         let nombre = document.getElementById('nombreProducto')
         let description = document.getElementById('description')
-        let password = document.getElementById('password')
         let imagen = document.getElementById('files')
         let form = document.querySelector('form')
         
-        let h1 = document.querySelector('h1')
-        
-        console.log(imagen.src);
-        console.log(nombre);
-        
-        
+
 
         nombre.focus();
 
