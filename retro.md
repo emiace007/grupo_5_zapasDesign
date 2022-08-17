@@ -31,7 +31,7 @@ Retrospectiva Sprint 1
 * Cambiar nombres de las "class". Es decir, definir nombres y no modificarlos 
 
 
-Retrospectiva Sprint 4:
+Retrospectiva:
 https://trello.com/b/tUw8BaPD/zapasdesing
 
 Tablero de trabajo:

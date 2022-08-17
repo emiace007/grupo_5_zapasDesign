@@ -34,7 +34,7 @@ function App() {
       </div>
 
       <div className="ultimoCreado">
-        <h2>Ultimo creado</h2>
+        <h2>Ultimo producto</h2>
         <div className="contenedorCreados">
           <Contenedor
             classProp="creadosIndividual"
@@ -43,6 +43,12 @@ function App() {
               <ApiUltimoObjeto url="/api/products" api="products" dato="name" />
             }
           />
+        </div>
+      </div>
+
+      <div className="ultimoCreado">
+        <h2>Ultimo usuario</h2>
+        <div className="contenedorCreados">
           <Contenedor
             classProp="creadosIndividual"
             titulo="Usuario:"
