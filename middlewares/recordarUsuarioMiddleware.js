@@ -10,16 +10,23 @@
 // }
 
 ///
-
+const db = require('../database/models')
 
 const usersFunctions = require("../models/userModel");
 
-function recordarUsuarioMiddleware (req,res,next) {
+async function recordarUsuarioMiddleware (req,res,next) {
 	res.locals.usuarioEstaLogiado = false;
 
-	let emailInCookie = req.cookies.userEmail
-	let userFromCookie = usersFunctions.findAlgo('email', emailInCookie);
-
+	let emailInCookie = req.cookies.userEmail;
+	if (!emailInCookie){
+		next();
+		return;
+	}
+	let userFromCookie = await db.Users.findOne({
+		where: {email: emailInCookie}
+	})
+	//let userFromCookie = usersFunctions.findAlgo('email', emailInCookie);
+	
 	if(userFromCookie){
 		req.session.usuarioLogiado = userFromCookie;
 	}

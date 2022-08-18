@@ -27,12 +27,12 @@ app.use(
   })
 );
 app.use(cookies());
+app.use(recordarUsuarioMiddleware); //Middleware para mantener una sesion inciada si el usuario asi lo requiere en el log in
 app.use(function (req, res, next) {
   //Middleware para que todas las vistas puedan tener acceso al usuario
   res.locals.user = req.session.usuarioLogiado;
   next();
 });
-app.use(recordarUsuarioMiddleware); //Middleware para mantener una sesion inciada si el usuario asi lo requiere en el log in
 
 // RUTAS
 
